@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>잡클라우드-메인</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <div style="height: 100vh; background: #eee; display: flex; align-items: center; justify-content: center;">
+    <h2>스크롤을 아래로 내려보세요 ↓</h2>
+    </div>
+
+    <div class="container" style="height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+    <h1 class="sliding-text" style="font-size: 5rem; opacity: 0;">HELLO GSAP!</h1>
+    </div>
+
+    <div style="height: 100vh; background: #eee;"></div>
+
+    <script>
+        // 스크립트 부분을 이렇게 수정해 보세요!
+        gsap.fromTo(".sliding-text", 
+        { 
+            x: -3000,    // [시작] 왼쪽 300px 지점에서
+            opacity: 0  // [시작] 투명한 상태로
+        }, 
+        { 
+            x: 0,          // [종료] 화면 정중앙 (제자리)
+            opacity: 1,    // [종료] 선명하게
+            ease: "power1.out", // 시작은 빠르고 끝은 아주 부드럽게 감속
+            
+            scrollTrigger: {
+            trigger: ".container",
+            start: "top 90%",    // 컨테이너가 화면 하단에 살짝 보일 때 바로 시작
+            end: "top 10%",      // 화면 상단 근처까지 올 때까지 천천히 진행 (거리가 길어짐)
+            scrub: 2,            // 숫자를 높일수록 스크롤을 멈춰도 텍스트가 부드럽게 따라옵니다 (관성 효과)
+            markers: false       // 위치 확인이 필요하면 true로 바꿔보세요
+            }
+        }
+        );
+    </script>
+</body>
+</html>
