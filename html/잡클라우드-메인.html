@@ -7,212 +7,54 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
 </head>
 <body>
     <style>
-        @font-face {
-            font-family: 'Pretendard';
-            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
-            font-weight: 100;
-            font-display: swap;
+        /* ... 기존 CSS ... */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Pretendard', sans-serif; background-color: #0a0e27; color: #ffffff; overflow-x: hidden; }
+        .inner { max-width: 1540px; margin: 0 auto; padding: 0 20px; }
+
+        .visual { display: flex; align-items: center; justify-content: center; width: 100%; height: 100vh; position: relative; overflow: hidden; }
+        .visual__video { width: 100%; height: 100%; position: absolute; top: 0; left: 0; object-fit: cover; opacity: 0.6; z-index: 1; }
+        .visual__overlay { width: 100%; height: 100%; position: absolute; top: 0; left: 0; background: rgba(0, 0, 0, 0.8  ); z-index: 2; }
+        .visual__content { position: relative; z-index: 3; text-align: center; }
+        .visual__text-wrapper { max-width: 700px; }
+        .visual__txt { position: relative; color: #fff; font-size: 66px; font-weight: 700; line-height: 1.5; letter-spacing: 0.05em; word-break: keep-all; }
+        .visual__title { background: linear-gradient(280deg, #00f59b 45%, #3333cc 60%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; clip-path: inset(1px); color: transparent; font-size: 80px; font-weight: 700; line-height: 1.5; letter-spacing: 0.05em; transform: translateY(20px); opacity: 0; }
+        .typing-cursor { display: inline-block; height: 66px; margin-left: 2px; border-left: 2px solid #fff; animation: blink 0.7s infinite; vertical-align: middle; }
+        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0; } 100% { opacity: 1; } }
+
+        .cont02 {height: 100vh; padding: 150px 0; background: url(./images/cont02_bg.png) center; background-size: cover; }
+        .cont02 .intro { display: flex; align-items: center; gap: 40px; margin-bottom: 150px; }
+        .cont02 .intro__item { flex: 1; }
+        .cont02 .intro__title > span { display: block; }
+        .cont02 .intro__title { color: #fff; font-size: 56px; font-weight: 700; line-height: 1.4; }
+        .cont02 .intro__text { color: #999999; font-size: 16px; font-weight: 400; line-height: 2; }
+
+        .intro__title .char-wrapper { display: inline-block; overflow: hidden; vertical-align: bottom; }
+        .intro__title .char {
+            display: inline-block;
+            transform: translateY(100%);
+            /* --- 떨림 현상 해결을 위한 코드 추가 --- */
+            will-change: transform;
         }
 
-        @font-face {
-            font-family: 'Pretendard';
-            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2');
-            font-weight: 200;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: 'Pretendard';
-            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');
-            font-weight: 300;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: 'Pretendard';
-            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
-            font-weight: 400;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: 'Pretendard';
-            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');
-            font-weight: 500;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: 'Pretendard';
-            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');
-            font-weight: 600;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: 'Pretendard';
-            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
-            font-weight: 700;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: 'Pretendard';
-            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');
-            font-weight: 800;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: 'Pretendard';
-            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');
-            font-weight: 900;
-            font-display: swap;
-        }
-        
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'Pretendard', sans-serif;
-    background-color: #0a0e27;
-    color: #ffffff;
-    overflow-x: hidden;
-}
-
-/* ===========================
-   히어로 섹션
-   =========================== */
-.inner {max-width: 1540px; margin: 0 auto;}
-.visual {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
-}
-.visual__video {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    object-fit: cover;
-    opacity: 0.6;
-    z-index: 1;
-}
-.visual__overlay {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.8);
-    z-index: 2;
-}
-.visual__content { 
-    position: relative;
-    z-index: 3;
-}
-/* 텍스트 래퍼 */
-.visual__text-wrapper {
-    max-width: 700px;
-    text-align: center;
-}
-.visual__txt {
-    position: relative;
-    color: #fff;
-    font-size: 66px;
-    font-weight: 700;
-    line-height: 1.5;
-    letter-spacing: 0.05em;
-    word-break: keep-all;
-}
-.visual__title {
-    background: linear-gradient(280deg, #00f59b 45%, #3333cc 60%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    clip-path: inset(1px);
-    color: transparent;
-    font-size: 80px;
-    font-weight: 700;
-    line-height: 1.5;
-    letter-spacing: 0.05em;
-    transform: translateY(20px);    
-    opacity: 0;
-    
-}
-
-.typing-cursor {
-    display: inline-block;
-    height: 66px;
-    margin-left: 2px;
-    border-left: 2px solid #fff; 
-    animation: blink 0.7s infinite;
-    vertical-align: middle;
-}
-
-@keyframes blink {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.cont02 {
-    height: 100vh;
-    background: url(./images/cont02_bg.png) center; background-size: cover;
-    font-family: 'NanumSquare';
-}
-.cont02 .inner {
-    padding-top: 130px;
-}
-.cont02__title {
-    display: flex;
-    align-items: center;
-    
-}
-.cont02__title-item {
-    flex: 1;
-}
-.cont02__title-tit {
-    color: #fff;
-    font-size: 56px;
-    font-weight: 700;
-    line-height: 80px;
-}
-.cont02__title-txt {
-    padding-left: 40px;
-    color: #999999;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 32px;
-}
+        .performance { text-align: left; }
+        .performance__title { font-size: 36px; font-weight: 600; margin-bottom: 16px; }
+        .performance__desc { font-size: 16px; color: #cccccc; margin-bottom: 80px; max-width: 600px; }
+        .performance__list { display: flex; justify-content: space-between; text-align: center; gap: 20px; }
+        .performance__item { flex: 1; }
+        .performance__item-title { font-size: 18px; font-weight: 500; color: #cccccc; margin-bottom: 20px; }
+        .performance__item-count { font-size: 60px; font-weight: 700; }
+        .performance__item-count span { font-size: 24px; font-weight: 500; margin-left: 8px; }
     </style>
+
+    <!-- HTML과 JavaScript는 이전과 동일합니다 -->
     <section class="visual">
-        <video class="visual__video" autoplay muted loop playsinline>
-            <source src="images/main_video.mp4" type="video/mp4">
-        </video>
+        <video class="visual__video" autoplay muted loop playsinline><source src="images/main_video.mp4" type="video/mp4"></video>
         <div class="visual__overlay"></div>
         <div class="visual__content">
             <div class="visual__text-wrapper">
@@ -221,49 +63,109 @@ body {
             </div>
         </div>
     </section>
+
     <section class="cont02">
         <div class="inner">
-            <div class="cont02__title">
-                <div class="cont02__title-item">
-                    <h3 class="cont02__title-tit" data-aos="fade-up" data-aos-duration="1500">대한민국 일자리<br> 플랫폼의 기준이 되다.</h3>
+            <div class="intro">
+                <div class="intro__item">
+                    <div class="intro__title" id="animated-title">
+                        <span>대한민국 일자리</span>
+                        <span>플랫폼의 기준이 되다.</span>
+                    </div>
                 </div>
-                <div class="cont02__title-item">
-                    <p class="cont02__title-txt" data-aos="fade-left" data-aos-offset="500" data-aos-duration="1500">공공기관 구축 경험과 노하우의 집약<br> 표준화된 프로세스와<br> 취업지원 서비스 구축부터 운영까지<br> 잡클라우드는 일자리 플랫폼의 새로운 기준이 됩니다.</p>
+                <div class="intro__item">
+                    <p class="intro__text">공공기관 구축 경험과 노하우의 집약<br>
+                        표준화된 프로세스와<br>  
+                        취업지원 서비스 구축부터 운영까지<br>  
+                        잡클라우드는 일자리 플랫폼의 새로운 기준이 됩니다.</p>
+                </div>
+            </div>
+            <div class="performance">
+                <div>
+                    <h4 class="performance__title">Performance</h4>
+                    <p class="performance__desc">독보적인 경험과 실제 성과로 입증된 데이터를 바탕으로, 고객의 니즈를 뛰어넘어 혁신하는 탁월한 서비스를 약속합니다.</p>
+                </div>
+                <div class="performance__list">
+                    <div class="performance__item"><p class="performance__item-title">채용정보 제공</p><p class="performance__item-count" data-count="80000">+ 0<span>건</span></p></div>
+                    <div class="performance__item"><p class="performance__item-title">채용정보 제공</p><p class="performance__item-count" data-count="80000">+ 0<span>건</span></p></div>
+                    <div class="performance__item"><p class="performance__item-title">채용정보 제공</p><p class="performance__item-count" data-count="80000">+ 0<span>건</span></p></div>
+                    <div class="performance__item"><p class="performance__item-title">채용정보 제공</p><p class="performance__item-count" data-count="80000">+ 0<span>건</span></p></div>
                 </div>
             </div>
         </div>
     </section>
-    <script>
-        AOS.init();
-       // GSAP 플러그인 등록
-        // gsap.registerPlugin(TextPlugin, ScrollTrigger);
 
-        window.addEventListener('load', function() {
-            const video = document.querySelector('.visual__video');
-            if (video) {
-                video.playbackRate = 0.8;
+    <script>
+        gsap.registerPlugin(TextPlugin, ScrollTrigger);
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const titleLines = document.querySelectorAll("#animated-title > span");
+            if (titleLines.length > 0) {
+                titleLines.forEach(line => {
+                    const text = line.textContent;
+                    line.innerHTML = '';
+                    for (const char of text) {
+                        if (char.trim() !== '') {
+                            line.innerHTML += `<div class="char-wrapper"><span class="char">${char}</span></div>`;
+                        } else {
+                            line.innerHTML += ' ';
+                        }
+                    }
+                });
+
+                gsap.to("#animated-title .char", {
+                    y: 0, stagger: 0.05, duration: 1, ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: "#animated-title", start: "top 80%", toggleActions: "play none none none",
+                    }
+                });
             }
-            const typingText = "기업과 인재를 연결하는 일자리통합플랫폼";
-            const typingCursor = document.querySelector('.typing-cursor');
-            const typingElement = document.querySelector('#typing-text');
-            const titleElement = document.querySelector('.visual__title');
-            
-            gsap.to("#typing-text", {
-                duration: 3,
-                text: typingText,
-                ease: "none",
-                onComplete: () => {
-                    typingCursor.classList.remove('typing-cursor');
-                    gsap.to(".visual__title", {
-                        duration: 1,
-                        opacity: 1,
-                        y: 0,
-                        delay: 0.5
-                    });
+
+            gsap.from(".intro__text", {
+                opacity: 0, x: 50, duration: 1,
+                scrollTrigger: {
+                    trigger: ".intro", start: "top 80%", toggleActions: "play none none none",
                 }
             });
+
+            const performanceElements = gsap.utils.toArray('.performance__title, .performance__desc, .performance__list');
+            performanceElements.forEach((el, index) => {
+                gsap.from(el, {
+                    opacity: 0, y: 50, duration: 1, delay: index * 0.2,
+                    scrollTrigger: {
+                        trigger: ".performance", start: "top 80%", toggleActions: "play none none none",
+                    }
+                });
+            });
+
+            const counters = gsap.utils.toArray(".performance__item-count");
+            counters.forEach(counter => {
+                const targetCount = +counter.dataset.count;
+                const counterObject = { value: 0 };
+                gsap.to(counterObject, {
+                    value: targetCount, duration: 2, ease: "power1.inOut",
+                    scrollTrigger: {
+                        trigger: counter, start: "top 85%", toggleActions: "play none none none",
+                    },
+                    onUpdate: () => {
+                        counter.innerHTML = `+ ${Math.round(counterObject.value).toLocaleString()}<span>건</span>`;
+                    }
+                });
+            });
+
+            const video = document.querySelector('.visual__video');
+            if (video) { video.playbackRate = 0.8; }
         });
 
+        gsap.to("#typing-text", {
+            duration: 3,
+            text: "기업과 인재를 연결하는 일자리통합플랫폼",
+            ease: "none",
+            onComplete: () => {
+                document.querySelector('.typing-cursor').style.display = 'none';
+                gsap.to(".visual__title", { duration: 1, opacity: 1, y: 0, delay: 0.5 });
+            }
+        });
     </script>
 </body>
 </html>
