@@ -6,39 +6,264 @@
     <title>잡클라우드-메인</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-    <div style="height: 100vh; background: #eee; display: flex; align-items: center; justify-content: center;">
-    <h2>스크롤을 아래로 내려보세요 ↓</h2>
-    </div>
-
-    <div class="container" style="height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-    <h1 class="sliding-text" style="font-size: 5rem; opacity: 0;">HELLO GSAP!</h1>
-    </div>
-
-    <div style="height: 100vh; background: #eee;"></div>
-
-    <script>
-        // 스크립트 부분을 이렇게 수정해 보세요!
-        gsap.fromTo(".sliding-text", 
-        { 
-            x: -3000,    // [시작] 왼쪽 300px 지점에서
-            opacity: 0  // [시작] 투명한 상태로
-        }, 
-        { 
-            x: 0,          // [종료] 화면 정중앙 (제자리)
-            opacity: 1,    // [종료] 선명하게
-            ease: "power1.out", // 시작은 빠르고 끝은 아주 부드럽게 감속
-            
-            scrollTrigger: {
-            trigger: ".container",
-            start: "top 90%",    // 컨테이너가 화면 하단에 살짝 보일 때 바로 시작
-            end: "top 10%",      // 화면 상단 근처까지 올 때까지 천천히 진행 (거리가 길어짐)
-            scrub: 2,            // 숫자를 높일수록 스크롤을 멈춰도 텍스트가 부드럽게 따라옵니다 (관성 효과)
-            markers: false       // 위치 확인이 필요하면 true로 바꿔보세요
-            }
+    <style>
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
+            font-weight: 100;
+            font-display: swap;
         }
-        );
+
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2');
+            font-weight: 200;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');
+            font-weight: 600;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');
+            font-weight: 800;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');
+            font-weight: 900;
+            font-display: swap;
+        }
+        
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Pretendard', sans-serif;
+    background-color: #0a0e27;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* ===========================
+   히어로 섹션
+   =========================== */
+.inner {max-width: 1540px; margin: 0 auto;}
+.visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+.visual__video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    opacity: 0.6;
+    z-index: 1;
+}
+.visual__overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 2;
+}
+.visual__content { 
+    position: relative;
+    z-index: 3;
+}
+/* 텍스트 래퍼 */
+.visual__text-wrapper {
+    max-width: 700px;
+    text-align: center;
+}
+.visual__txt {
+    position: relative;
+    color: #fff;
+    font-size: 66px;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+    word-break: keep-all;
+}
+.visual__title {
+    background: linear-gradient(280deg, #00f59b 45%, #3333cc 60%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    clip-path: inset(1px);
+    color: transparent;
+    font-size: 80px;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+    transform: translateY(20px);    
+    opacity: 0;
+    
+}
+
+.typing-cursor {
+    display: inline-block;
+    height: 66px;
+    margin-left: 2px;
+    border-left: 2px solid #fff; 
+    animation: blink 0.7s infinite;
+    vertical-align: middle;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.cont02 {
+    height: 100vh;
+    background: url(./images/cont02_bg.png) center; background-size: cover;
+    font-family: 'NanumSquare';
+}
+.cont02 .inner {
+    padding-top: 130px;
+}
+.cont02__title {
+    display: flex;
+    align-items: center;
+    
+}
+.cont02__title-item {
+    flex: 1;
+}
+.cont02__title-tit {
+    color: #fff;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 80px;
+}
+.cont02__title-txt {
+    padding-left: 40px;
+    color: #999999;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 32px;
+}
+    </style>
+    <section class="visual">
+        <video class="visual__video" autoplay muted loop playsinline>
+            <source src="images/main_video.mp4" type="video/mp4">
+        </video>
+        <div class="visual__overlay"></div>
+        <div class="visual__content">
+            <div class="visual__text-wrapper">
+                <div class="visual__txt"><span id="typing-text"></span><span class="typing-cursor"></span></div>
+                <h2 class="visual__title">JOBCLOUD</h2>
+            </div>
+        </div>
+    </section>
+    <section class="cont02">
+        <div class="inner">
+            <div class="cont02__title">
+                <div class="cont02__title-item">
+                    <h3 class="cont02__title-tit" data-aos="fade-up" data-aos-duration="1500">대한민국 일자리<br> 플랫폼의 기준이 되다.</h3>
+                </div>
+                <div class="cont02__title-item">
+                    <p class="cont02__title-txt" data-aos="fade-left" data-aos-offset="500" data-aos-duration="1500">공공기관 구축 경험과 노하우의 집약<br> 표준화된 프로세스와<br> 취업지원 서비스 구축부터 운영까지<br> 잡클라우드는 일자리 플랫폼의 새로운 기준이 됩니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        AOS.init();
+       // GSAP 플러그인 등록
+        // gsap.registerPlugin(TextPlugin, ScrollTrigger);
+
+        window.addEventListener('load', function() {
+            const video = document.querySelector('.visual__video');
+            if (video) {
+                video.playbackRate = 0.8;
+            }
+            const typingText = "기업과 인재를 연결하는 일자리통합플랫폼";
+            const typingCursor = document.querySelector('.typing-cursor');
+            const typingElement = document.querySelector('#typing-text');
+            const titleElement = document.querySelector('.visual__title');
+            
+            gsap.to("#typing-text", {
+                duration: 3,
+                text: typingText,
+                ease: "none",
+                onComplete: () => {
+                    typingCursor.classList.remove('typing-cursor');
+                    gsap.to(".visual__title", {
+                        duration: 1,
+                        opacity: 1,
+                        y: 0,
+                        delay: 0.5
+                    });
+                }
+            });
+        });
+
     </script>
 </body>
 </html>
