@@ -15,7 +15,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body { font-family: 'Pretendard', sans-serif; background-color: #0a0e27; color: #ffffff; overflow-x: hidden; }
-        .inner { max-width: 1540px; margin: 0 auto; padding: 0 20px; }
+        .inner { max-width: 1540px; width: 100%; margin: 0 auto; padding: 0 20px; }
 
         .visual { display: flex; align-items: center; justify-content: center; width: 100%; height: 100vh; position: relative; overflow: hidden; }
         .visual__video { width: 100%; height: 100%; position: absolute; top: 0; left: 0; object-fit: cover; opacity: 0.6; z-index: 1; }
@@ -74,6 +74,73 @@
         .biz-card__inner { display: flex; flex-direction: column; justify-content: space-between; padding: 30px 20px; height: 100%; background: rgba(255, 255, 255, 0.6); border: 1px solid #222; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); } 
         .biz-card h3 { color: #3333cc; font-size: 22px; font-weight: 700; } 
         .biz-card p { color: #333; font-size: 14px; font-weight: 400; line-height: 1.4; word-break: keep-all; } 
+
+        .cont05 { width: 100%; background-color: #fff; position: relative; } 
+        .cont05__bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('./images/cont05_bg.png') no-repeat center/cover; background-attachment: fixed; opacity: 0; z-index: 1; } 
+        .cont05 .inner { position: relative; z-index: 2; } 
+        .cont05__wrap { display: flex; justify-content: space-between; align-items: flex-start; position: relative; } 
+        .cont05__left { display: flex; flex-direction: column; justify-content: center; flex: 1; height: 100vh; position: sticky; top: 0; opacity: 0; z-index: 10; } 
+        .cont05__text-box { margin-top: -200px; } 
+        .cont05__tit { color: #000; font-size: 80px; font-weight: 800; margin-bottom: 60px; } 
+        .cont05__txt { color: #000; font-size: 20px; line-height: 1.4; font-weight: 300; } 
+        .cont05__txt span { color: #3333cc; font-weight: 600; } 
+        .cont05__right { flex: 1; padding-top: 30vh; padding-bottom: 10vh; } 
+        .cont05-card { max-width: 720px; width: 100%; height: 400px; margin-bottom: 150px; position: relative; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 30px; overflow: hidden; opacity: 0; transform: translateY(100px); } 
+        .cont05-card::before { content: ''; position: absolute; top: 0; left: 0; bottom: 0; right: 0; background: rgba(0, 0, 0, 0.6); z-index: 9; } 
+        .cont05-card.is-active { border-color: rgba(0, 245, 155, 0.5); background-color: rgba(255, 255, 255, 0.1); } 
+        .cont05-card__img { width: 100%; overflow: hidden; } 
+        .cont05-card__img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; } 
+        .cont05-card:hover .cont05-card__img img { transform: scale(1.1); } 
+        .cont05-card__info { display: flex; flex-direction: column; justify-content: center; padding: 30px 40px; position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 10; } 
+        .cont05-card__info h3 { color: #fff; font-size: 50px; font-weight: 800; margin-bottom: 40px; } 
+        .cont05-card__info p { max-width: 500px; color: #fff; font-size: 18px; line-height: 1.5; word-break: keep-all; } 
+
+        .cont06 { display: flex; flex-direction: column; width: 100%; height: 100vh; padding: 120px 0; position: relative; background: #edfbf6; overflow: hidden; } 
+        .cont06__tit { color: #000; font-size: 52px; font-weight: 800; margin-bottom: 40px; letter-spacing: -1.5px; text-transform: uppercase; } 
+        .cont06__txt { color: #333; font-size: 16px; font-weight: 400; } 
+        .cont06 .pinInner { flex: 1; display: flex; align-items: center; width: 100%; } 
+        .cont06__list { display: flex; gap: 40px; list-style: none; margin: 0; padding: 0 100px 0 10%; width: max-content; } 
+        .cont06__list li { display: flex; flex-direction: column; justify-content: space-between; flex-shrink: 0; width: 420px; height: 360px; padding: 60px 40px; position: relative; background-image: linear-gradient(rgb(153 223 239 / 90%), rgb(2 213 225 / 80%)), url(./images/cont06_card.jpg); background-size: cover; background-position: center; color: #fff; border: none; transition: transform 0.5s ease, box-shadow 0.5s ease; border-radius: 30px; overflow: hidden; } 
+        .cont06__list li:hover { transform: translateY(-20px); box-shadow: 0 30px 60px rgba(80, 80, 81, 0.15); border-color: #b9b9b9; } 
+        .cont06__list dt { font-size: 32px; font-weight: 800; color: #fff; margin-bottom: 30px; word-break: keep-all; } 
+        .cont06__list dd { color: #fff; font-size: 16px; line-height: 1.6; word-break: keep-all; } 
+        .cont06__list a { display: inline-flex; align-items: center; margin-left: auto; font-size: 16px; font-weight: 300; color: #fff; text-decoration: none; letter-spacing: 1px; transition: gap 0.3s; } 
+        .cont06__list a:hover { gap: 10px; } 
+
+        .cont07 { width: 100%; height: 100vh; padding: 120px 0; position: relative; background-color: #f5f5f5; overflow: hidden; } 
+        .cont07 .bg-text-wrap { width: 100%; height: 100%; position: absolute; top: 0; pointer-events: none; z-index: 0; } 
+        .cont07 .bg-text { position: absolute; color: #fff; font-size: 120px; font-weight: 900; white-space: nowrap; text-transform: uppercase; line-height: 1; } 
+        .cont07 .bg-text.left { top: 0; left: 0; writing-mode: vertical-rl; animation: flowDown 30s linear infinite; } 
+        .cont07 .bg-text.right { top: 0; right: 0; writing-mode: vertical-rl; animation: flowUp 30s linear infinite; } 
+
+        @keyframes flowDown { 
+        0% { transform: translateY(-50%); } 
+        100% { transform: translateY(0%); } 
+        }
+
+        @keyframes flowUp { 
+        0% { transform: translateY(0%); } 
+        100% { transform: translateY(-50%); } 
+        }
+
+        .cont07__tbox { margin-bottom: 80px; text-align: center; } 
+        .cont07__tbox-tit { color: #000; font-size: 52px; font-weight: 800; margin-bottom: 40px; letter-spacing: -1.5px; text-transform: uppercase; } 
+        .cont07__tbox-txt { color: #333; font-size: 16px; font-weight: 400; } 
+        .cont07 .module__list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 1200px; width: 100%; margin: 0 auto; padding: 0; list-style: none; } 
+        .cont07 .module__list-card { display: flex; flex-direction: column; justify-content: center; height: 150px; padding: 0; background: #fff; border: 1px solid #eee; border-radius: 12px; text-align: center; transition: all 0.4s ease; opacity: 0.4; filter: grayscale(1); } 
+        .cont07 .module__list-card .icon { font-size: 24px; margin-bottom: 10px; opacity: 0.5; } 
+        .cont07 .module__list-card dt { font-size: 18px; font-weight: 700; color: #333; margin-bottom: 8px; } 
+        .cont07 .module__list-card dd { margin: 0; display: flex; justify-content: center; gap: 5px; } 
+        .cont07 .module__list-card .tag { font-size: 10px; padding: 2px 8px; background: #fff; border-radius: 4px; color: #999; } 
+
+
+        .cont07 .module__list-card.sp_on { background: #eef2ff; border-color: #6366f1; opacity: 1; filter: grayscale(0); transform: translateY(-10px); }
+        .cont07 .module__list-card.sp_on .tag.sp_on { background: #6366f1; color: #fff; }
+        .cont07 .module__list-card.cp_on { background: #fdf2ff; border-color: #d946ef; opacity: 1; filter: grayscale(0); transform: translateY(-10px); }
+        .cont07 .module__list-card.cp_on .tag.cp_on { background: #d946ef; color: #fff; }
+        .cont07 .module__list-card.rc_on { background: #fff7ed; border-color: #f97316; opacity: 1; filter: grayscale(0); transform: translateY(-10px); }
+        .cont07 .module__list-card.rc_on .tag.rc_on { background: #f97316; color: #fff; }
+
     </style>
 
     <section class="visual">
@@ -188,158 +255,211 @@
 
         </div>
     </section>
-
-    <style>
-.cont05 { width: 100%; background-color: #000; position: relative; }
-.cont05__bg {position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('./images/cont05_bg.png') no-repeat center/cover;  background-attachment: fixed; opacity: 0; z-index: 1;}
-
-.cont05 .inner { 
-    position: relative;
-    z-index: 2;
-}
-
-/* 좌측 고정 및 우측 스크롤을 위한 Flex 설정 */
-.cont05__wrap { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: flex-start; 
-    position: relative;
-}
-
-.cont05__left { 
-    display: flex; 
-    flex-direction: column;
-    justify-content: center;
-    flex: 1;
-    height: 100vh;
-    position: sticky; 
-    top: 0;
-    opacity: 0;
-    z-index: 10;
-}
-
-.cont05__text-box {
-    margin-top: -200px;
-}
-.cont05__tit { 
-    color: #000; 
-    font-size: 80px; 
-    font-weight: 800; 
-    margin-bottom: 60px; 
-}
-
-.cont05__txt { 
-    color: #000; 
-    font-size: 20px; 
-    line-height: 1.4; 
-    font-weight: 300;
-}
-.cont05__txt span {
-    color: #3333cc;
-    font-weight: 600;
-}
-
-.cont05__right {
-    flex: 1;
-    padding-top: 30vh;
-    padding-bottom: 30vh;
-}
-
-.cont05-card { 
-    max-width: 720px;
-    width: 100%;
-    height: 400px;
-    margin-bottom: 150px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 30px; 
-    overflow: hidden;
-    opacity: 0;
-    transform: translateY(100px);
-    border: 1px solid red;
-}
-
-/* 활성화 상태 (GSAP toggleClass 사용 시) */
-.cont05-card.is-active {
-    border-color: rgba(0, 245, 155, 0.5);
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.cont05-card__img { 
-    width: 100%; 
-    overflow: hidden;
-}
-
-.cont05-card__img img { 
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
-    transition: transform 0.5s;
-}
-
-.cont05-card:hover .cont05-card__img img {
-    transform: scale(1.1);
-}
-
-.cont05-card__info { 
-    padding: 40px; 
-}
-
-.cont05-card__info h3 { 
-    color: #fff; 
-    font-size: 32px; 
-    font-weight: 700; 
-    margin-bottom: 15px; 
-}
-
-.cont05-card__info p { 
-    color: #aaa; 
-    font-size: 18px; 
-    line-height: 1.6; 
-}
-
-</style>
     
     <section class="cont05">
-    <div class="cont05__bg"></div>
-    
-    <div class="inner">
-        <div class="cont05__wrap">
-            <div class="cont05__left">
-                <div class="cont05__text-box">
-                    <h2 class="cont05__tit">Service</h2>
-                    <p class="cont05__txt">
-                        사이트 구축에 필요한 A부터 Z까지<br> <span>잡클라우드</span> 하나면 충분합니다. 
-                    </p>
-                </div>
-            </div>
-            <div class="cont05__right">
-                <div class="cont05-card">
-                    <div class="cont05-card__img"><img src="./images/cont05_card01.png" alt=""></div>
-                    <div class="cont05-card__info">
-                        <h3>취업진단서비스</h3>
-                        <p>전문 컨설턴트를 통해 최적화된 문항 개발 및 진단 지표를 제공합니다.</p>
+        <div class="cont05__bg"></div>
+        
+        <div class="inner">
+            <div class="cont05__wrap">
+                <div class="cont05__left">
+                    <div class="cont05__text-box">
+                        <h2 class="cont05__tit">Service</h2>
+                        <p class="cont05__txt">
+                            사이트 구축에 필요한 A부터 Z까지<br> <span>잡클라우드</span> 하나면 충분합니다. 
+                        </p>
                     </div>
                 </div>
-                <div class="cont05-card">
-                    <div class="cont05-card__img"><img src="./images/merit02.png" alt=""></div>
-                    <div class="cont05-card__info">
-                        <h3>직관적인 UX/UI</h3>
-                        <p>누구나 쉽게 이용할 수 있는 인터페이스로 서비스 접근성을 극대화했습니다.</p>
+                <div class="cont05__right">
+                    <div class="cont05-card">
+                        <div class="cont05-card__img"><img src="./images/cont05_card01.png" alt=""></div>
+                        <div class="cont05-card__info">
+                            <h3>취업진단서비스</h3>
+                            <p>전문 컨설턴트를 통해 최적화된 문항 개발 및 진단 지표를 제공합니다.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="cont05-card">
-                    <div class="cont05-card__img"><img src="./images/merit03.png" alt=""></div>
-                    <div class="cont05-card__info">
-                        <h3>올인원 관리 시스템</h3>
-                        <p>접수부터 면접, 채용까지 모든 과정을 하나의 시스템에서 관리하세요.</p>
+                    <div class="cont05-card">
+                        <div class="cont05-card__img"><img src="./images/cont05_card02.png" alt=""></div>
+                        <div class="cont05-card__info">
+                            <h3>채용관리시스템 구축</h3>
+                            <p>공고 등록, 지원자 관리, 면접관리, 결과관리 채용의 전 과정을 지원하며 기업의 채용 성공을 함께합니다.</p>
+                        </div>
+                    </div>
+                    <div class="cont05-card">
+                        <div class="cont05-card__img"><img src="./images/cont05_card03.png" alt=""></div>
+                        <div class="cont05-card__info">
+                            <h3>DB 수집 및 관리</h3>
+                            <p>가장 적합한 정보 제공을 위한 맞춤화된 구조를 설계하고 운영 노하우를 기반으로 DB를 수집 하고 관리합니다.</p>
+                        </div>
+                    </div>
+                    <div class="cont05-card">
+                        <div class="cont05-card__img"><img src="./images/cont05_card04.png" alt=""></div>
+                        <div class="cont05-card__info">
+                            <h3>AI 서비스</h3>
+                            <p>자기소개서 컨설팅부터, 모의면접까지 취업에 필요한 서비스를 제공합니다.</p>
+                        </div>
+                    </div>
+                    <div class="cont05-card">
+                        <div class="cont05-card__img"><img src="./images/cont05_card05.png" alt=""></div>
+                        <div class="cont05-card__info">
+                            <h3>온라인 채용박람회</h3>
+                            <p>채용 관리 솔루션을 통해 온라인 채용 운영을 지원하며, 맞춤형 디자인을 제공합니다.</p>
+                        </div>
+                    </div>
+                    <div class="cont05-card">
+                        <div class="cont05-card__img"><img src="./images/cont05_card06.png" alt=""></div>
+                        <div class="cont05-card__info">
+                            <h3>API연동</h3>
+                            <p>운영에 필요한 필수 외부 연동 API연동 서비스를 탑재 및 제공합니다.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+    <style>
+        
 
+        
+    </style>
+    <section class="cont06">
+        <div class="inner">
+            <div class="cont06__text-box">
+                <h2 class="cont06__tit">Learn About Our ServiCe</h2>
+                <p class="cont06__txt">일자리 관련 서비스는 잡클라우드 하나로 모두 해결하세요.</p>
+            </div>
+        </div>
 
+        <div class="pinInner">
+            <ul class="cont06__list">
+                <li>
+                    <dl>
+                        <dt>개인화 추천서비스</dt>
+                        <dd>정책, 교육 등 취업관련 정보를 수집하여 개인에게 맞춤화된 형태로 제공할 수 있도록 세분화 및 추천 매칭 시스템</dd>
+                    </dl>
+                    <a href="#">VIEW MORE +</a>
+                </li>
+                <li>
+                    <dl>
+                        <dt>기업정보관리 서비스</dt>
+                        <dd>기업의 기본 정보 및 매출, 재무 정보, 입/퇴사자 정보 등 구직자에게 기업을 홍보할 수 있는 다양한 정보를 수집 제공</dd>
+                    </dl>
+                    <a href="#">VIEW MORE +</a>
+                </li>
+                <li>
+                    <dl>
+                        <dt>온라인 취업상담 서비스</dt>
+                        <dd>유선 상담 외에 실시간 채팅 상담을 통해 구직자의 상태를 심도있게 파악하여 맞춤 정보 제공 및 지속적인 구직자 관리 가능</dd>
+                    </dl>
+                    <a href="#">VIEW MORE +</a>
+                </li>
+                <li>
+                    <dl>
+                        <dt>AI역량검사 서비스</dt>
+                        <dd>기업에서 요구하는 직무별 역량과 면접을 AI솔루션을 통해 파악하고 부족한 역량에 대한 보완할 수 있는 가이드 제공</dd>
+                    </dl>
+                    <a href="#">VIEW MORE +</a>
+                </li>
+                <li>
+                    <dl>
+                        <dt>채용관리시스템(ATS)</dt>
+                        <dd>채용공고 등록 부터 지원자 관리, 면접 관리, 결과 관리 등 채용 과정을 일괄 관리할 수 있는 시스템 제공</dd>
+                    </dl>
+                    <a href="#">VIEW MORE +</a>
+                </li>
+                <li>
+                    <dl>
+                        <dt>비대면 채용 서비스</dt>
+                        <dd>대면 면접이 어려운 상황에서도 인사담당자와 구직자간의 커뮤니케이션 진행이 가능한 비대면 면접 솔루션</dd>
+                    </dl>
+                    <a href="#">VIEW MORE +</a>
+                </li>
+                <li>
+                    <dl>
+                        <dt>온라인 박람회 서비스</dt>
+                        <dd>박람회 주제에 따른 기업 모집부터 채용공고 등록, 인재 추천, 비대면 면접 등 기업과 구직자 간의 온라인 상에서 활용가능한 다양한 기능 제공</dd>
+                    </dl>
+                    <a href="#">VIEW MORE +</a>
+                </li>
+
+                
+            </ul>
+        </div>
+    </section>
+    
+    <section class="cont07">
+        <div class="bg-text left">MODULAR PACKAGE MODULAR PACKAGE MODULAR PACKAGE</div>
+        <div class="bg-text right">MODULAR PACKAGE MODULAR PACKAGE MODULAR PACKAGE</div>
+
+        <div class="inner">
+            <div class="cont07__tbox">
+                <h2 class="cont07__tbox-tit">MODULAR PACKAGE</h2>
+                <p class="cont07__tbox-txt">나에게 필요한 기능을 선택하여 구성이 가능한 모듈화 패키지 시스템을 제공합니다.</p>
+            </div>
+
+            <ul class="module__list">
+                <li class="module__list-card sp cp">
+                    <div class="icon">⌨️</div>
+                    <dt>개인화 추천</dt>
+                    <dd><span class="tag sp">취업지원</span><span class="tag cp">역량개발</span></dd>
+                </li>
+                <li class="module__list-card rc">
+                    <div class="icon">📋</div>
+                    <dt>채용공고 관리</dt>
+                    <dd><span class="tag rc">채용관리</span></dd>
+                </li>
+                <li class="module__list-card sp cp">
+                    <div class="icon">💜</div>
+                    <dt>취업진단검사</dt>
+                    <dd><span class="tag sp">취업지원</span><span class="tag cp">역량개발</span></dd>
+                </li>
+                <li class="module__list-card sp">
+                    <div class="icon">🔹</div>
+                    <dt>온라인 취업상담</dt>
+                    <dd><span class="tag sp">취업지원</span></dd>
+                </li>
+                <li class="module__list-card sp cp">
+                    <div class="icon">✍️</div>
+                    <dt>자기소개서 컨설팅</dt>
+                    <dd><span class="tag sp">취업지원</span><span class="tag cp">역량개발</span></dd>
+                </li>
+                <li class="module__list-card rc">
+                    <div class="icon">👥</div>
+                    <dt>구직/구직자관리</dt>
+                    <dd><span class="tag rc">채용관리</span></dd>
+                </li>
+                <li class="module__list-card sp cp">
+                    <div class="icon">🤖</div>
+                    <dt>AI역량검사</dt>
+                    <dd><span class="tag sp">취업지원</span><span class="tag cp">역량개발</span></dd>
+                </li>
+                <li class="module__list-card sp cp">
+                    <div class="icon">📚</div>
+                    <dt>취업콘텐츠 관리</dt>
+                    <dd><span class="tag sp">취업지원</span><span class="tag cp">역량개발</span></dd>
+                </li>
+                <li class="module__list-card rc">
+                    <div class="icon">🏢</div>
+                    <dt>기업정보관리</dt>
+                    <dd><span class="tag rc">채용관리</span></dd>
+                </li>
+                <li class="module__list-card rc">
+                    <div class="icon">🤝</div>
+                    <dt>AI인재 매칭</dt>
+                    <dd><span class="tag rc">채용관리</span></dd>
+                </li>
+                <li class="module__list-card rc">
+                    <div class="icon">💻</div>
+                    <dt>비대면 채용</dt>
+                    <dd><span class="tag rc">채용관리</span></dd>
+                </li>
+                <li class="module__list-card sp cp">
+                    <div class="icon">🎓</div>
+                    <dt>온라인 교육</dt>
+                    <dd><span class="tag sp">취업지원</span><span class="tag cp">역량개발</span></dd>
+                </li>
+            </ul>
+        </div>
+    </section>
 
 
 
@@ -445,94 +565,144 @@
         cont03.to({}, { duration: 1 });
 
         const cont04 = gsap.timeline({
-    scrollTrigger: {
-        trigger: ".cont04",
-        start: "top top",
-        end: "bottom bottom",
-        scrub: 1,
-        pin: ".cont04 .pinInner",
-        pinSpacing: false
-    }
-});
+            scrollTrigger: {
+                trigger: ".cont04",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 1,
+                pin: ".cont04 .pinInner",
+                pinSpacing: false
+            }
+        });
 
-// 1. 중앙 텍스트 애니메이션
-cont04.to(".cont04__text", { scale: 0.8, opacity: 0.4, duration: 1 });
+        cont04.to(".cont04__text", { scale: 0.8, opacity: 0.4, duration: 1 });
+        cont04.fromTo(".biz-card", { opacity: 0, scale: 0.3, x: "-50%", y: "-50%" }, { opacity: 1, scale: 1, duration: 1.2, ease: "power2.out" },"-=0.5");
 
-// 2. 모든 카드 중앙 등장 (margin-top: 0 상태에서 중앙 정렬을 위해 y: "-50%" 추가)
-cont04.fromTo(".biz-card", { opacity: 0, scale: 0.3, x: "-50%", y: "-50%" }, { opacity: 1, scale: 1, duration: 1.2, ease: "power2.out" },"-=0.5");
+        const cardLayout = [
+            { el: ".card01", x: "-170%", y: "-160%", r: -8 }, 
+            { el: ".card02", x: "-50%",  y: "-180%", r: 0 },  
+            { el: ".card03", x: "70%",   y: "-160%", r: 8 },  
+            { el: ".card04", x: "-210%", y: "-50%",  r: -5 }, 
+            { el: ".card05", x: "110%",  y: "-50%",  r: 5 },  
+            { el: ".card06", x: "-170%", y: "60%",   r: -8 }, 
+            { el: ".card07", x: "-50%",  y: "80%",   r: 0 },  
+            { el: ".card08", x: "70%",   y: "60%",   r: 8 }   
+        ];
 
-// 3. 8개 카드 컴팩트 배치 (margin-top: 0 보정 좌표)
-const cardLayout = [
-    // 상단 라인: y값을 더 위로 올려서 텍스트와 간격 확보
-    { el: ".card01", x: "-170%", y: "-160%", r: -8 }, 
-    { el: ".card02", x: "-50%",  y: "-180%", r: 0 },  
-    { el: ".card03", x: "70%",   y: "-160%", r: 8 },  
+        cardLayout.forEach((card) => {
+            cont04.to(card.el, { 
+                left: "50%",
+                top: "50%",
+                x: card.x, 
+                y: card.y, 
+                rotation: card.r, 
+                duration: 3, 
+                ease: "power3.out" 
+            }, "-=2.8"); 
+        });
 
-    // 중앙 라인: x축으로 더 밀어내어 텍스트 가림 방지
-    { el: ".card04", x: "-210%", y: "-50%",  r: -5 }, 
-    { el: ".card05", x: "110%",  y: "-50%",  r: 5 },  
+        cont04.to(".cont04__text", { opacity: 1, scale: 1, duration: 1.5 });
 
-    // 하단 라인: margin-top: 0이므로 y값을 상대적으로 적게 내려도 됨
-    { el: ".card06", x: "-170%", y: "60%",   r: -8 }, 
-    { el: ".card07", x: "-50%",  y: "80%",   r: 0 },  
-    { el: ".card08", x: "70%",   y: "60%",   r: 8 }   
-];
 
-cardLayout.forEach((card) => {
-    cont04.to(card.el, { 
-        left: "50%", // 초기 위치 보장
-        top: "50%",
-        x: card.x, 
-        y: card.y, 
-        rotation: card.r, 
-        duration: 3, 
-        ease: "power3.out" 
-    }, "-=2.8"); 
-});
+        const cont05 = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".cont05",
+                start: "top 80%", 
+                endTrigger: ".cont06",
+                end: "top 20%",
+                scrub: 1,
+            }
+        });
 
-// 4. 마지막에 중앙 텍스트 강조
-cont04.to(".cont04__text", { opacity: 1, scale: 1, duration: 1.5 });
+        cont05.to(".cont05__bg", { opacity: 1, duration: 1 })
+                .to(".cont05__left", { opacity: 1, y: 0, duration: 1 }, "-=0.8")
+                .to({}, { duration: 5 }) 
+                .to([".cont05__bg", ".cont05__left"], { opacity: 0, duration: 1 });
 
-// 1. 배경 및 좌측 제목 스크롤 연동
-const cont05Main = gsap.timeline({
-    scrollTrigger: {
-        trigger: ".cont05",
-        start: "top 80%",   // 섹션이 화면 아래에서 올라올 때 시작
-        end: "top top",     // 섹션 상단이 화면 상단에 닿을 때 완료
-        scrub: 1,           // 스크롤 속도에 맞춰 부드럽게 연동
-    }
-});
+        gsap.utils.toArray(".cont05-card").forEach((card) => {
+            gsap.to(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 90%",
+                    end: "top 50%", 
+                    scrub: 1,
+                },
+                opacity: 1,
+                y: 0,
+                duration: 1
+            });
+        });
 
-cont05Main
-    .to(".cont05__bg", { opacity: 1 })           // 배경 페이드인
-    .to(".cont05__left", { opacity: 1, y: 0 }, "-=0.5"); // 제목 등장
 
-// 2. 우측 카드들 개별 스크롤 연동 (나타났다 사라졌다 함)
-gsap.utils.toArray(".cont05-card").forEach((card) => {
-    gsap.to(card, {
-        scrollTrigger: {
-            trigger: card,
-            start: "top 90%",    // 카드가 화면 아래에서 보일 때
-            end: "top 50%",      // 화면 중앙쯤 왔을 때 완전히 보임
-            scrub: 1,
-            // 아래로 내릴 때와 위로 올릴 때 모두 반응함
-        },
-        opacity: 1,
-        y: 0,
-        duration: 1
-    });
-});
+        if (window.innerWidth > 820) {
+            gsap.to('.cont06 .pinInner', {
+                x: function() {
+                    const listElement = document.querySelector('.cont06__list');
+                    return -(listElement.scrollWidth - window.innerWidth + 200);
+                },
+                ease: "none",
+                scrollTrigger: {
+                    trigger: ".cont06",
+                    start: "top top",
+                    end: "+=3000", 
+                    pin: true,
+                    scrub: 1,
+                    invalidateOnRefresh: true
+                }
+            });
+        }
 
-// 3. 섹션이 끝날 때 배경과 제목이 다시 사라지게 하고 싶다면 (선택 사항)
-gsap.to([".cont05__bg", ".cont05__left"], {
-    scrollTrigger: {
-        trigger: ".cont05",
-        start: "bottom 20%", // 섹션 하단이 화면 위로 나갈 때
-        end: "bottom top",
-        scrub: 1,
-    },
-    opacity: 0
-});
+        const moduleTL = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".cont07",
+                start: "top top",
+                end: "+=4000",
+                scrub: 1,
+                pin: true,
+            }
+        });
+
+        const resetClasses = () => {
+            document.querySelectorAll('.sp_on').forEach(el => el.classList.replace('sp_on', 'sp'));
+            document.querySelectorAll('.cp_on').forEach(el => el.classList.replace('cp_on', 'cp'));
+            document.querySelectorAll('.rc_on').forEach(el => el.classList.replace('rc_on', 'rc'));
+        };
+
+        moduleTL
+            .to({}, { duration: 1.5, onStart: resetClasses, onReverseComplete: resetClasses })
+            .to({}, {
+                duration: 1,
+                onStart: () => { 
+                    resetClasses(); 
+                    document.querySelectorAll('.sp').forEach(el => el.classList.replace('sp', 'sp_on')); 
+                },
+                onReverseComplete: () => { resetClasses(); }
+            })
+            .to({}, { duration: 1 })
+            .to({}, {
+                duration: 1,
+                onStart: () => { 
+                    resetClasses(); 
+                    document.querySelectorAll('.cp').forEach(el => el.classList.replace('cp', 'cp_on')); 
+                },
+                onReverseComplete: () => { 
+                    resetClasses(); 
+                    document.querySelectorAll('.sp').forEach(el => el.classList.replace('sp', 'sp_on')); 
+                }
+            })
+            .to({}, { duration: 1 })
+            .to({}, {
+                duration: 1,
+                onStart: () => { 
+                    resetClasses(); 
+                    document.querySelectorAll('.rc').forEach(el => el.classList.replace('rc', 'rc_on')); 
+                },
+                onReverseComplete: () => { 
+                    resetClasses(); 
+                    document.querySelectorAll('.cp').forEach(el => el.classList.replace('cp', 'cp_on')); 
+                }
+            })
+            .to({}, { duration: 1 });
 
 
 
