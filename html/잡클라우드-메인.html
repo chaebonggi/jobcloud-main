@@ -19,7 +19,7 @@
 
         .visual { display: flex; align-items: center; justify-content: center; width: 100%; height: 100vh; position: relative; overflow: hidden; }
         .visual__video { width: 100%; height: 100%; position: absolute; top: 0; left: 0; object-fit: cover; opacity: 0.6; z-index: 1; }
-        .visual__overlay { width: 100%; height: 100%; position: absolute; top: 0; left: 0; background: rgba(0, 0, 0, 0.8  ); z-index: 2; }
+        .visual__overlay { width: 100%; height: 100%; position: absolute; top: 0; left: 0; background: rgba(0, 0, 0, 0.85 ); z-index: 2; }
         .visual__content { position: relative; z-index: 3; text-align: center; }
         .visual__text-wrapper { max-width: 700px; }
         .visual__txt { position: relative; color: #fff; font-size: 66px; font-weight: 700; line-height: 1.5; letter-spacing: 0.05em; word-break: keep-all; }
@@ -132,8 +132,6 @@
         .cont07 .module__list-card dt { font-size: 18px; font-weight: 700; color: #333; margin-bottom: 8px; } 
         .cont07 .module__list-card dd { margin: 0; display: flex; justify-content: center; gap: 5px; } 
         .cont07 .module__list-card .tag { font-size: 10px; padding: 2px 8px; background: #fff; border-radius: 4px; color: #999; } 
-
-
         .cont07 .module__list-card.sp_on { background: #eef2ff; border-color: #6366f1; opacity: 1; filter: grayscale(0); transform: translateY(-10px); }
         .cont07 .module__list-card.sp_on .tag.sp { background: #6366f1; color: #fff; }
         .cont07 .module__list-card.cp_on { background: #fdf2ff; border-color: #d946ef; opacity: 1; filter: grayscale(0); transform: translateY(-10px); }
@@ -141,6 +139,71 @@
         .cont07 .module__list-card.rc_on { background: #fff7ed; border-color: #f97316; opacity: 1; filter: grayscale(0); transform: translateY(-10px); }
         .cont07 .module__list-card.rc_on .tag.rc { background: #f97316; color: #fff; }
 
+        .cont08 { width: 100%; height: 300vh; background-color: #fff; position: relative; overflow: hidden; } 
+        .cont08 .pin-inner { width: 100%; height: 100vh; position: relative; } 
+        .cont08__title { color: #000; font-size: 200px; font-weight: 800; white-space: nowrap; position: absolute; top: 50%; left: 0; transform: translate(0, -50%); } 
+
+        .cont09 { width: 100%; padding: 120px 0; background-color: #000; overflow: hidden; } 
+        .cont09__text-box { margin-bottom: 80px; text-align: center; } 
+        .cont09__text-box p { color: #fff; font-size: 24px; font-weight: 500; } 
+        .cont09__slide-wrap { display: flex; width: 100%; } 
+        .cont09__slide-wrap .slide-track { display: flex; width: calc(390px * 14); animation: marquee 40s linear infinite; } 
+        .cont09__slide-wrap .slide { width: 320px; height: 500px; margin: 0 10px; flex-shrink: 0; border-radius: 15px; overflow: hidden; background-color: #333; } 
+        .cont09__slide-wrap .slide img { width: 100%; display: block; } 
+        .cont09__slide-wrap:hover .slide-track { animation-play-state: paused; } 
+
+        @keyframes marquee { 
+        0% { transform: translateX(0); } 
+        100% { transform: translateX(calc(-330px * 6)); } 
+        }
+
+        .cont10 { padding: 150px 0; background-color: #000; } 
+        .cont10 .accordion { max-width: 1200px; margin: 0 auto; padding: 20px 40px; background-color: #fff; border-radius: 10px; } 
+        .cont10 .accordion__item { border-bottom: 1px solid #eee; } 
+        .cont10 .accordion__item:last-child { border-bottom: none; } 
+        .cont10 .accordion__header { display: flex; justify-content: space-between; align-items: center; padding: 25px 0; cursor: pointer; } 
+        .cont10 .accordion__header h3 { color: #000; font-size: 20px; font-weight: 600; } 
+        .cont10 .accordion__content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-out, padding 0.5s ease-out; } 
+        .cont10 .accordion__content p { padding: 0 0 25px; color: #555; font-size: 16px; line-height: 1.7; } 
+        .cont10 .icon-box { position: relative; width: 20px; height: 20px; flex-shrink: 0; margin-left: 20px; } 
+        .cont10 .icon-box::before,
+        .cont10 .icon-box::after { content: ''; position: absolute; top: 50%; left: 50%; width: 16px; height: 2px; background-color: #333; transform: translate(-50%, -50%); transition: transform 0.3s ease-out; } 
+        .cont10 .icon-box::after { transform: translate(-50%, -50%) rotate(90deg); } 
+        .cont10 .accordion__item.active .icon-box::after { transform: translate(-50%, -50%) rotate(0deg); } 
+
+        .cont11 { width: 100%; padding: 150px 0; background-color: #000; overflow: hidden; } 
+        .cont11__text-box { text-align: center; margin-bottom: 60px; } 
+        .cont11__text-box h2 { margin-bottom: 40px; color: #fff; font-size: 48px; font-weight: 700; } 
+        .cont11__text-box p { color: #fff; font-size: 16px; } 
+        .cont11__slide-wrap { width: 100%; display: flex; } 
+        .cont11__slide-wrap .slide-track { display: flex; animation: marquee-partners 30s linear infinite; } 
+        .cont11__slide-wrap .slide { display: flex; align-items: center; justify-content: center; flex-shrink: 0; width: 200px; margin: 0 15px; border-radius: 15px; box-sizing: border-box; overflow: hidden; }
+        .cont11__slide-wrap .slide img { max-height: 100%; width: 100%; transition: filter 0.3s; } 
+        .cont11__slide-wrap:hover .slide-track { animation-play-state: paused; } 
+        @keyframes marquee-partners { 
+        from { transform: translateX(0); } 
+        to { transform: translateX(-25%); } 
+        }
+
+        .cont12 { display: flex; justify-content: center; align-items: center; width: 100%; height: 50vh; position: relative; text-align: center;  background-image: url('./images/footer_bg.jpg'); background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover; } 
+        .cont12::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); } 
+        .cont12__content { position: relative; color: #fff; z-index: 2; } 
+        .cont12__content h2 { font-size: 60px; font-weight: 800; margin-bottom: 20px; } 
+        .cont12__content p { font-size: 20px; margin-bottom: 60px; } 
+        .cont12__content-button { display: inline-block; padding: 15px 40px; color: #000; background-color: #00f59b; font-size: 18px; font-weight: 700; text-decoration: none; border-radius: 50px; transition: background-color 0.3s, color 0.3s; } 
+        .cont12__content-button:hover { background-color: #fff; color: #000; } 
+
+        .footer { padding: 80px 0; background-color: #111; color: #888; } 
+        .footer .inner { display: flex; flex-direction: column; gap: 40px; } 
+        .footer__top { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #333; padding-bottom: 40px; } 
+        .footer__logo { font-size: 32px; font-weight: 800; color: #fff; } 
+        .footer__links a { color: #aaa; text-decoration: none; margin-left: 30px; font-size: 16px; transition: color 0.3s; } 
+        .footer__links a:hover { color: #fff; } 
+        .footer__bottom { display: flex; justify-content: space-between; align-items: flex-end; } 
+        .footer__info { font-size: 14px; line-height: 1.8; } 
+        .footer__info span { margin-right: 20px; } 
+        .footer__info address { display: inline; font-style: normal; } 
+        .footer__copyright { font-size: 14px; } 
     </style>
 
     <!-- 섹션 1: 비주얼 -->
@@ -166,12 +229,9 @@
                     </div>
                 </div>
                 <div class="intro__item">
-                    <p class="intro__text">공공기관 구축 경험과 노하우의 집약  
-
-                        표준화된 프로세스와  
-  
-                        취업지원 서비스 구축부터 운영까지  
-  
+                    <p class="intro__text">공공기관 구축 경험과 노하우의 집약<br>
+                        표준화된 프로세스와<br>  
+                        취업지원 서비스 구축부터 운영까지<br>   
                         잡클라우드는 일자리 플랫폼의 새로운 기준이 됩니다.</p>
                 </div>
             </div>
@@ -198,19 +258,45 @@
                 <p class="cont03__item-txt">취업 준비, 역량 개발, 채용 관리를 하나로 연결하는 올인원(All-in-One ) 솔루션입니다.</p>
             </div>
             <div class="overlay item01">
-                <div class="overlay__bg"><img src="./images/cont03_overlay1.png" alt=""></div>
-                <div class="overlay__wrap"><div class="inner"><div class="overlay__box"><h2 class="overlay__box-tit">취업지원 솔루션</h2><p class="overlay__box-txt">취업을 준비하는 개인에게 최적화된 맞춤법 지원을 제공합니다.</p><p class="overlay__box-stxt">개인화 추천 관리, 기업 정보 관리, 기업채용콘텐츠 제작 관리  
- 온라인 취업상담 서비스, 취업 진단검사 8종</p></div></div></div>
+                <div class="overlay__bg">
+                    <img src="./images/cont03_overlay1.png" alt="">
+                </div>
+                <div class="overlay__wrap">
+                    <div class="inner"><div class="overlay__box">
+                        <h2 class="overlay__box-tit">취업지원 솔루션</h2>
+                        <p class="overlay__box-txt">취업을 준비하는 개인에게 최적화된 맞춤법 지원을 제공합니다.</p>
+                        <p class="overlay__box-stxt">개인화 추천 관리, 기업 정보 관리, 기업채용콘텐츠 제작 관리<br> 온라인 취업상담 서비스, 취업 진단검사 8종</p>
+                    </div>
+                </div>
+            </div>
             </div>
             <div class="overlay item02">
-                <div class="overlay__bg"><img src="./images/cont03_overlay2.png" alt=""></div>
-                <div class="overlay__wrap"><div class="inner"><div class="overlay__box"><p class="overlay__box-stxt">AI자기소개 컨설팅, AI역량개발 검사(면접), 비대면 면접 서비스  
- 온라인교육 서비스(LMS), JOB라이브러리 </p><h2 class="overlay__box-tit">역량개발 솔루션</h2><p class="overlay__box-txt">성공적인 취업을 위한 실질적인 역량 강화 및 검증을 지원 하는서비스 입니다.</p></div></div></div>
+                <div class="overlay__bg">
+                    <img src="./images/cont03_overlay2.png" alt="">
+                </div>
+                <div class="overlay__wrap">
+                    <div class="inner">
+                        <div class="overlay__box">
+                            <p class="overlay__box-stxt">AI자기소개 컨설팅, AI역량개발 검사(면접), 비대면 면접 서비스<br> 온라인교육 서비스(LMS), JOB라이브러리 </p>
+                            <h2 class="overlay__box-tit">역량개발 솔루션</h2>
+                            <p class="overlay__box-txt">성공적인 취업을 위한 실질적인 역량 강화 및 검증을 지원 하는서비스 입니다.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="overlay item03">
-                <div class="overlay__bg"><img src="./images/cont03_overlay3.png" alt=""></div>
-                <div class="overlay__wrap"><div class="inner"><div class="overlay__box"><h2 class="overlay__box-tit">채용관리 솔루션</h2><p class="overlay__box-txt">기업이 필요로 하는 인재를 효율적으로 발굴하고 관리할 수 있도록 지원합니다.</p><p class="overlay__box-stxt">온라인 채용 박람회, 채용공고 API, 구인구직 관리 서비스  
- 비대면 채용 관리 서비스, AI인재매칭 서비스</p></div></div></div>
+                <div class="overlay__bg">
+                    <img src="./images/cont03_overlay3.png" alt="">
+                </div>
+                <div class="overlay__wrap">
+                    <div class="inner">
+                        <div class="overlay__box">
+                            <h2 class="overlay__box-tit">채용관리 솔루션</h2>
+                            <p class="overlay__box-txt">기업이 필요로 하는 인재를 효율적으로 발굴하고 관리할 수 있도록 지원합니다.</p>
+                            <p class="overlay__box-stxt">온라인 채용 박람회, 채용공고 API, 구인구직 관리 서비스 비대면<br> 채용 관리 서비스, AI인재매칭 서비스</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -237,8 +323,12 @@
         <div class="cont05__bg"></div>
         <div class="inner">
             <div class="cont05__wrap">
-                <div class="cont05__left"><div class="cont05__text-box"><h2 class="cont05__tit">Service</h2><p class="cont05__txt">사이트 구축에 필요한 A부터 Z까지  
- <span>잡클라우드</span> 하나면 충분합니다. </p></div></div>
+                <div class="cont05__left">
+                    <div class="cont05__text-box">
+                        <h2 class="cont05__tit">Service</h2>
+                        <p class="cont05__txt">사이트 구축에 필요한 A부터 Z까지<br> <span>잡클라우드</span> 하나면 충분합니다. </p>
+                    </div>
+                </div>
                 <div class="cont05__right">
                     <div class="cont05-card"><div class="cont05-card__img"><img src="./images/cont05_card01.png" alt=""></div><div class="cont05-card__info"><h3>취업진단서비스</h3><p>전문 컨설턴트를 통해 최적화된 문항 개발 및 진단 지표를 제공합니다.</p></div></div>
                     <div class="cont05-card"><div class="cont05-card__img"><img src="./images/cont05_card02.png" alt=""></div><div class="cont05-card__info"><h3>채용관리시스템 구축</h3><p>공고 등록, 지원자 관리, 면접관리, 결과관리 채용의 전 과정을 지원하며 기업의 채용 성공을 함께합니다.</p></div></div>
@@ -272,15 +362,163 @@
         </div>
     </section>
 
+    <!-- 섹션 7: 모듈 패키지 -->
+    <section class="cont07">
+        <div class="bg-text left">MODULAR PACKAGE MODULAR PACKAGE MODULAR PACKAGE</div>
+        <div class="bg-text right">MODULAR PACKAGE MODULAR PACKAGE MODULAR PACKAGE</div>
+        <div class="inner">
+            <div class="cont07__tbox">
+                <h2 class="cont07__tbox-tit">MODULAR PACKAGE</h2>
+                <p class="cont07__tbox-txt">나에게 필요한 기능을 선택하여 구성이 가능한 모듈화 패키지 시스템을 제공합니다.</p>
+            </div>
+            <ul class="module__list">
+                <li class="module__list-card sp cp"><div class="icon">⌨️</div><dt>개인화 추천</dt><dd><span class="tag sp">취업지원</span><span class="tag cp">역량개발</span></dd></li>
+                <li class="module__list-card rc"><div class="icon">📋</div><dt>채용공고 관리</dt><dd><span class="tag rc">채용관리</span></dd></li>
+                <li class="module__list-card sp cp"><div class="icon">💜</div><dt>취업진단검사</dt><dd><span class="tag sp">취업지원</span><span class="tag cp">역량개발</span></dd></li>
+                <li class="module__list-card sp"><div class="icon">🔹</div><dt>온라인 취업상담</dt><dd><span class="tag sp">취업지원</span></dd></li>
+                <li class="module__list-card sp cp"><div class="icon">✍️</div><dt>자기소개서 컨설팅</dt><dd><span class="tag sp">취업지원</span><span class="tag cp">역량개발</span></dd></li>
+                <li class="module__list-card rc"><div class="icon">👥</div><dt>구직/구직자관리</dt><dd><span class="tag rc">채용관리</span></dd></li>
+                <li class="module__list-card sp cp"><div class="icon">🤖</div><dt>AI역량검사</dt><dd><span class="tag sp">취업지원</span><span class="tag cp">역량개발</span></dd></li>
+                <li class="module__list-card sp cp"><div class="icon">📚</div><dt>취업콘텐츠 관리</dt><dd><span class="tag sp">취업지원</span><span class="tag cp">역량개발</span></dd></li>
+                <li class="module__list-card rc"><div class="icon">🏢</div><dt>기업정보관리</dt><dd><span class="tag rc">채용관리</span></dd></li>
+                <li class="module__list-card rc"><div class="icon">🤝</div><dt>AI인재 매칭</dt><dd><span class="tag rc">채용관리</span></dd></li>
+                <li class="module__list-card rc"><div class="icon">💻</div><dt>비대면 채용</dt><dd><span class="tag rc">채용관리</span></dd></li>
+                <li class="module__list-card sp cp"><div class="icon">🎓</div><dt>온라인 교육</dt><dd><span class="tag sp">취업지원</span><span class="tag cp">역량개발</span></dd></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 섹션 8 -->
+    <section class="cont08">
+        <div class="pin-inner">
+            <h2 class="cont08__title">All about jobcloud</h2>
+        </div>
+    </section>
+
+    <!-- 섹션 9: 무한 롤링 슬라이더 -->
+    <section class="cont09">
+        <div class="cont09__text-box">
+            <p>어디서부터 시작해야할지 막막하다면, 잡클라우드와 시작하세요.</p>
+        </div>
+        <div class="cont09__slide-wrap">
+            <div class="slide-track">
+                <!-- 원본 이미지 리스트 -->
+                <div class="slide"><img src="./images/cont09_card01.png" alt="스마트그린도시"></div>
+                <div class="slide"><img src="./images/cont09_card02.png" alt="경기도 워라밸 링크"></div>
+                <div class="slide"><img src="./images/cont09_card03.png" alt="전라남도 일자리정보망"></div>
+                <div class="slide"><img src="./images/cont09_card04.png" alt="온라인 여성경력개발센터 꿈날개"></div>
+                <div class="slide"><img src="./images/cont09_card05.png" alt="강원일자리정보망"></div>
+                <div class="slide"><img src="./images/cont09_card06.png" alt="경기도일자리포털 잡아바"></div>
+                
+                <!-- 끊김 없는 효과를 위한 복제본 이미지 리스트 -->
+                <div class="slide"><img src="./images/cont09_card01.png" alt="스마트그린도시"></div>
+                <div class="slide"><img src="./images/cont09_card02.png" alt="경기도 워라밸 링크"></div>
+                <div class="slide"><img src="./images/cont09_card03.png" alt="전라남도 일자리정보망"></div>
+                <div class="slide"><img src="./images/cont09_card04.png" alt="온라인 여성경력개발센터 꿈날개"></div>
+                <div class="slide"><img src="./images/cont09_card05.png" alt="강원일자리정보망"></div>
+                <div class="slide"><img src="./images/cont09_card06.png" alt="경기도일자리포털 잡아바"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 섹션 10: 아코디언 FAQ -->
+    <section class="cont10">
+        <div class="inner">
+            <div class="accordion">
+                <div class="accordion__item">
+                    <div class="accordion__header">
+                        <h3>기존에 사용중인 플랫폼이 있는데, 해당 플랫폼에 기능을 추가 할 수 있나요?</h3>
+                        <div class="icon-box"></div>
+                    </div>
+                    <div class="accordion__content">
+                        <p>사이트에 사용할 이미지, 타이틀 및 본문 설명을 미리 준비하시면 신속한 사이트 구축이 가능합니다. 채용사이트 빌더에서 제공하고 있는 템플릿을 활용해 보세요. 6가지의 다양한 형식의 템플릿을 제공하고 있어서, 템플릿으로 사이트 생성 후 이미지/텍스트 수정만으로 누구나 쉽게 사이트 제작이 가능합니다.</p>
+                    </div>
+                </div>
+                <div class="accordion__item">
+                    <div class="accordion__header">
+                        <h3>기존에 사용중인 플랫폼이 있는데, 해당 플랫폼에 기능을 추가 할 수 있나요?</h3>
+                        <div class="icon-box"></div>
+                    </div>
+                    <div class="accordion__content">
+                        <p>사이트에 사용할 이미지, 타이틀 및 본문 설명을 미리 준비하시면 신속한 사이트 구축이 가능합니다. 채용사이트 빌더에서 제공하고 있는 템플릿을 활용해 보세요. 6가지의 다양한 형식의 템플릿을 제공하고 있어서, 템플릿으로 사이트 생성 후 이미지/텍스트 수정만으로 누구나 쉽게 사이트 제작이 가능합니다.</p>
+                    </div>
+                </div>
+                <div class="accordion__item">
+                    <div class="accordion__header">
+                        <h3>기존에 사용중인 플랫폼이 있는데, 해당 플랫폼에 기능을 추가 할 수 있나요?</h3>
+                        <div class="icon-box"></div>
+                    </div>
+                    <div class="accordion__content">
+                        <p>사이트에 사용할 이미지, 타이틀 및 본문 설명을 미리 준비하시면 신속한 사이트 구축이 가능합니다. 채용사이트 빌더에서 제공하고 있는 템플릿을 활용해 보세요. 6가지의 다양한 형식의 템플릿을 제공하고 있어서, 템플릿으로 사이트 생성 후 이미지/텍스트 수정만으로 누구나 쉽게 사이트 제작이 가능합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 섹션 11: 파트너사  -->
+    <section class="cont11">
+        <div class="cont11__text-box">
+            <h2>PARTNERS</h2>
+            <p>국내 주요 일자리 플랫폼과 함께하며 개인과 기업의 성공적인 고용 환경을 선도하는 리딩 파트너입니다.</p>
+        </div>
+        <div class="cont11__slide-wrap">
+            <div class="slide-track">
+                <div class="slide"><img src="./images/partner01.png" alt="경기도일자리포털 잡아바"></div>
+                <div class="slide"><img src="./images/partner02.png" alt="경기도 워라밸 링크"></div>
+                <div class="slide"><img src="./images/partner03.png" alt="강원일자리정보망"></div>
+                <div class="slide"><img src="./images/partner04.png" alt="전라남도 일자리정보망"></div>
+                <div class="slide"><img src="./images/partner05.png" alt="스마트그린도시"></div>
+                <div class="slide"><img src="./images/partner06.png" alt="온라인 여성경력개발센터 꿈날개"></div>
+
+                <div class="slide"><img src="./images/partner01.png" alt="경기도일자리포털 잡아바"></div>
+                <div class="slide"><img src="./images/partner02.png" alt="경기도 워라밸 링크"></div>
+                <div class="slide"><img src="./images/partner03.png" alt="강원일자리정보망"></div>
+                <div class="slide"><img src="./images/partner04.png" alt="전라남도 일자리정보망"></div>
+                <div class="slide"><img src="./images/partner05.png" alt="스마트그린도시"></div>
+                <div class="slide"><img src="./images/partner06.png" alt="온라인 여성경력개발센터 꿈날개"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 섹션 12: Parallax 배경 섹션 -->
+    <section class="cont12">
+        <div class="cont12__content">
+            <h2>JOBCLOUD</h2>
+            <p>지금 바로 잡클라우드의 전문 컨설턴트와 상담하세요.</p>
+            <a href="#" class="cont12__content-button">프로젝트 문의하기</a>
+        </div>
+    </section>
+
+    <!-- 섹션 13: Footer -->
+    <footer class="footer">
+        <div class="inner">
+            <div class="footer__top">
+                <div class="footer__logo">
+                    JOBCLOUD
+                </div>
+                <div class="footer__links">
+                    <a href="#">회사소개</a>
+                    <a href="#">서비스</a>
+                    <a href="#">문의하기</a>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <div class="footer__info">
+                    <span>(주)잡클라우드</span>
+                </div>
+                <p class="footer__copyright">
+                    &copy; 2026 JOBCLOUD Inc. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
 
 
 
 
     <script>
-        // 모든 GSAP 코드를 DOMContentLoaded 이벤트 리스너 안에 배치하여 안정성 확보
         document.addEventListener('DOMContentLoaded', function() {
-            
-            // GSAP 플러그인 등록
             gsap.registerPlugin(TextPlugin, ScrollTrigger);
 
             // --- visual 섹션 ---
@@ -301,15 +539,10 @@
             ScrollTrigger.create({
                 trigger: ".cont02",
                 start: "top top",
-                end: "+=100%", // 섹션 높이의 100%만큼 스크롤해야 pin이 풀림
+                end: "+=100%",
                 pin: true,
-                // scrub, timeline 등 애니메이션 관련 설정은 모두 제거
             });
 
-            // 2. 기존의 개별 애니메이션 ScrollTrigger들을 그대로 사용
-            // (각 애니메이션이 독립적으로, 한 번만 실행되도록)
-
-            // 글자 분할 및 애니메이션
             const titleLines = document.querySelectorAll("#animated-title > span");
             if (titleLines.length > 0) {
                 titleLines.forEach(line => {
@@ -334,7 +567,6 @@
                 });
             }
 
-            // intro__text 애니메이션
             gsap.from(".intro__text", {
                 opacity: 0, x: 50, duration: 1,
                 scrollTrigger: {
@@ -344,7 +576,6 @@
                 }
             });
 
-            // performance 요소들 애니메이션
             const performanceElements = gsap.utils.toArray('.performance__title, .performance__desc, .performance__list');
             performanceElements.forEach((el, index) => {
                 gsap.from(el, {
@@ -357,7 +588,6 @@
                 });
             });
 
-            // 숫자 카운팅 애니메이션
             const counters = gsap.utils.toArray(".performance__item-count");
             counters.forEach(counter => {
                 const targetCount = +counter.dataset.count;
@@ -420,8 +650,6 @@
             });
 
             cont04.to(".cont04__text", { scale: 0.8, opacity: 0.4, duration: 1 });
-            cont04.fromTo(".biz-card", { opacity: 0, scale: 0.3, x: "-50%", y: "-50%" }, { opacity: 1, scale: 1, duration: 1.2, ease: "power2.out" },"-=0.5");
-
             const cardLayout = [
                 { el: ".card01", x: "-170%", y: "-160%", r: -8 }, 
                 { el: ".card02", x: "-50%",  y: "-180%", r: 0 },  
@@ -433,19 +661,32 @@
                 { el: ".card08", x: "70%",   y: "60%",   r: 8 }   
             ];
 
-            cardLayout.forEach((card) => {
-                cont04.to(card.el, { 
-                    left: "50%",
-                    top: "50%",
-                    x: card.x, 
-                    y: card.y, 
-                    rotation: card.r, 
-                    duration: 3, 
-                    ease: "power3.out" 
-                }, "-=2.8"); 
+            cardLayout.forEach((card, index) => {
+                cont04.fromTo(card.el, 
+                    { 
+                        opacity: 0, 
+                        scale: 0.3, 
+                        x: "-50%",
+                        y: "-50%",
+                        left: "50%",
+                        top: "50%",
+                        rotation: 0
+                    }, 
+                    { 
+                        opacity: 1, 
+                        scale: 1, 
+                        x: card.x, 
+                        y: card.y, 
+                        rotation: card.r, 
+                        duration: 3, 
+                        ease: "power2.out" 
+                    }, 
+                    "-=2.8"
+                );
             });
 
             cont04.to(".cont04__text", { opacity: 1, scale: 1, duration: 1.5 });
+
 
             // --- cont05 섹션 ---
             const cont05 = gsap.timeline({
@@ -560,66 +801,45 @@
                 })
                 .fromTo(".cont08__title", 
                     { 
-                        // --- 시작(from) 상태 ---
-                        opacity: 0,       // 1. 시작 시 투명하게
-                        x: "-50%",        // 2. 화면 왼쪽에 살짝 걸치도록 x 위치 조정 (-100% -> -20%)
+                        opacity: 0,
+                        x: "-50%",
                     }, 
                     { 
-                        // --- 종료(to) 상태 ---
-                        opacity: 1,       // 1. 중앙으로 오면서 선명하게
-                        x: 0,             // 2. 원래 위치로 복귀
-                        left: "50%",      // (중앙 정렬)
-                        xPercent: -50,    // (중앙 정렬)
-                        ease: "power1.in", // 3. 시작 부분을 부드럽게 (ease: "none" -> "power1.in")
+                        opacity: 1,
+                        x: 0,
+                        left: "50%",
+                        xPercent: -50,
+                        ease: "power1.in",
                     }
                 );
 
+                // --- cont10 섹션 (아코디언) ---
+                const accordionItems = document.querySelectorAll('.accordion__item');
 
-                    // --- cont10 섹션 (아코디언) ---
-                    const accordionItems = document.querySelectorAll('.accordion__item');
+                accordionItems.forEach(item => {
+                    const header = item.querySelector('.accordion__header');
 
-                    accordionItems.forEach(item => {
-                        const header = item.querySelector('.accordion__header');
-
-                        header.addEventListener('click', () => {
-                            const isActive = item.classList.contains('active');
-
-                            // 모든 아이템에서 active 클래스와 max-height를 제거 (모두 닫기)
-                            accordionItems.forEach(otherItem => {
-                                otherItem.classList.remove('active');
-                                otherItem.querySelector('.accordion__content').style.maxHeight = null;
-                            });
-
-                            // 현재 클릭한 아이템이 닫혀 있었다면 열어주기
-                            if (!isActive) {
-                                item.classList.add('active');
-                                const content = item.querySelector('.accordion__content');
-                                content.style.maxHeight = content.scrollHeight + "px"; // 내용의 실제 높이만큼 펼침
-                            }
+                    header.addEventListener('click', () => {
+                        const isActive = item.classList.contains('active');
+                        accordionItems.forEach(otherItem => {
+                            otherItem.classList.remove('active');
+                            otherItem.querySelector('.accordion__content').style.maxHeight = null;
                         });
+                        if (!isActive) {
+                            item.classList.add('active');
+                            const content = item.querySelector('.accordion__content');
+                            content.style.maxHeight = content.scrollHeight + "px";
+                        }
                     });
-
-                    // 첫 번째 아이템을 기본으로 열어두기
-                    if (accordionItems.length > 0) {
-                        accordionItems[0].classList.add('active');
-                        const firstContent = accordionItems[0].querySelector('.accordion__content');
-                        firstContent.style.maxHeight = firstContent.scrollHeight + "px";
-                    }
-
-
-                    const track = document.querySelector('.cont11 .slide-track');
-
-
-
-
+                });
+                if (accordionItems.length > 0) {
+                    accordionItems[0].classList.add('active');
+                    const firstContent = accordionItems[0].querySelector('.accordion__content');
+                    firstContent.style.maxHeight = firstContent.scrollHeight + "px";
+                }
+                const track = document.querySelector('.cont11 .slide-track');
 
         });
-       
-       
-
-
-
-
 
     </script>
 </body>
