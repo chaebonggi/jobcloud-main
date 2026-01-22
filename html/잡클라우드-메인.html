@@ -17,8 +17,9 @@
         body { font-family: 'Pretendard', sans-serif; background-color: #0a0e27; color: #ffffff; overflow-x: hidden; }
         .inner { max-width: 1540px; width: 100%; margin: 0 auto; padding: 0 20px; }
 
-        .header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; transition: transform 0.4s ease-out, background-color 0.4s ease-out; } 
+        .header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; transition: transform 0.4s ease-out, background-color 0.4s ease-out, opacity 1.2s ease-in-out, visibility 1.2s ease-in-out; visibility: hidden; opacity: 0;} 
         .header.is-hidden { transform: translateY(-100%); } 
+        .header.is-visible { opacity: 1; visibility: visible;}
         .header.is-scrolled { background-color: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); } 
         .header .inner { height: 80px; } 
         .header__wrap { display: flex; justify-content: space-between; align-items: center; height: 100%; } 
@@ -569,29 +570,44 @@
 
 
             const header = document.querySelector('.header');
-            let lastScrollY = window.scrollY; // 마지막 스크롤 위치를 저장
+            let lastScrollY = window.scrollY;
 
             window.addEventListener('scroll', () => {
                 const currentScrollY = window.scrollY;
 
-                // 1. 배경색 변경 로직
-                if (currentScrollY > 50) { // 50px 이상 스크롤되면
+                if (window.scrollY === 0) {
+                    gsap.to("#typing-text", {
+                        duration: 3,
+                        text: "기업과 인재를 연결하는 일자리통합플랫폼",
+                        ease: "none",
+                        onComplete: () => {
+                            document.querySelector('.typing-cursor').style.display = 'none';
+                            gsap.to(".visual__title", { duration: 1, opacity: 1, y: 0, delay: 0.5 });
+                            header.classList.add('is-visible');
+                        }
+                    });
+
+                } else {
+                    header.classList.add('is-visible');
                     header.classList.add('is-scrolled');
-                } else {
-                    header.classList.remove('is-scrolled');
                 }
+                let lastScrollY = window.scrollY;
 
-                // 2. 헤더 숨김/표시 로직
-                if (currentScrollY > lastScrollY && currentScrollY > 100) {
-                    // 아래로 스크롤 중이고, 100px 이상 내려왔을 때 -> 헤더 숨김
-                    header.classList.add('is-hidden');
-                } else {
-                    // 위로 스크롤 중일 때 -> 헤더 표시
-                    header.classList.remove('is-hidden');
-                }
+                window.addEventListener('scroll', () => {
+                    const currentScrollY = window.scrollY;
 
-                // 마지막 스크롤 위치 업데이트
-                lastScrollY = currentScrollY;
+                    if (currentScrollY > 50) {
+                        header.classList.add('is-scrolled');
+                    } else {
+                        header.classList.remove('is-scrolled');
+                    }
+                    if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                        header.classList.add('is-hidden');
+                    } else {
+                        header.classList.remove('is-hidden');
+                    }
+                    lastScrollY = currentScrollY;
+                });
             });
 
             gsap.registerPlugin(TextPlugin, ScrollTrigger);
@@ -604,6 +620,9 @@
                 onComplete: () => {
                     document.querySelector('.typing-cursor').style.display = 'none';
                     gsap.to(".visual__title", { duration: 1, opacity: 1, y: 0, delay: 0.5 });
+                    gsap.delayedCall(0.5, () => {
+                        header.classList.add('is-visible');
+                    });
                 }
             });
 
