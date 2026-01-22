@@ -575,27 +575,15 @@
             window.addEventListener('scroll', () => {
                 const currentScrollY = window.scrollY;
 
-                if (window.scrollY === 0) {
-                    gsap.to("#typing-text", {
-                        duration: 3,
-                        text: "기업과 인재를 연결하는 일자리통합플랫폼",
-                        ease: "none",
-                        onComplete: () => {
-                            document.querySelector('.typing-cursor').style.display = 'none';
-                            gsap.to(".visual__title", { duration: 1, opacity: 1, y: 0, delay: 0.5 });
-                            header.classList.add('is-visible');
-                        }
-                    });
-
-                } else {
+                if (window.scrollY > 0) {                    
                     header.classList.add('is-visible');
                     header.classList.add('is-scrolled');
                 }
+
                 let lastScrollY = window.scrollY;
 
                 window.addEventListener('scroll', () => {
                     const currentScrollY = window.scrollY;
-
                     if (currentScrollY > 50) {
                         header.classList.add('is-scrolled');
                     } else {
@@ -620,9 +608,8 @@
                 onComplete: () => {
                     document.querySelector('.typing-cursor').style.display = 'none';
                     gsap.to(".visual__title", { duration: 1, opacity: 1, y: 0, delay: 0.5 });
-                    gsap.delayedCall(0.5, () => {
-                        header.classList.add('is-visible');
-                    });
+
+                    header.classList.add('is-visible');
                 }
             });
 
@@ -630,11 +617,14 @@
             if (video) { video.playbackRate = 0.8; }
 
             // --- cont02 섹션 ---
-            ScrollTrigger.create({
-                trigger: ".cont02",
-                start: "top top",
-                end: "+=100%",
-                pin: true,
+            const cont02Timeline = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".cont02",
+                    start: "top top",
+                    end: "+=2000",
+                    scrub: 1,
+                    pin: true,
+                }
             });
 
             const titleLines = document.querySelectorAll("#animated-title > span");
