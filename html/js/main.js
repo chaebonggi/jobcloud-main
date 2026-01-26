@@ -63,6 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (video) { video.playbackRate = 0.8; }
 
     // --- cont02 섹션 ---
+    
     const titleLines = document.querySelectorAll("#animated-title > span");
     if (titleLines.length > 0) {
         titleLines.forEach(line => {
@@ -122,12 +123,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 toggleActions: "play none none none",
             },
             onUpdate: () => {
-                counter.innerHTML = `+ ${Math.round(counterObject.value).toLocaleString()}<span>건</span>`;
+                counter.innerHTML = `<span>+</span> ${Math.round(counterObject.value).toLocaleString()}<span>건</span>`;
             }
         });
     });
     ScrollTrigger.matchMedia({    
-        "(min-width: 1025px)": function() {
+        "(min-width: 1025px)": function() {   
+            // --- cont02 섹션 ---         
             const cont02Timeline = gsap.timeline({
                 scrollTrigger: {
                     trigger: ".cont02",
@@ -137,37 +139,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     pin: true,
                 }
             });
-
-            // --- cont03 섹션 ---
-            const cont03 = gsap.timeline({
-                scrollTrigger: {
-                    trigger: ".cont03",
-                    start: "top top",
-                    end: "bottom bottom",
-                    scrub: 1,
-                    pin: ".cont03 .pinInner",
-                    pinSpacing: false
-                }
-            });
-            cont03.to(".cont03 .cont03__item", { scale: 1, opacity: 0, duration: 1 });
-            cont03.to(".overlay.item01", { y: "0%", opacity: 1, duration: 1.5, ease: "power2.out"});        
-            cont03.to(".overlay.item01 .overlay__box-tit", { opacity: 1, x: 0, duration: 0.8 }, "-=0.5");
-            cont03.to(".overlay.item01 .overlay__box-txt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.6");
-            cont03.to(".overlay.item01 .overlay__box-stxt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.7");
-            cont03.to({}, { duration: 1 });
-
-            cont03.to(".overlay.item02", { y: "0%", opacity: 1, duration: 1.5, ease: "power2.out"});        
-            cont03.to(".overlay.item02 .overlay__box-tit", { opacity: 1, x: 0, duration: 0.8 }, "-=0.5");
-            cont03.to(".overlay.item02 .overlay__box-txt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.6");
-            cont03.to(".overlay.item02 .overlay__box-stxt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.7");
-            cont03.to({}, { duration: 1 });
-
-            cont03.to(".overlay.item03", { y: "0%", opacity: 1, duration: 1.5, ease: "power2.out"});        
-            cont03.to(".overlay.item03 .overlay__box-tit", { opacity: 1, x: 0, duration: 0.8 }, "-=0.5");
-            cont03.to(".overlay.item03 .overlay__box-txt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.6");
-            cont03.to(".overlay.item03 .overlay__box-stxt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.7");
-            cont03.to({}, { duration: 1 });
-
             // --- cont04 섹션 ---
             const cont04 = gsap.timeline({
                 scrollTrigger: {
@@ -337,6 +308,36 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
     });
+
+    // --- cont03 섹션 ---
+    const cont03 = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".cont03",
+            start: "top top",
+            end: "bottom bottom",
+            scrub: 1,
+            pin: ".cont03 .pinInner",
+            pinSpacing: false
+        }
+    });
+    cont03.to(".cont03 .cont03__item", { scale: 1, opacity: 0, duration: 1 });
+    cont03.to(".overlay.item01", { y: "0%", opacity: 1, duration: 1.5, ease: "power2.out"});        
+    cont03.to(".overlay.item01 .overlay__box-tit", { opacity: 1, x: 0, duration: 0.8 }, "-=0.5");
+    cont03.to(".overlay.item01 .overlay__box-txt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.6");
+    cont03.to(".overlay.item01 .overlay__box-stxt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.7");
+    cont03.to({}, { duration: 1 });
+
+    cont03.to(".overlay.item02", { y: "0%", opacity: 1, duration: 1.5, ease: "power2.out"});        
+    cont03.to(".overlay.item02 .overlay__box-tit", { opacity: 1, x: 0, duration: 0.8 }, "-=0.5");
+    cont03.to(".overlay.item02 .overlay__box-txt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.6");
+    cont03.to(".overlay.item02 .overlay__box-stxt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.7");
+    cont03.to({}, { duration: 1 });
+
+    cont03.to(".overlay.item03", { y: "0%", opacity: 1, duration: 1.5, ease: "power2.out"});        
+    cont03.to(".overlay.item03 .overlay__box-tit", { opacity: 1, x: 0, duration: 0.8 }, "-=0.5");
+    cont03.to(".overlay.item03 .overlay__box-txt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.6");
+    cont03.to(".overlay.item03 .overlay__box-stxt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.7");
+    cont03.to({}, { duration: 1 });
 
     // --- cont05 섹션 ---
     gsap.utils.toArray(".cont05-card").forEach((card) => {
