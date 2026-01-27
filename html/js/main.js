@@ -286,6 +286,33 @@ document.addEventListener('DOMContentLoaded', function() {
                 );
         },
         "(max-width: 1024px)": function() {
+            gsap.from(".cont04__text", {
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: ".cont04__text",
+                    start: "top 90%",
+                    end: "bottom 80%", // 애니메이션이 끝나는 지점 추가
+                    scrub: 1, // ★★★ 스크롤과 연동시키는 scrub 옵션 ★★★
+                }
+            });
+
+            // 각 biz-card에 개별적으로 애니메이션 적용
+            gsap.utils.toArray(".biz-card").forEach((card, index) => {
+                gsap.from(card, {
+                    opacity: 0,
+                    y: 100,
+                    duration: 1,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: card,
+                        start: "top 95%",
+                        end: "bottom 85%", // 애니메이션이 끝나는 지점 추가
+                        scrub: 1, // ★★★ 스크롤과 연동시키는 scrub 옵션 ★★★
+                    }
+                });
+            });
         },
         "(min-width: 769px)": function() {
             // --- cont05 섹션 ---
@@ -383,5 +410,22 @@ document.addEventListener('DOMContentLoaded', function() {
             firstContent.style.maxHeight = firstContent.scrollHeight + "px";
         }
         const track = document.querySelector('.cont11 .slide-track');
+
+        // 리사이즈
+        let resizeTimer;
+        let lastWidth = window.innerWidth; 
+
+        window.addEventListener("resize", () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                const newWidth = window.innerWidth;
+
+                if (newWidth !== lastWidth) {
+                    location.reload();
+                }
+
+            }, 250); 
+        });
+
 
 });

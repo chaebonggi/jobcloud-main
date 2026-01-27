@@ -10,7 +10,7 @@
         .header.is-scrolled { background-color: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); } 
         .header .inner { height: 80px; } 
         .header__wrap { display: flex; justify-content: space-between; align-items: center; height: 100%; } 
-        .header__logo a { display: block; position: relative; height: 26px; } 
+        .header__logo a { display: block; width: 197px; height: 26px;  position: relative;} 
         .header__logo img { position: absolute; top: 0; left: 0; height: 100%; width: auto; transition: opacity 0.3s ease-in-out; } 
         .header.is-scrolled .logo-on { opacity: 1; } 
         .header.is-scrolled .logo-off { opacity: 0; } 
@@ -178,16 +178,31 @@
                 padding: 100px 0;
             }
             .cont02 .intro__title {
-                font-size: 34px;
+                font-size: 28px;
             }
             .cont02 .performance__title {
-                font-size: 28px;
+                font-size: 24px;
+            }
+            .cont02 .intro__text {
+                font-size: 14px;
+                line-height: 1.5;
+                word-break: keep-all;
             }
             .cont02 .performance__item-count {
                 font-size: 40px
             }
             .cont02 .performance__item {
                 flex-basis: 100%;
+            }
+            .cont02 .performance__desc {
+                font-size: 14px;
+            }
+            .cont03__item-tit {
+                font-size: 26px;
+            }
+            .cont03__item-txt {
+                font-size: 10px;
+                white-space: nowrap;
             }
         }
 
@@ -229,44 +244,44 @@
             }
         }
 
-        @media (max-width: 768px) {
-            /* .cont03 {
-                padding: 100px 0;
+        @media (max-width: 640px) {
+            .inner {padding: 0 10px;}
+            .cont03 .overlay__bg {
+                background-color: #000;
             }
-            .cont03__item-tit {
-                font-size: 34px;
+            .cont03 .overlay__bg img {
+                object-fit: contain;
             }
-            .cont03__item-txt {
-                font-size: 15px;
+            .cont03 .overlay.item02 .overlay__box-tit {
+                text-align: left;
             }
-            .cont03 .overlay__wrap {
-                padding: 40px 30px;
-            }
-            .cont03 .overlay__box-tit {
-                font-size: 28px;
-            } */
-        }
-
-        @media (max-width: 480px) {
-            /* .cont03__item-tit {
-                font-size: 30px;
+            .cont03 .overlay.item02 .overlay__box-txt {
+                text-align: left;
             }
             .cont03 .overlay__box-tit {
-                font-size: 24px;
+                margin-bottom: 26px;
+                font-size: 36px;
             }
             .cont03 .overlay__box-txt {
                 font-size: 14px;
             }
             .cont03 .overlay__box-stxt {
-                font-size: 14px; */
+                font-size: 16px;
+                text-align: left;
+                word-break: keep-all;
             }
+            
+        }
+
+        @media (max-width: 480px) {
+            
         }
 
         .cont04 { width: 100%; height: 300vh; background-color: #000; position: relative; overflow: hidden; } 
         .cont04 .pinInner { width: 100%; height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; } 
         .cont04__text { text-align: center; z-index: 10; } 
         .cont04__text-tit { font-size: 52px; font-weight: 700; color: #00f59b; margin-bottom: 40px; } 
-        .cont04__text-txt { font-size: 16px; color: #fff; font-weight: 700; } 
+        .cont04__text-txt { font-size: 16px; color: #fff; font-weight: 700; line-height: 1.5;} 
         .cont04__card-wrap { position: absolute; width: 100%; height: 100%; top: 0; left: 0; pointer-events: none; } 
         .biz-card { width: 280px; height: 180px; position: absolute; top: 50%; left: 50%; margin-top: 0; margin-left: 0; opacity: 0; scale: 0.1; will-change: transform, opacity; z-index: 5; } 
         .biz-card__inner { display: flex; flex-direction: column; justify-content: space-between; padding: 30px 20px; height: 100%; background: rgba(255, 255, 255, 0.6); border: 1px solid #222; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); } 
@@ -282,6 +297,9 @@
                 display: block;
                 height: auto;
             }
+            .cont04__card-wrap {
+                padding: 0 20px;
+            }
             .cont04__text {
                 text-align: center;
                 margin-bottom: 80px;
@@ -293,7 +311,7 @@
                 position: static;
                 pointer-events: auto;
                 display: grid;
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: 1fr 1fr 1fr;
                 gap: 20px;
             }
             .biz-card {
@@ -316,21 +334,31 @@
                 font-size: 34px;
             }
             .cont04__card-wrap {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 1fr;
                 gap: 15px;
-            }
-            .biz-card {
-                min-height: auto;
-            }
-            .biz-card__inner {
-                padding: 25px 20px;
             }
         }
 
         @media (max-width: 480px) {
+            .cont04__text {
+                margin-bottom: 60px;
+                padding: 0 20px;
+                word-break: keep-all;
+            }
             .cont04__text-tit {
                 font-size: 30px;
             }
+            .cont04__card-wrap {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            .biz-card {
+                min-height: auto;
+            }
+            .biz-card h3 {
+                margin-bottom: 20px;
+            }
+            
         }
 
 
@@ -347,7 +375,7 @@
         .cont05-card { max-width: 720px; width: 100%; height: 400px; margin-bottom: 150px; position: relative; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 30px; overflow: hidden; opacity: 0; transform: translateY(100px); } 
         .cont05-card::before { content: ''; position: absolute; top: 0; left: 0; bottom: 0; right: 0; background: rgba(0, 0, 0, 0.6); z-index: 9; } 
         .cont05-card.is-active { border-color: rgba(0, 245, 155, 0.5); background-color: rgba(255, 255, 255, 0.1); } 
-        .cont05-card__img { width: 100%; overflow: hidden; } 
+        .cont05-card__img { width: 100%; height: 100%; overflow: hidden; } 
         .cont05-card__img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; } 
         .cont05-card:hover .cont05-card__img img { transform: scale(1.1); } 
         .cont05-card__info { display: flex; flex-direction: column; justify-content: center; padding: 30px 40px; position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 10; } 
@@ -374,18 +402,14 @@
                 position: static;
                 height: auto;
                 opacity: 1;
-                margin-bottom: 60px;
+                margin: 0 auto 60px;
             }
             .cont05__text-box {
                 margin-top: 0;
                 text-align: center;
             }
-            .cont05__tit {
-                font-size: 34px;
+            .cont05__tit {                
                 margin-bottom: 20px;
-            }
-            .cont05__txt {
-                font-size: 16px;
             }
             .cont05__right {
                 padding: 0;
@@ -405,9 +429,22 @@
         }
 
         @media (max-width: 480px) {
-            .cont05-card {
-                height: 250px;
+            .cont05 {
+                padding: 50px 0;
             }
+            .cont05__tit {
+                font-size: 32px;
+            }
+            .cont05__txt {
+                font-size: 16px;
+            }
+            .cont05-card__info {
+                padding: 20px;
+            }
+            .cont05-card {
+                height: 220px;
+            }
+            
             .cont05-card__info h3 {
                 font-size: 28px;
             }
