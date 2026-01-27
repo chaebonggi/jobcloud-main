@@ -419,7 +419,6 @@ document.addEventListener('DOMContentLoaded', function() {
             clearTimeout(resizeTimer);
             resizeTimer = setTimeout(() => {
                 const newWidth = window.innerWidth;
-
                 if (newWidth !== lastWidth) {
                     location.reload();
                 }
