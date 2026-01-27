@@ -60,7 +60,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     const video = document.querySelector('.visual__video');
-    if (video) { video.playbackRate = 0.8; }
+    if (video) {
+        video.classList.add('visual__video--loading');
+        video.addEventListener('canplay', function() {
+            video.classList.remove('visual__video--loading');
+        }, { once: true });
+
+        video.playbackRate = 0.8;
+    }
 
     // --- cont02 섹션 ---
     
