@@ -62,7 +62,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const video = document.querySelector('.visual__video');
     if (video) { video.playbackRate = 0.8; }
 
-    // --- cont02 섹션 ---
+    // --- cont02 섹션 ---         
+    const cont02Timeline = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".cont02",
+            start: "top top",
+            end: "+=500",
+            scrub: 1,
+            pin: true,
+        }
+    });
     
     const titleLines = document.querySelectorAll("#animated-title > span");
     if (titleLines.length > 0) {
@@ -128,17 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     ScrollTrigger.matchMedia({    
-        "(min-width: 1025px)": function() {   
-            // --- cont02 섹션 ---         
-            const cont02Timeline = gsap.timeline({
-                scrollTrigger: {
-                    trigger: ".cont02",
-                    start: "top top",
-                    end: "+=500",
-                    scrub: 1,
-                    pin: true,
-                }
-            });
+        "(min-width: 1025px)": function() {               
             // --- cont04 섹션 ---
             const cont04 = gsap.timeline({
                 scrollTrigger: {
