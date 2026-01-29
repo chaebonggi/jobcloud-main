@@ -42,9 +42,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+
     gsap.registerPlugin(TextPlugin, ScrollTrigger);
-    ScrollTrigger.normalizeScroll(true);
-    ScrollTrigger.config({ ignoreMobileResize: true });
 
     // --- visual 섹션 ---
     gsap.to("#typing-text", {
@@ -132,21 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // --- cont03 ---
-    const cont03 = gsap.timeline({
-        scrollTrigger: {
-            trigger: ".cont03",
-            start: "top top",
-            end: "bottom bottom",
-            scrub: 1,
-            pin: ".cont03 .pinInner",
-        }
-    });
-    cont03.to(".cont03 .cont03__item", { scale: 1, opacity: 0, duration: 1 });
-    cont03.to(".overlay.item01", { y: "0%", opacity: 1, duration: 1.5, ease: "power2.out"}); cont03.to(".overlay.item01 .overlay__box-tit", { opacity: 1, x: 0, duration: 0.8 }, "-=0.5"); cont03.to(".overlay.item01 .overlay__box-txt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.6"); cont03.to(".overlay.item01 .overlay__box-stxt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.7"); cont03.to({}, { duration: 1 });
-    cont03.to(".overlay.item02", { y: "0%", opacity: 1, duration: 1.5, ease: "power2.out"}); cont03.to(".overlay.item02 .overlay__box-tit", { opacity: 1, x: 0, duration: 0.8 }, "-=0.5"); cont03.to(".overlay.item02 .overlay__box-txt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.6"); cont03.to(".overlay.item02 .overlay__box-stxt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.7"); cont03.to({}, { duration: 1 });
-    cont03.to(".overlay.item03", { y: "0%", opacity: 1, duration: 1.5, ease: "power2.out"}); cont03.to(".overlay.item03 .overlay__box-tit", { opacity: 1, x: 0, duration: 0.8 }, "-=0.5"); cont03.to(".overlay.item03 .overlay__box-txt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.6"); cont03.to(".overlay.item03 .overlay__box-stxt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.7"); cont03.to({}, { duration: 1 });
-
+   
     let mm = gsap.matchMedia();
     mm.add({
         isDesktop: "(min-width: 1025px)",
@@ -171,6 +156,20 @@ document.addEventListener('DOMContentLoaded', function() {
                     // pinSpacing은 기본값(true)을 사용하거나, 명시적으로 true로 설정합니다.
                 }
             });            
+             // --- cont03 ---
+            const cont03 = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".cont03",
+                    start: "top top",
+                    end: "bottom bottom",
+                    scrub: 1,
+                    pin: ".cont03 .pinInner",
+                }
+            });
+            cont03.to(".cont03 .cont03__item", { scale: 1, opacity: 0, duration: 1 });
+            cont03.to(".overlay.item01", { y: "0%", opacity: 1, duration: 1.5, ease: "power2.out"}); cont03.to(".overlay.item01 .overlay__box-tit", { opacity: 1, x: 0, duration: 0.8 }, "-=0.5"); cont03.to(".overlay.item01 .overlay__box-txt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.6"); cont03.to(".overlay.item01 .overlay__box-stxt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.7"); cont03.to({}, { duration: 1 });
+            cont03.to(".overlay.item02", { y: "0%", opacity: 1, duration: 1.5, ease: "power2.out"}); cont03.to(".overlay.item02 .overlay__box-tit", { opacity: 1, x: 0, duration: 0.8 }, "-=0.5"); cont03.to(".overlay.item02 .overlay__box-txt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.6"); cont03.to(".overlay.item02 .overlay__box-stxt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.7"); cont03.to({}, { duration: 1 });
+            cont03.to(".overlay.item03", { y: "0%", opacity: 1, duration: 1.5, ease: "power2.out"}); cont03.to(".overlay.item03 .overlay__box-tit", { opacity: 1, x: 0, duration: 0.8 }, "-=0.5"); cont03.to(".overlay.item03 .overlay__box-txt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.6"); cont03.to(".overlay.item03 .overlay__box-stxt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.7"); cont03.to({}, { duration: 1 });
 
             
 
