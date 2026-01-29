@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
             end: "bottom bottom",
             scrub: 1,
             pin: ".cont03 .pinInner",
-            // pinSpacing: false
+            pinSpacing: false
         }
     });
     cont03.to(".cont03 .cont03__item", { scale: 1, opacity: 0, duration: 1 });

@@ -241,7 +241,7 @@
 
         @media (max-width: 640px) {
             .cont03 {
-                height: 300vh;
+                margin-bottom: 1vh;
             }
             .cont03__item {
                 transform: scale(2);
