@@ -240,6 +240,12 @@
         }
 
         @media (max-width: 640px) {
+            .cont03 {
+                height: 300vh;
+            }
+            .cont03__item {
+                transform: scale(2);
+            }
             .cont03 .overlay__bg {
                 background-color: #000;
             }
