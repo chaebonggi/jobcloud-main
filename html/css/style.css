@@ -102,7 +102,7 @@
         }
 
 
-        .cont02 {height: 100vh; padding: clamp(100px, calc(140 / 900 * 100vh), 140px) 0;; background: url(../images/cont02_bg.png) center; background-size: cover; font-family: 'NanumSquare'; }
+        .cont02 {height: 100vh; padding: clamp(100px, calc(140 / 900 * 100vh), 140px) 0; background: url(../images/cont02_bg.png) center; background-size: cover; font-family: 'NanumSquare'; overflow: hidden;}
         .cont02 .intro { display: flex; align-items: center; gap: 40px; margin-bottom: 200px; }
         .cont02 .intro__item { flex: 1; }
         .cont02 .intro__title > span { display: block; }
