@@ -89,7 +89,7 @@
                 height: 32px;
             }
         }
-        @media (max-width: 480px) {
+        @media (max-width: 640px) {
             .visual__text-wrapper {
                 max-width: 260px;
             }
@@ -175,7 +175,7 @@
                 line-height: 1.5;
             }            
         }
-        @media (max-width: 480px) {
+        @media (max-width: 640px) {
             .cont02 {
                 padding: 100px 0;
             }
@@ -203,7 +203,7 @@
 
 
         .cont03 { width: 100%; height: 600vh; position: relative; background-color: #000; } 
-        .cont03 .pinInner { display: flex; align-items: center; justify-content: center;position: relative; overflow: hidden; } 
+        .cont03 .pinInner { display: flex; align-items: center; justify-content: center;width: 100%; height: 100vh; position: relative; overflow: hidden; } 
         .cont03__item { text-align: center; transform: scale(2.4); will-change: transform, opacity; } 
         .cont03__item-tit { color: #fff; font-size: 120px; font-weight: 800; white-space: nowrap;} 
         .cont03__item-txt { margin-top: 30px; color: #999; font-size: 30px; font-weight: 400; } 
@@ -239,41 +239,80 @@
             }
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 640px) {
+            .cont03 {
+                height: auto;
+            }
+            .cont03 .pinInner {
+                display: block;
+                height: auto;
+            }
+            
             .cont03__item {
-                transform: scale(2);
-            }
-            .cont03 .overlay__bg {
-                background-color: #000;
-            }
-            .cont03 .overlay__bg img {
-                object-fit: contain;
-            }
-            .cont03 .overlay.item02 .overlay__box-tit {
-                text-align: left;
-            }
-            .cont03 .overlay.item02 .overlay__box-txt {
-                text-align: left;
-            }
-            .cont03 .overlay__box-tit {
-                margin-bottom: 26px;
-                font-size: 36px;
-            }
-            .cont03 .overlay__box-txt {
-                font-size: 14px;
-            }
-            .cont03 .overlay__box-stxt {
-                font-size: 16px;
-                text-align: left;
-                word-break: keep-all;
+                padding: 30px 0;
+                transform: scale(1);
             }
             .cont03__item-tit {
                 font-size: 26px;
             }
             .cont03__item-txt {
-                font-size: 10px;
-                white-space: nowrap;
+                margin-top: 20px;
+                font-size: 12px;
+                word-break: keep-all;
+                line-height: 1.5;
             }
+            .cont03 .overlay {
+                position: static;
+                transform: none;
+                opacity: 1;
+                height: auto;
+            }
+            .cont03 .overlay__wrap {
+                padding: 50px 0;
+            }
+            .cont03 .overlay__bg {
+                background-color: #000;
+            }
+            .cont03 .overlay.item02 .overlay__box-tit {
+                text-align: right;
+                transform: none;
+            }
+            .cont03 .overlay.item02 .overlay__box-txt {
+                margin-bottom: 0;
+                text-align: right;
+                transform: none;
+            }
+             .cont03 .overlay.item02 .overlay__box-stxt {
+                margin-bottom: 60px;
+                transform: none;
+            }
+            .cont03 .overlay__box-tit {
+                margin-bottom: 24px;
+                font-size: 32px;
+                transform: none;
+                opacity: 1;
+            }
+            .cont03 .overlay__box-txt {
+                margin-bottom: 60px;
+                font-size: 12px;
+                transform: none;
+                word-break: keep-all;
+                opacity: 1;
+            }
+           
+            .cont03 .overlay__box-stxt {
+                max-width: 300px;
+                font-size: 14px;
+                text-align: left;
+                word-break: keep-all;
+                transform: none;
+                opacity: 1;
+                word-break: keep-all;
+            }
+            .cont03 .overlay__box-stxt br {
+                display: none;
+            }
+            
             
         }
 

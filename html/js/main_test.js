@@ -130,54 +130,119 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // --- cont03 섹션 ---
-    const cont03 = gsap.timeline({
-        scrollTrigger: {
-            trigger: ".cont03",
-            start: "top top",
-            end: "bottom bottom",
-            scrub: 1,
-            pin: ".cont03 .pinInner",
-            pinSpacing: false
-        }
-    });
-    cont03.to(".cont03 .cont03__item", { scale: 1, opacity: 0, duration: 1 });
-    cont03.to(".overlay.item01", { y: "0%", opacity: 1, duration: 1.5, ease: "power2.out"});        
-    cont03.to(".overlay.item01 .overlay__box-tit", { opacity: 1, x: 0, duration: 0.8 }, "-=0.5");
-    cont03.to(".overlay.item01 .overlay__box-txt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.6");
-    cont03.to(".overlay.item01 .overlay__box-stxt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.7");
-    cont03.to({}, { duration: 1 });
-
-    cont03.to(".overlay.item02", { y: "0%", opacity: 1, duration: 1.5, ease: "power2.out"});        
-    cont03.to(".overlay.item02 .overlay__box-tit", { opacity: 1, x: 0, duration: 0.8 }, "-=0.5");
-    cont03.to(".overlay.item02 .overlay__box-txt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.6");
-    cont03.to(".overlay.item02 .overlay__box-stxt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.7");
-    cont03.to({}, { duration: 1 });
-
-    cont03.to(".overlay.item03", { y: "0%", opacity: 1, duration: 1.5, ease: "power2.out"});        
-    cont03.to(".overlay.item03 .overlay__box-tit", { opacity: 1, x: 0, duration: 0.8 }, "-=0.5");
-    cont03.to(".overlay.item03 .overlay__box-txt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.6");
-    cont03.to(".overlay.item03 .overlay__box-stxt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.7");
-    cont03.to({}, { duration: 1 });
+    // main.js 파일의 mm.add() 부분을 이 코드로 교체해주세요.
 
     let mm = gsap.matchMedia();
     mm.add({
-        isAboveMobile: "(min-width: 480px)",
-        isSmallMobile: "(max-width: 479px)"
-
+        isDesktop: "(min-width: 1025px)",
+        isTablet: "(min-width: 640px) and (max-width: 1024px)",
+        isMobile: "(max-width: 639px)" 
     }, (context) => {
-        let { isAboveMobile, isSmallMobile } = context.conditions;
+        let { isDesktop, isTablet, isMobile } = context.conditions;
 
-        if (isAboveMobile) {
+        // =============================================================
+        // ★ 640px 이상 (PC & 태블릿) 에서 실행될 모든 pin 애니메이션 ★
+        // =============================================================
+        if (isDesktop || isTablet) {
+            
+            // --- cont02 ---         
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".cont02",
+                    start: "top top",
+                    end: "+=500",
+                    scrub: 1,
+                    pin: true,
+                    // pinSpacing은 기본값(true)을 사용하거나, 명시적으로 true로 설정합니다.
+                }
+            });            
+
+            // --- cont03 ---
+            const cont03 = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".cont03",
+                    start: "top top",
+                    end: "bottom bottom",
+                    scrub: 1,
+                    pin: ".cont03 .pinInner",
+                    // ★★★ pinSpacing: false 를 제거하여 GSAP이 공간을 만들게 합니다. ★★★
+                }
+            });
+            // ... (cont03의 .to() 애니메이션 코드는 그대로 유지) ...
+            cont03.to(".cont03 .cont03__item", { scale: 1, opacity: 0, duration: 1 });
+            cont03.to(".overlay.item01", { y: "0%", opacity: 1, duration: 1.5, ease: "power2.out"}); cont03.to(".overlay.item01 .overlay__box-tit", { opacity: 1, x: 0, duration: 0.8 }, "-=0.5"); cont03.to(".overlay.item01 .overlay__box-txt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.6"); cont03.to(".overlay.item01 .overlay__box-stxt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.7"); cont03.to({}, { duration: 1 });
+            cont03.to(".overlay.item02", { y: "0%", opacity: 1, duration: 1.5, ease: "power2.out"}); cont03.to(".overlay.item02 .overlay__box-tit", { opacity: 1, x: 0, duration: 0.8 }, "-=0.5"); cont03.to(".overlay.item02 .overlay__box-txt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.6"); cont03.to(".overlay.item02 .overlay__box-stxt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.7"); cont03.to({}, { duration: 1 });
+            cont03.to(".overlay.item03", { y: "0%", opacity: 1, duration: 1.5, ease: "power2.out"}); cont03.to(".overlay.item03 .overlay__box-tit", { opacity: 1, x: 0, duration: 0.8 }, "-=0.5"); cont03.to(".overlay.item03 .overlay__box-txt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.6"); cont03.to(".overlay.item03 .overlay__box-stxt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.7"); cont03.to({}, { duration: 1 });
+
+            // --- cont05 ---
+            const cont05 = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".cont05",
+                    start: "top 80%", 
+                    endTrigger: ".cont06",
+                    end: "top 20%",
+                    scrub: 1,
+                }
+            });
+            cont05.to(".cont05__bg", { opacity: 1, duration: 1 }).to(".cont05__left", { opacity: 1, y: 0, duration: 1 }, "-=0.8").to({}, { duration: 5 }).to([".cont05__bg", ".cont05__left"], { opacity: 0, duration: 1 });
+                    
+            gsap.utils.toArray(".cont05-card").forEach((card) => {
+                gsap.to(card, {
+                    scrollTrigger: {
+                        trigger: card,
+                        start: "top 90%",
+                        end: "top 50%", 
+                        scrub: 1,
+                    },
+                    opacity: 1,
+                    y: 0,
+                    duration: 1
+                });
+            });
         }
-        if (isSmallMobile) {
 
+        // =============================================================
+        // ★ 1025px 이상 (PC) 에서만 실행될 pin 애니메이션 ★
+        // =============================================================
+        if (isDesktop) {
+            // --- cont04 ---
+            const cont04 = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".cont04",
+                    start: "top top",
+                    end: "bottom bottom",
+                    scrub: 1,
+                    pin: ".cont04 .pinInner",
+                    // ★★★ pinSpacing: false 를 제거하여 GSAP이 공간을 만들게 합니다. ★★★
+                }
+            });
+            // ... (cont04의 .to() 애니메이션 코드는 그대로 유지) ...
+            cont04.to(".cont04__text", { scale: 0.8, opacity: 0.4, duration: 1 });
+            const cardLayout = [ { el: ".card01", x: "-170%", y: "-160%", r: -8 }, { el: ".card02", x: "-50%",  y: "-180%", r: 0 },  { el: ".card03", x: "70%",   y: "-160%", r: 8 }, { el: ".card04", x: "-210%", y: "-50%",  r: -5 }, { el: ".card05", x: "110%",  y: "-50%",  r: 5 },  { el: ".card06", x: "-170%", y: "60%",   r: -8 }, { el: ".card07", x: "-50%",  y: "80%",   r: 0 },  { el: ".card08", x: "70%",   y: "60%",   r: 8 } ];
+            cardLayout.forEach((card) => { cont04.fromTo(card.el, { opacity: 0, scale: 0.3, x: "-50%", y: "-50%", left: "50%", top: "50%", rotation: 0 }, { opacity: 1, scale: 1, x: card.x, y: card.y, rotation: card.r, duration: 3, ease: "power2.out" }, "-=2.8"); });
+            cont04.to(".cont04__text", { opacity: 1, scale: 1, duration: 1.5 });
         }
 
-        return () => { 
- 
-        };
+        // =============================================================
+        // ★ 1024px 이하 (태블릿 & 모바일) 에서 실행될 애니메이션 ★
+        // =============================================================
+        if (isTablet || isMobile) {
+            // --- cont04 ---
+            gsap.from(".cont04__text", {
+                opacity: 0, y: 50, duration: 1,
+                scrollTrigger: { trigger: ".cont04__text", start: "top 90%", end: "bottom 80%", scrub: 1 }
+            });
+            gsap.utils.toArray(".biz-card").forEach((card) => {
+                gsap.from(card, {
+                    opacity: 0, y: 100, duration: 1, ease: "power2.out",
+                    scrollTrigger: { trigger: card, start: "top 95%", end: "bottom 85%", scrub: 1 }
+                });
+            });
+        }
+
+        return () => { };
     });
+
 
 
 
