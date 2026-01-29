@@ -239,10 +239,7 @@
             }
         }
 
-        @media (max-width: 640px) {
-            .cont03 {
-                margin-bottom: 1vh;
-            }
+        @media (max-width: 480px) {
             .cont03__item {
                 transform: scale(2);
             }
@@ -277,10 +274,6 @@
                 font-size: 10px;
                 white-space: nowrap;
             }
-            
-        }
-
-        @media (max-width: 480px) {
             
         }
 

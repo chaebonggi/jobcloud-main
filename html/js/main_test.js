@@ -161,25 +161,24 @@ document.addEventListener('DOMContentLoaded', function() {
     cont03.to({}, { duration: 1 });
 
     let mm = gsap.matchMedia();
-
     mm.add({
-        isDesktop: "(min-width: 1025px)",
-        isMobile: "(max-width: 1024px)"
+        isAboveMobile: "(min-width: 480px)",
+        isSmallMobile: "(max-width: 479px)"
+
     }, (context) => {
+        let { isAboveMobile, isSmallMobile } = context.conditions;
 
-        let { isDesktop, isMobile } = context.conditions;
-
-        if (isDesktop) {
+        if (isAboveMobile) {
+        }
+        if (isSmallMobile) {
 
         }
 
-
-        if (isMobile) {
-
-        }
-
-        return () => { };
+        return () => { 
+ 
+        };
     });
+
 
 
     let resizeTimer;
