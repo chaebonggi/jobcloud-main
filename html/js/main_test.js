@@ -43,6 +43,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     gsap.registerPlugin(TextPlugin, ScrollTrigger);
+    ScrollTrigger.normalizeScroll(true);
+    ScrollTrigger.config({ ignoreMobileResize: true });
 
     // --- visual 섹션 ---
     gsap.to("#typing-text", {
