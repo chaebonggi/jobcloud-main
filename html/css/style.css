@@ -90,6 +90,9 @@
             }
         }
         @media (max-width: 480px) {
+            .visual__text-wrapper {
+                max-width: 260px;
+            }
             .visual__txt {
                 font-size: 26px; 
             }
