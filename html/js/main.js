@@ -418,20 +418,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         const track = document.querySelector('.cont11 .slide-track');
 
-        // 리사이즈
-        // let resizeTimer;
-        // let lastWidth = window.innerWidth; 
-
-        // window.addEventListener("resize", () => {
-        //     clearTimeout(resizeTimer);
-        //     resizeTimer = setTimeout(() => {
-        //         const newWidth = window.innerWidth;
-        //         if (newWidth !== lastWidth) {
-        //             location.reload();
-        //         }
-
-        //     }, 250); 
-        // });
+      
 
 
 });
