@@ -203,7 +203,7 @@
 
 
         .cont03 { width: 100%; height: 600vh; position: relative; background-color: #000; } 
-        .cont03 .pinInner { display: flex; align-items: center; justify-content: center; width: 100%; height: 100vh; position: relative; overflow: hidden; } 
+        .cont03 .pinInner { display: flex; align-items: center; justify-content: center;position: relative; overflow: hidden; } 
         .cont03__item { text-align: center; transform: scale(2.4); will-change: transform, opacity; } 
         .cont03__item-tit { color: #fff; font-size: 120px; font-weight: 800; white-space: nowrap;} 
         .cont03__item-txt { margin-top: 30px; color: #999; font-size: 30px; font-weight: 400; } 

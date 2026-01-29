@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
             start: "top top",
             end: "bottom bottom",
             scrub: 1,
-            pin: ".cont03",
+            pin: ".cont03 .pinInner",
             pinSpacing: false
         }
     });
