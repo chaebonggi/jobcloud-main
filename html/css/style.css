@@ -220,7 +220,7 @@
         .cont03 .overlay.item02 .overlay__box-txt { text-align: right; transform: translateX(80px); } 
         .cont03 .overlay.item02 .overlay__box-stxt { margin-top: initial; text-align: left; transform: translateX(-80px); } 
 
-        @media (max-width: 1024px) {
+        /* @media (max-width: 1024px) {
             .cont03__item-tit {
                 font-size: 80px;
             }
@@ -314,7 +314,7 @@
             }
             
             
-        }
+        } */
 
         .cont04 { width: 100%; height: 300vh; background-color: #000; position: relative; overflow: hidden; } 
         .cont04 .pinInner { width: 100%; height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; } 

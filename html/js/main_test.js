@@ -130,7 +130,20 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // main.js 파일의 mm.add() 부분을 이 코드로 교체해주세요.
+    // --- cont03 ---
+    const cont03 = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".cont03",
+            start: "top top",
+            end: "bottom bottom",
+            scrub: 1,
+            pin: ".cont03 .pinInner",
+        }
+    });
+    cont03.to(".cont03 .cont03__item", { scale: 1, opacity: 0, duration: 1 });
+    cont03.to(".overlay.item01", { y: "0%", opacity: 1, duration: 1.5, ease: "power2.out"}); cont03.to(".overlay.item01 .overlay__box-tit", { opacity: 1, x: 0, duration: 0.8 }, "-=0.5"); cont03.to(".overlay.item01 .overlay__box-txt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.6"); cont03.to(".overlay.item01 .overlay__box-stxt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.7"); cont03.to({}, { duration: 1 });
+    cont03.to(".overlay.item02", { y: "0%", opacity: 1, duration: 1.5, ease: "power2.out"}); cont03.to(".overlay.item02 .overlay__box-tit", { opacity: 1, x: 0, duration: 0.8 }, "-=0.5"); cont03.to(".overlay.item02 .overlay__box-txt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.6"); cont03.to(".overlay.item02 .overlay__box-stxt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.7"); cont03.to({}, { duration: 1 });
+    cont03.to(".overlay.item03", { y: "0%", opacity: 1, duration: 1.5, ease: "power2.out"}); cont03.to(".overlay.item03 .overlay__box-tit", { opacity: 1, x: 0, duration: 0.8 }, "-=0.5"); cont03.to(".overlay.item03 .overlay__box-txt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.6"); cont03.to(".overlay.item03 .overlay__box-stxt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.7"); cont03.to({}, { duration: 1 });
 
     let mm = gsap.matchMedia();
     mm.add({
@@ -157,22 +170,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });            
 
-            // --- cont03 ---
-            const cont03 = gsap.timeline({
-                scrollTrigger: {
-                    trigger: ".cont03",
-                    start: "top top",
-                    end: "bottom bottom",
-                    scrub: 1,
-                    pin: ".cont03 .pinInner",
-                    // ★★★ pinSpacing: false 를 제거하여 GSAP이 공간을 만들게 합니다. ★★★
-                }
-            });
-            // ... (cont03의 .to() 애니메이션 코드는 그대로 유지) ...
-            cont03.to(".cont03 .cont03__item", { scale: 1, opacity: 0, duration: 1 });
-            cont03.to(".overlay.item01", { y: "0%", opacity: 1, duration: 1.5, ease: "power2.out"}); cont03.to(".overlay.item01 .overlay__box-tit", { opacity: 1, x: 0, duration: 0.8 }, "-=0.5"); cont03.to(".overlay.item01 .overlay__box-txt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.6"); cont03.to(".overlay.item01 .overlay__box-stxt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.7"); cont03.to({}, { duration: 1 });
-            cont03.to(".overlay.item02", { y: "0%", opacity: 1, duration: 1.5, ease: "power2.out"}); cont03.to(".overlay.item02 .overlay__box-tit", { opacity: 1, x: 0, duration: 0.8 }, "-=0.5"); cont03.to(".overlay.item02 .overlay__box-txt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.6"); cont03.to(".overlay.item02 .overlay__box-stxt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.7"); cont03.to({}, { duration: 1 });
-            cont03.to(".overlay.item03", { y: "0%", opacity: 1, duration: 1.5, ease: "power2.out"}); cont03.to(".overlay.item03 .overlay__box-tit", { opacity: 1, x: 0, duration: 0.8 }, "-=0.5"); cont03.to(".overlay.item03 .overlay__box-txt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.6"); cont03.to(".overlay.item03 .overlay__box-stxt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.7"); cont03.to({}, { duration: 1 });
+            
 
             // --- cont05 ---
             const cont05 = gsap.timeline({
