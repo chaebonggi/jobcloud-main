@@ -240,7 +240,10 @@
         }
 
         @media (max-width: 640px) {
-            .inner {padding: 0 10px;}
+            .cont03 {
+                border: 1px solid red;
+                overflow: hidden;
+            }
             .cont03 .overlay__bg {
                 background-color: #000;
             }
