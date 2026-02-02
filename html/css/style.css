@@ -205,7 +205,7 @@
 
         .cont03 { width: 100%; height: 600vh; position: relative; background-color: #000; } 
         .cont03 .pinInner { display: flex; align-items: center; justify-content: center;width: 100%; height: 100vh; position: relative; overflow: hidden; } 
-        .cont03__item { text-align: center; transform: scale(2.4); will-change: transform, opacity; } 
+        .cont03__item { text-align: center; transform: scale(2); will-change: transform, opacity; } 
         .cont03__item-tit { color: #fff; font-size: 120px; font-weight: 800; white-space: nowrap;} 
         .cont03__item-txt { margin-top: 30px; color: #999; font-size: 30px; font-weight: 400; } 
         .cont03 .overlay { width: 100%; height: 100%; position: absolute; top: 0; left: 0; transform: translateY(100%); will-change: transform, opacity; opacity: 0; z-index: 20; } 
@@ -320,7 +320,7 @@
         .cont04 { width: 100%; height: 300vh; background-color: #000; position: relative; overflow: hidden; } 
         .cont04 .pinInner { width: 100%; height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; } 
         .cont04__text { text-align: center; z-index: 10; } 
-        .cont04__text-tit { font-size: 52px; font-weight: 700; color: #00f59b; margin-bottom: 40px; } 
+        .cont04__text-tit { font-size: 52px; font-weight: 700; color: #00f59b; margin-bottom: 20px; } 
         .cont04__text-txt { font-size: 16px; color: #fff; font-weight: 700; line-height: 1.5;} 
         .cont04__card-wrap { position: absolute; width: 100%; height: 100%; top: 0; left: 0; pointer-events: none; } 
         .biz-card { width: 280px; height: 180px; position: absolute; top: 50%; left: 50%; margin-top: 0; margin-left: 0; opacity: 0; scale: 0.1; will-change: transform, opacity; z-index: 5; } 

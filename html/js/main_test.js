@@ -229,10 +229,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     // ★★★ pinSpacing: false 를 제거하여 GSAP이 공간을 만들게 합니다. ★★★
                 }
             });
-            cont04.to(".cont04__text", { scale: 0.8, opacity: 0.4, duration: 1 });
+            cont04.to(".cont04__text", { scale: 0.8, opacity: 0.4, duration: 5 });
             const cardLayout = [ { el: ".card01", x: "-170%", y: "-160%", r: -8 }, { el: ".card02", x: "-50%",  y: "-180%", r: 0 },  { el: ".card03", x: "70%",   y: "-160%", r: 8 }, { el: ".card04", x: "-210%", y: "-50%",  r: -5 }, { el: ".card05", x: "110%",  y: "-50%",  r: 5 },  { el: ".card06", x: "-170%", y: "60%",   r: -8 }, { el: ".card07", x: "-50%",  y: "80%",   r: 0 },  { el: ".card08", x: "70%",   y: "60%",   r: 8 } ];
             cardLayout.forEach((card) => { cont04.fromTo(card.el, { opacity: 0, scale: 0.3, x: "-50%", y: "-50%", left: "50%", top: "50%", rotation: 0 }, { opacity: 1, scale: 1, x: card.x, y: card.y, rotation: card.r, duration: 3, ease: "power2.out" }, "-=2.8"); });
-            cont04.to(".cont04__text", { opacity: 1, scale: 1, duration: 1.5 });
         }
 
         // =============================================================
