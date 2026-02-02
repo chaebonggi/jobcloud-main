@@ -105,8 +105,9 @@
         }
 
 
-        .cont02 {height: 100vh; padding: clamp(100px, calc(140 / 900 * 100vh), 140px) 0; background: url(../images/cont02_bg.png) center; background-size: cover; font-family: 'NanumSquare'; overflow: hidden;}
-        .cont02 .intro { display: flex; align-items: center; gap: 40px; margin-bottom: 200px; }
+        .cont02 {height: 100vh; padding: 120px 0 60px; background: url(../images/cont02_bg.png) center; background-size: cover; font-family: 'NanumSquare'; overflow: hidden;}
+        .cont02 .inner { display: flex; flex-direction: column; justify-content: space-between; height: 100%;}
+        .cont02 .intro { display: flex; align-items: center; gap: 40px;}
         .cont02 .intro__item { flex: 1; }
         .cont02 .intro__title > span { display: block; }
         .cont02 .intro__title { color: #fff; font-size: 56px; font-weight: 700; line-height: 1.4; }
@@ -115,7 +116,7 @@
         .cont02 .intro__title .char {display: inline-block;transform: translateY(100%);will-change: transform;}
         .cont02 .performance { padding-left: 34px; text-align: left; }
         .cont02 .performance__title { font-size: 32px; font-weight: 700; margin-bottom: 16px; }
-        .cont02 .performance__desc { font-size: 14px; color: #999; margin-bottom: 80px;}
+        .cont02 .performance__desc { font-size: 14px; color: #999; margin-bottom: 60px;}
         .cont02 .performance__list { display: flex; justify-content: space-between; gap: 20px; }
         .cont02 .performance__item { flex: 1; }
         .cont02 .performance__item-title { font-size: 18px; font-weight: 400; color: #fff; margin-bottom: 30px; }
@@ -203,14 +204,14 @@
 
 
         .cont03 { width: 100%; height: 600vh; position: relative; background-color: #000; } 
-        .cont03 .pinInner { display: flex; align-items: center; justify-content: center;width: 100%; height: calc(var(--vh, 1vh) * 100); position: relative; overflow: hidden; } 
+        .cont03 .pinInner { display: flex; align-items: center; justify-content: center;width: 100%; height: 100vh; position: relative; overflow: hidden; } 
         .cont03__item { text-align: center; transform: scale(2.4); will-change: transform, opacity; } 
         .cont03__item-tit { color: #fff; font-size: 120px; font-weight: 800; white-space: nowrap;} 
         .cont03__item-txt { margin-top: 30px; color: #999; font-size: 30px; font-weight: 400; } 
         .cont03 .overlay { width: 100%; height: 100%; position: absolute; top: 0; left: 0; transform: translateY(100%); will-change: transform, opacity; opacity: 0; z-index: 20; } 
         .cont03 .overlay__bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; } 
         .cont03 .overlay__bg img { width: 100%; height: 100%; object-fit: cover; } 
-        .cont03 .overlay__wrap { width: 100%; height: 100%; padding: clamp(100px, calc(140 / 800 * 100vh), 140px) 0; position: relative; z-index: 5; } 
+        .cont03 .overlay__wrap { width: 100%; height: 100%; padding: clamp(80px, 10vh + 20px, 140px) 0; position: relative; z-index: 5; } 
         .cont03 .inner { height: 100%; } 
         .cont03 .overlay__box { display: flex; flex-direction: column; height: inherit; } 
         .cont03 .overlay__box-tit { display: block; margin-bottom: 70px; color: #fff; font-size: 90px; font-weight: 700; transform: translateX(-80px); will-change: transform, opacity; opacity: 0; } 
@@ -490,10 +491,10 @@
         }
 
 
-        .cont06 { display: flex; flex-direction: column; width: 100%; height: 100vh; padding: 120px 0; position: relative; background: #edfbf6; overflow: hidden; } 
-        .cont06__tit { color: #000; font-size: 52px; font-weight: 800; margin-bottom: 40px; letter-spacing: -1.5px; text-transform: uppercase; } 
-        .cont06__txt { color: #333; font-size: 16px; font-weight: 400; } 
-        .cont06 .pinInner { flex: 1; display: flex; align-items: center; width: 100%; } 
+        .cont06 { display: flex; flex-direction: column; justify-content: space-between; gap: 10px; width: 100%; height: 100vh; padding: clamp(80px, calc(80px + (140 - 80) * ((100vh - 700px) / (900 - 700))), 140px) 0; position: relative; background: #edfbf6; overflow: hidden; } 
+        .cont06__text-tit { color: #000; font-size: 52px; font-weight: 800; margin-bottom: 40px; letter-spacing: -1.5px; text-transform: uppercase; } 
+        .cont06__text-txt { color: #333; font-size: 16px; font-weight: 400; } 
+        /* .cont06 .pinInner { flex: 1; display: flex; align-items: center; width: 100%; }  */
         .cont06__list { display: flex; gap: 40px; list-style: none; margin: 0; padding: 0 100px 0 10%; width: max-content; } 
         .cont06__list li { display: flex; flex-direction: column; justify-content: space-between; flex-shrink: 0; width: 420px; height: 360px; padding: 60px 40px; position: relative; background-image: linear-gradient(rgb(153 223 239 / 90%), rgb(2 213 225 / 80%)), url(../images/cont06_card.jpg); background-size: cover; background-position: center; color: #fff; border: none; transition: transform 0.5s ease, box-shadow 0.5s ease; border-radius: 30px; overflow: hidden; } 
         .cont06__list li:hover { transform: translateY(-20px); box-shadow: 0 30px 60px rgba(80, 80, 81, 0.15); border-color: #b9b9b9; } 
@@ -513,7 +514,7 @@
             .cont06__text-box {
                 text-align: center;
             }
-            .cont06__tit {
+            .cont06__text-tit {
                 font-size: 42px;
             }
             .cont06 .pinInner {
@@ -539,7 +540,7 @@
             .cont06 {
                 padding: 100px 0;
             }
-            .cont06__tit {
+            .cont06__text-tit {
                 font-size: 34px;
             }
             .cont06__list {
@@ -556,7 +557,7 @@
         }
 
         @media (max-width: 480px) {
-            .cont06__tit {
+            .cont06__text-tit {
                 font-size: 30px;
             }
             .cont06__list dt {
@@ -565,7 +566,8 @@
         }
 
 
-        .cont07 { width: 100%; height: 100vh; padding: 120px 0; position: relative; background-color: #f5f5f5; overflow: hidden; } 
+        .cont07 { width: 100%; height: 100vh; padding: clamp(60px, 10vh, 140px) 0;  position: relative; background-color: #f5f5f5; overflow: hidden; } 
+        .cont07 .inner {display: flex; flex-direction: column; justify-content: space-between; gap: 10px; height: 100%; max-height: 650px;}
         .cont07 .bg-text-wrap { width: 100%; height: 100%; position: absolute; top: 0; pointer-events: none; z-index: 0; } 
         .cont07 .bg-text { position: absolute; color: #fff; font-size: 120px; font-weight: 900; white-space: nowrap; text-transform: uppercase; line-height: 1; } 
         .cont07 .bg-text.left { top: 0; left: 0; writing-mode: vertical-rl; animation: flowDown 30s linear infinite; } 
@@ -581,11 +583,11 @@
         100% { transform: translateY(-50%); } 
         }
 
-        .cont07__tbox { margin-bottom: 80px; text-align: center; } 
-        .cont07__tbox-tit { color: #000; font-size: 52px; font-weight: 800; margin-bottom: 40px; letter-spacing: -1.5px; text-transform: uppercase; } 
+        .cont07__tbox { text-align: center; } 
+        .cont07__tbox-tit { margin-bottom: 20px; color: #000; font-size: 52px; font-weight: 800; letter-spacing: -1.5px; text-transform: uppercase; } 
         .cont07__tbox-txt { color: #333; font-size: 16px; font-weight: 400; } 
-        .cont07 .module__list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 1200px; width: 100%; margin: 0 auto; padding: 0; list-style: none; } 
-        .cont07 .module__list-card { display: flex; flex-direction: column; justify-content: center; height: 150px; padding: 0; background: #fff; border: 1px solid #eee; border-radius: 12px; text-align: center; transition: all 0.4s ease; opacity: 0.4; filter: grayscale(1); } 
+        .cont07 .module__list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; max-width: 1200px; width: 100%; margin: 0 auto; padding: 0; list-style: none; } 
+        .cont07 .module__list-card { display: flex; flex-direction: column; justify-content: center; height: 130px; padding: 0; background: #fff; border: 1px solid #eee; border-radius: 12px; text-align: center; transition: all 0.4s ease; opacity: 0.4; filter: grayscale(1); } 
         .cont07 .module__list-card .icon { font-size: 24px; margin-bottom: 10px; opacity: 0.5; } 
         .cont07 .module__list-card dt { font-size: 18px; font-weight: 700; color: #333; margin-bottom: 8px; } 
         .cont07 .module__list-card dd { margin: 0; display: flex; justify-content: center; gap: 5px; } 

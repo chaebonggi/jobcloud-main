@@ -153,7 +153,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     end: "+=500",
                     scrub: 1,
                     pin: true,
-                    // pinSpacing은 기본값(true)을 사용하거나, 명시적으로 true로 설정합니다.
                 }
             });            
              // --- cont03 ---
@@ -170,8 +169,6 @@ document.addEventListener('DOMContentLoaded', function() {
             cont03.to(".overlay.item01", { y: "0%", opacity: 1, duration: 1.5, ease: "power2.out"}); cont03.to(".overlay.item01 .overlay__box-tit", { opacity: 1, x: 0, duration: 0.8 }, "-=0.5"); cont03.to(".overlay.item01 .overlay__box-txt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.6"); cont03.to(".overlay.item01 .overlay__box-stxt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.7"); cont03.to({}, { duration: 1 });
             cont03.to(".overlay.item02", { y: "0%", opacity: 1, duration: 1.5, ease: "power2.out"}); cont03.to(".overlay.item02 .overlay__box-tit", { opacity: 1, x: 0, duration: 0.8 }, "-=0.5"); cont03.to(".overlay.item02 .overlay__box-txt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.6"); cont03.to(".overlay.item02 .overlay__box-stxt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.7"); cont03.to({}, { duration: 1 });
             cont03.to(".overlay.item03", { y: "0%", opacity: 1, duration: 1.5, ease: "power2.out"}); cont03.to(".overlay.item03 .overlay__box-tit", { opacity: 1, x: 0, duration: 0.8 }, "-=0.5"); cont03.to(".overlay.item03 .overlay__box-txt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.6"); cont03.to(".overlay.item03 .overlay__box-stxt", { opacity: 1, x: 0, duration: 0.8 }, "-=0.7"); cont03.to({}, { duration: 1 });
-
-            
 
             // --- cont05 ---
             const cont05 = gsap.timeline({
@@ -198,6 +195,23 @@ document.addEventListener('DOMContentLoaded', function() {
                     duration: 1
                 });
             });
+
+            // --- cont06 ---
+            gsap.to('.cont06 .pinInner', {
+                x: function() {
+                    const listElement = document.querySelector('.cont06__list');
+                    return -(listElement.scrollWidth - window.innerWidth + 200);
+                },
+                ease: "none",
+                scrollTrigger: {
+                    trigger: ".cont06",
+                    start: "top top",
+                    end: "+=3000", 
+                    pin: true,
+                    scrub: 1,
+                    invalidateOnRefresh: true
+                }
+            });
         }
 
         // =============================================================
@@ -215,7 +229,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     // ★★★ pinSpacing: false 를 제거하여 GSAP이 공간을 만들게 합니다. ★★★
                 }
             });
-            // ... (cont04의 .to() 애니메이션 코드는 그대로 유지) ...
             cont04.to(".cont04__text", { scale: 0.8, opacity: 0.4, duration: 1 });
             const cardLayout = [ { el: ".card01", x: "-170%", y: "-160%", r: -8 }, { el: ".card02", x: "-50%",  y: "-180%", r: 0 },  { el: ".card03", x: "70%",   y: "-160%", r: 8 }, { el: ".card04", x: "-210%", y: "-50%",  r: -5 }, { el: ".card05", x: "110%",  y: "-50%",  r: 5 },  { el: ".card06", x: "-170%", y: "60%",   r: -8 }, { el: ".card07", x: "-50%",  y: "80%",   r: 0 },  { el: ".card08", x: "70%",   y: "60%",   r: 8 } ];
             cardLayout.forEach((card) => { cont04.fromTo(card.el, { opacity: 0, scale: 0.3, x: "-50%", y: "-50%", left: "50%", top: "50%", rotation: 0 }, { opacity: 1, scale: 1, x: card.x, y: card.y, rotation: card.r, duration: 3, ease: "power2.out" }, "-=2.8"); });
@@ -241,7 +254,108 @@ document.addEventListener('DOMContentLoaded', function() {
 
         return () => { };
     });
+    // --- cont07 섹션 ---
+    const moduleTL = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".cont07",
+            start: "top top",
+            end: "+=4000",
+            scrub: 1,
+            pin: true,
+        }
+    });
 
+    const resetClasses = () => {
+        document.querySelectorAll('.module__list-card').forEach(el => {
+            el.classList.remove('sp_on', 'cp_on', 'rc_on');
+        });
+    };
+
+    moduleTL
+        .to({}, { duration: 1.5, onStart: resetClasses, onReverseComplete: resetClasses })
+        .to({}, {
+            duration: 1,
+            onStart: () => { 
+                resetClasses(); 
+                document.querySelectorAll('.module__list-card.sp').forEach(el => el.classList.add('sp_on')); 
+            },
+            onReverseComplete: () => { resetClasses(); }
+        })
+        .to({}, { duration: 1 })
+        .to({}, {
+            duration: 1,
+            onStart: () => { 
+                resetClasses(); 
+                document.querySelectorAll('.module__list-card.cp').forEach(el => el.classList.add('cp_on')); 
+            },
+            onReverseComplete: () => { 
+                resetClasses(); 
+                document.querySelectorAll('.module__list-card.sp').forEach(el => el.classList.add('sp_on')); 
+            }
+        })
+        .to({}, { duration: 1 })
+        .to({}, {
+            duration: 1,
+            onStart: () => { 
+                resetClasses(); 
+                document.querySelectorAll('.module__list-card.rc').forEach(el => el.classList.add('rc_on')); 
+            },
+            onReverseComplete: () => { 
+                resetClasses(); 
+                document.querySelectorAll('.module__list-card.cp').forEach(el => el.classList.add('cp_on')); 
+            }
+        })
+        .to({}, { duration: 1 });
+    
+    // --- cont08 섹션 ---
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".cont08",
+            start: "top top",
+            end: "bottom bottom",
+            scrub: 1,
+            pin: ".cont08 .pin-inner",
+        }
+    })
+    .fromTo(".cont08__title", 
+        { 
+            opacity: 0,
+            x: "-50%",
+        }, 
+        { 
+            opacity: 1,
+            x: 0,
+            left: "50%",
+            xPercent: -50,
+            ease: "power1.in",
+        }
+    );
+
+    // --- cont10 섹션 (아코디언) ---
+    const accordionItems = document.querySelectorAll('.accordion__item');
+
+    accordionItems.forEach(item => {
+        const header = item.querySelector('.accordion__header');
+
+        header.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+            accordionItems.forEach(otherItem => {
+                otherItem.classList.remove('active');
+                otherItem.querySelector('.accordion__content').style.maxHeight = null;
+            });
+            if (!isActive) {
+                item.classList.add('active');
+                const content = item.querySelector('.accordion__content');
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        });
+    });
+    if (accordionItems.length > 0) {
+        accordionItems[0].classList.add('active');
+        const firstContent = accordionItems[0].querySelector('.accordion__content');
+        firstContent.style.maxHeight = firstContent.scrollHeight + "px";
+    }
+    const track = document.querySelector('.cont11 .slide-track');
 
 
 
