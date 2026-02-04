@@ -42,6 +42,31 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // scroll
+    const scrollbarWrapper = document.querySelector('.fake-scrollbar');
+    const scrollbarThumb = document.querySelector('.fake-scrollbar__thumb');
+    let scrollTimer;
+
+    function updateScrollbar() {
+        const contentHeight = document.body.scrollHeight;
+        const viewportHeight = window.innerHeight;
+        const scrollTop = window.scrollY;
+        const thumbHeight = (viewportHeight / contentHeight) * 100;
+        scrollbarThumb.style.height = `${thumbHeight}%`;
+        const thumbTop = (scrollTop / contentHeight) * 100;
+        scrollbarThumb.style.top = `${thumbTop}%`;
+    }
+    window.addEventListener('scroll', function() {
+        updateScrollbar();
+        scrollbarWrapper.classList.add('is-scrolling');
+        clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(function() {
+            scrollbarWrapper.classList.remove('is-scrolling');
+        }, 1500);
+    });
+    window.addEventListener('resize', updateScrollbar);
+    updateScrollbar();
+
 
     gsap.registerPlugin(TextPlugin, ScrollTrigger);
 
