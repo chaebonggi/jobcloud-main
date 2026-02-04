@@ -1,44 +1,11 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; -ms-overflow-style: none; scrollbar-width: none;}
         body { font-family: 'Pretendard', sans-serif; background-color: #0a0e27; color: #ffffff; overflow-x: hidden; }
-        body::-webkit-scrollbar {
-            display: none;
-        }
+        body::-webkit-scrollbar {display: none;}
+        html::-webkit-scrollbar {display: none;}
 
-        html::-webkit-scrollbar {
-            display: none;
-        }
 
-        .fake-scrollbar {
-            position: fixed;
-            top: 0;
-            right: 0;
-            width: 15px;
-            height: 100%;
-            background: transparent;
-            z-index: 2000;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.5s, visibility 0.5s;
-            pointer-events: none;
-        }
-
-        .fake-scrollbar.is-scrolling {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .fake-scrollbar__thumb {
-            position: absolute;
-            left: 4px;
-            width: 7px;
-            background-color: rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-            box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
-        }
-
-        body.no-scroll {overflow: hidden;}
-        
+        body.no-scroll {overflow: hidden;}        
         .inner { max-width: 1920px; width: 100%; margin: 0 auto; padding: 0 20px; }
 
         .header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; transition: transform 0.4s ease-out, background-color 0.4s ease-out, opacity 1.2s ease-in-out, visibility 1.2s ease-in-out; visibility: hidden; opacity: 0;} 
@@ -81,6 +48,39 @@
             .header.is-menu-open .header__hamburger span:nth-child(2) { opacity: 0; } 
             .header.is-menu-open .header__hamburger span:nth-child(3) { transform: translateY(-8.5px) rotate(-45deg); } 
             .header.is-menu-open .header__hamburger span { background-color: #fff; } 
+        }
+
+        .fake-scrollbar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 15px;
+            height: 100%;
+            background: transparent;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s, visibility 0.5s;
+            pointer-events: none;
+        }
+
+        .fake-scrollbar.is-scrolling {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .fake-scrollbar__thumb {
+            position: absolute;
+            left: 4px;
+            width: 7px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+        }
+        @media (max-width: 1024px) {
+            .fake-scrollbar {
+                display: none !important;
+            }
         }
 
         @media (max-width: 768px) {
