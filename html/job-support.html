@@ -3,138 +3,221 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>역량강화 솔루션 상세페이지 기획안</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Lucide Icons CDN -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=JetBrains+Mono&display=swap');
-        
-        :root {
-            --brand-primary: #0F172A;
-            --brand-accent: #10B981;
-        }
-
-        body {
-            font-family: 'Inter', 'Noto Sans KR', sans-serif;
-            background-color: #f8fafc;
-            color: #0f172a;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        .font-mono { font-family: 'JetBrains Mono', monospace; }
-        .bg-brand-primary { background-color: var(--brand-primary); }
-        .text-brand-accent { color: var(--brand-accent); }
-        .bg-brand-accent { background-color: var(--brand-accent); }
-        .border-brand-accent { border-color: var(--brand-accent); }
-
-        .card-hover {
-            transition: all 0.3s ease;
-            border: 1px solid #e2e8f0;
-            background-color: #ffffff;
-        }
-        .card-hover:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            border-color: rgba(16, 185, 129, 0.2);
-        }
-
-        /* Modal Animation */
-        #serviceModal {
-            display: none;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        #serviceModal.active {
-            display: flex;
-            opacity: 1;
-        }
-        .modal-content {
-            transform: translateY(20px);
-            transition: transform 0.3s ease;
-        }
-        #serviceModal.active .modal-content {
-            transform: translateY(0);
-        }
-
-        /* Custom Scrollbar */
-        .custom-scroll::-webkit-scrollbar { width: 6px; }
-        .custom-scroll::-webkit-scrollbar-track { background: #f1f5f9; }
-        .custom-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
-    </style>
+    <title>잡클라우드-역량강화 솔루션</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- <script src="./js/main.js"></script> -->
+     <script src="./js/main_test.js"></script>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="./css/style.css">
+    
 </head>
 <body>
 
-    <!-- Header / Hero -->
-    <header class="bg-brand-primary text-white py-24 px-6 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-20 pointer-events-none">
-            <div class="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] rounded-full bg-brand-accent blur-[120px]"></div>
-            <div class="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] rounded-full bg-blue-500 blur-[100px]"></div>
+    <header class="header">
+        <div class="inner">
+            <div class="header__wrap">
+                <h1 class="header__logo">
+                    <a href="#">
+                        <img src="./images/logo_on.png" alt="Jobcloud Logo" class="logo-on">
+                        <img src="./images/logo_off.png" alt="Jobcloud Logo" class="logo-off">
+                    </a>
+                </h1>
+                <nav class="header__nav--pc">
+                    <a href="#">홈</a>
+                    <a href="#">취업지원 솔루션</a>
+                    <a href="#">역량개발 솔루션</a>
+                    <a href="#">채용관리 솔루션</a>
+                </nav>
+                <div class="header__utils">
+                    <a href="#" class="btn-contact">문의하기</a>
+                </div>
+                <button class="header__hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
-
-        <div class="max-w-6xl mx-auto relative z-10 text-center">
-            <h2 class="text-brand-accent font-bold tracking-[0.2em] uppercase text-sm mb-4">역량강화 솔루션</h2>
-            <h1 class="text-4xl md:text-6xl font-bold mb-8 leading-[1.15] tracking-tight">
-                데이터 기반의 정밀 진단으로 보완책을 제시하고,<br>
-                <span class="text-brand-accent">구직자의 경쟁력</span>을 압도적으로 높이세요
-            </h1>
-            <p class="text-slate-300 text-lg max-w-3xl mx-auto leading-relaxed font-light">
-                전문가의 밀착 케어와 체계적인 LMS(학습관리)가 결합된<br>
-                고도화된 인재 양성 시스템을 통해 기업의 인재 경쟁력을 확보하십시오.
-            </p>
+        <div class="header__nav--mobile">
+            <a href="#">Service</a>
+            <a href="#">Solutions</a>
+            <a href="#">Portfolio</a>
+            <a href="#">Partners</a>
+            <a href="#">Contact</a>
         </div>
     </header>
-
-    <main class="max-w-6xl mx-auto py-20 px-6">
+    <div class="fake-scrollbar">
+        <div class="fake-scrollbar__thumb"></div>
+    </div>
+    <style>
+        body {
+            background-color: #f8fafc;
+        }      
+        .header {
+            background-color: #0F172A;
+        }
+        .sub-main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 500px;
+            margin-top: 80px;
+            background-color: #0F172A;
+            text-align: center;
+        }
+        .sub-main h2 {
+            margin-bottom: 10px;
+            color: #10B981;
+            font-size: 18px;
+            letter-spacing: 0.2em;
+        }
+        .sub-main h3 {
+            margin-bottom: 40px;
+            color: #fff;
+            font-size: 58px;
+            font-weight: 800;
+            line-height: 1.3;
+        }
+        .sub-main .txt {
+            font-size: 20px;
+            font-weight: 100;
+            line-height: 1.6;
+        }
+    </style>
+    <section class="sub-main">
+        <h2>역량강화 솔루션</h2>
+        <h3>데이터 기반의 정밀 진단으로 보완책을 제시하고,<br> 구직자의 경쟁력을 압도적으로 높이세요</h3>
+        <p class="txt">전문가의 밀착 케어와 체계적인 LMS(학습관리)가 결합된<br> 고도화된 인재 양성 시스템을 통해 기업의 인재 경쟁력을 확보하십시오.</p>
+    </section>
+    <main class="container">
         <!-- Core Services Section -->
-        <section class="mb-32">
-            <div class="flex justify-between items-end mb-12">
-                <div>
-                    <h3 class="text-xs font-bold text-brand-accent uppercase tracking-[0.3em] mb-2">Core Services</h3>
-                    <h2 class="text-3xl font-bold text-slate-900">핵심 서비스 6종</h2>
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-title-group">
+                    <h3>Module</h3>
+                    <h2>주요 서비스 구성</h2>
                 </div>
-                <p class="text-slate-400 text-sm hidden md:block">카드를 클릭하여 상세 기획안을 확인하세요.</p>
             </div>
 
-            <div id="serviceGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- 서비스 카드가 JS로 동적 생성되거나 JSP에서 루프로 생성될 자리 -->
+            <div class="card-grid">
+                <!-- 서비스 카드 1 -->
+                <div class="service-card" onclick="openModal('modal-consulting')">
+                    <div class="card-icon">
+                        <span class="material-symbols-outlined">support_agent</span>
+                    </div>
+                    <div class="tag-wrap">
+                        <span class="card-tag">취업지원</span>
+                    </div>
+                    <h4 class="card-title">온라인 취업상담</h4>
+                    <p class="card-description">단순 상담을 넘어, 진단 결과와 학습 이력을 토대로 한 '역량 피드백' 중심 설계</p>
+                </div>
+
+                <!-- 서비스 카드 2 -->
+                <div class="service-card" onclick="openModal('modal-diagnosis')">
+                    <div class="card-icon">
+                       <span class="material-symbols-outlined">fact_check</span>
+                    </div>
+                    <div class="tag-wrap">
+                        <span class="card-tag">취업지원</span>
+                        <span class="card-tag">역량강화</span>
+                    </div>
+                    <h4 class="card-title">취업진단검사</h4>
+                    <p class="card-description">입과 시(Pre)와 수료 시(Post) 검사를 통해 역량 성장치(KPI) 시각화</p>
+                </div>
+
+                <!-- 서비스 카드 3 -->
+                <div class="service-card" onclick="openModal('modal-lms')">
+                    <div class="card-icon">
+                        <span class="material-symbols-outlined">play_lesson</span>
+                    </div>
+                    <div class="tag-wrap">
+                        <span class="card-tag">취업지원</span>
+                        <span class="card-tag">역량강화</span>
+                    </div>
+                    <h4 class="card-title">온라인 교육(LMS)</h4>
+                    <p class="card-description">기관만의 커스텀 커리큘럼 구성 가능 및 학습 진도율 실시간 관리</p>
+                </div>
+
+                <!-- 서비스 카드 4 -->
+                <div class="service-card" onclick="openModal('modal-recommendation')">
+                    <div class="card-icon">
+                        <span class="material-symbols-outlined">auto_awesome_mosaic</span>
+                    </div>
+                    <div class="tag-wrap">
+                        <span class="card-tag">취업지원</span>
+                        <span class="card-tag">역량강화</span>
+                    </div>
+                    <h4 class="card-title">개인화 추천</h4>
+                    <p class="card-description">진단 점수가 낮은 역량을 보완할 수 있는 교육 콘텐츠 및 상담사 자동 매칭</p>
+                </div>
+
+                <!-- 서비스 카드 5 -->
+                <div class="service-card" onclick="openModal('modal-contents')">
+                    <div class="card-icon">
+                        <span class="material-symbols-outlined">article_person</span>
+                    </div>
+                    <div class="tag-wrap">
+                        <span class="card-tag">취업지원</span>
+                        <span class="card-tag">역량강화</span>
+                    </div>
+                    <h4 class="card-title">취업 콘텐츠 관리</h4>
+                    <p class="card-description">직무별 실무 가이드, 최신 산업 트렌드 등 역량 강화에 특화된 DB 제공</p>
+                </div>
+
+                <!-- 서비스 카드 6 -->
+                <div class="service-card" onclick="openModal('modal-chatbot')">
+                    <div class="card-icon">
+                        <span class="material-symbols-outlined">smart_toy</span>
+                    </div>
+                    <div class="tag-wrap">
+                        <span class="card-tag">취업지원</span>
+                        <span class="card-tag">역량강화</span>
+                    </div>
+                    <h4 class="card-title">챗봇 시스템</h4>
+                    <p class="card-description">상담 예약 관리 및 학습 Q&A 대응으로 상담사 업무 효율화</p>
+                </div>
             </div>
         </section>
 
         <!-- Management Points Section -->
         <section>
-            <div class="bg-white rounded-[40px] p-12 lg:p-20 border border-slate-200 shadow-sm overflow-hidden relative">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-slate-50 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+            <div class="admin-section">
+                <div class="admin-bg"></div>
                 
-                <div class="relative z-10">
-                    <div class="mb-16 text-center">
-                        <h3 class="text-xs font-bold text-brand-accent uppercase tracking-[0.3em] mb-2">Admin Control</h3>
-                        <h2 class="text-3xl font-bold text-slate-900">관리 포인트 3종</h2>
-                        <p class="mt-4 text-slate-500">운영 효율을 극대화하는 관리자 전용 시스템 아키텍처</p>
+                <div class="admin-content">
+                    <div class="admin-header">
+                        <h3>Admin Control</h3>
+                        <h2>관리 포인트 3종</h2>
+                        <p>운영 효율을 극대화하는 관리자 전용 시스템 아키텍처</p>
                     </div>
 
-                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-                        <div class="flex flex-col items-center text-center">
-                            <div class="w-16 h-16 rounded-full bg-slate-50 flex items-center justify-center text-brand-primary mb-6 border border-slate-100">
-                                <i data-lucide="layout-dashboard" class="w-7 h-7"></i>
+                    <div class="admin-grid">
+                        <div class="admin-item">
+                            <div class="admin-icon">
+                                <span class="material-symbols-outlined">monitoring</span>
                             </div>
-                            <h4 class="text-lg font-bold text-slate-900 mb-3">역량 성장 대시보드</h4>
-                            <p class="text-sm text-slate-500 leading-relaxed max-w-[280px]">개인 및 그룹별 역량 변화 추이를 한눈에 파악하고 성성과를 시각화하는 통합 관제 센터</p>
+                            <h4>역량 성장 대시보드</h4>
+                            <p>개인 및 그룹별 역량 변화 추이를 한눈에 파악하고 성성과를 시각화하는 통합 관제 센터</p>
                         </div>
-                        <div class="flex flex-col items-center text-center">
-                            <div class="w-16 h-16 rounded-full bg-slate-50 flex items-center justify-center text-brand-primary mb-6 border border-slate-100">
-                                <i data-lucide="users" class="w-7 h-7"></i>
+                        <div class="admin-item">
+                            <div class="admin-icon">
+                                <span class="material-symbols-outlined">manage_accounts</span>
                             </div>
-                            <h4 class="text-lg font-bold text-slate-900 mb-3">상담 관리 시스템</h4>
-                            <p class="text-sm text-slate-500 leading-relaxed max-w-[280px]">상담 이력, 만족도, 피드백 데이터를 체계적으로 기록하고 상담 품질을 모니터링하는 전용 툴</p>
+                            <h4>상담 관리 시스템</h4>
+                            <p>상담 이력, 만족도, 피드백 데이터를 체계적으로 기록하고 상담 품질을 모니터링하는 전용 툴</p>
                         </div>
-                        <div class="flex flex-col items-center text-center">
-                            <div class="w-16 h-16 rounded-full bg-slate-50 flex items-center justify-center text-brand-primary mb-6 border border-slate-100">
-                                <i data-lucide="server" class="w-7 h-7"></i>
+                        <div class="admin-item">
+                            <div class="admin-icon">
+                                <span class="material-symbols-outlined">backup</span>
                             </div>
-                            <h4 class="text-lg font-bold text-slate-900 mb-3">고용정보 데이터 통합 관리</h4>
-                            <p class="text-sm text-slate-500 leading-relaxed max-w-[280px]">지원자 정보, 교육 이수 현황, 취업 성공 데이터를 통합하여 고용 정책 수립의 근거 데이터 제공</p>
+                            <h4>고용정보 데이터 통합 관리</h4>
+                            <p>지원자 정보, 교육 이수 현황, 취업 성공 데이터를 통합하여 고용 정책 수립의 근거 데이터 제공</p>
                         </div>
                     </div>
                 </div>
@@ -143,271 +226,133 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-brand-primary text-white py-16 px-6">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
-            <div class="text-center md:text-left">
-                <div class="flex items-center gap-2 mb-4 justify-center md:justify-start">
-                    <div class="w-8 h-8 bg-brand-accent rounded-lg flex items-center justify-center text-brand-primary font-bold text-xl">S</div>
-                    <span class="font-bold text-xl tracking-tight">Solution Planner Pro</span>
+    <section class="partnership">
+        <div class="partnership__content">
+            <h2>JOBCLOUD</h2>
+            <p>제휴, 도입을 희망하시는 경우 간편하게 문의해 보세요.</p>
+            <a href="#" class="partnership__content-button">제휴 문의하기</a>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="inner">
+            <div class="footer__top">
+                <div class="footer__logo">
+                    JOBCLOUD
                 </div>
-                <p class="text-slate-400 text-sm max-w-sm">
-                    기업의 미래 가치를 높이는 인재 양성 파트너.<br>
-                    데이터로 증명하고 결과로 설득합니다.
-                </p>
+                <div class="footer__links">
+                    <a href="#">회사소개</a>
+                    <a href="#">서비스</a>
+                    <a href="#">문의하기</a>
+                </div>
             </div>
-            
-            <div class="flex flex-col items-center md:items-end gap-6">
-                <p class="text-slate-300 font-medium">지금 바로 솔루션 도입 상담을 시작하세요</p>
-                <button class="px-10 py-4 bg-brand-accent text-brand-primary rounded-full font-bold hover:scale-105 transition-transform flex items-center gap-2 shadow-lg">
-                    도입 문의하기 <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                </button>
+            <div class="footer__bottom">
+                <div class="footer__info">
+                    <span>잡클라우드</span>
+                </div>
+                <p class="footer__copyright">
+                    &copy; 2026 JOBCLOUD Inc. All rights reserved.
+                </p>
             </div>
         </div>
     </footer>
 
-    <!-- Layer Popup Modal -->
-    <div id="serviceModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
-        <div class="modal-content bg-white rounded-3xl shadow-2xl w-full max-w-2xl overflow-hidden">
-            <!-- Modal Header -->
-            <div class="relative p-8 border-b border-slate-100 bg-slate-50">
-                <button id="closeModal" class="absolute top-6 right-6 p-2 rounded-full hover:bg-slate-200 text-slate-400 transition-colors">
-                    <i data-lucide="x" class="w-5 h-5"></i>
+    <!-- Modal 1: 온라인 취업상담 -->
+    <div id="modal-consulting" class="service-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close-btn" onclick="closeModal('modal-consulting')">
+                    <span class="material-symbols-outlined">close</span>
                 </button>
-                <div class="flex items-center gap-4 mb-4">
-                    <div id="modalIcon" class="p-3 rounded-2xl bg-brand-primary text-white">
-                        <!-- Icon injected by JS -->
+                <div class="modal-header-top">
+                    <div class="modal-icon">
+                        <span class="material-symbols-outlined">support_agent</span>
                     </div>
                     <div>
-                        <span id="modalTag" class="text-[10px] font-bold text-brand-accent uppercase tracking-widest px-2 py-0.5 rounded-md bg-emerald-50 border border-emerald-100">
-                            TAG
-                        </span>
-                        <h2 id="modalTitle" class="text-2xl font-bold text-slate-900 mt-1">Service Title</h2>
+                        <div>
+                            <span class="modal-tag">취업지원</span>
+                        </div>
+                        <h2 class="modal-title">온라인 취업상담</h2>
                     </div>
                 </div>
-                <p id="modalDesc" class="text-slate-500 font-medium">Service Description</p>
+                <p class="modal-description">솔루션 내 역할 / 밀착 케어의 핵심</p>
             </div>
 
-            <!-- Modal Body -->
-            <div class="p-8 space-y-8 max-h-[60vh] overflow-y-auto custom-scroll">
-                <section>
-                    <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3 flex items-center gap-2">
-                        <i data-lucide="trending-up" class="w-4 h-4"></i> [솔루션 특징]
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h4 class="modal-section-title">
+                       <span class="material-symbols-outlined">verified</span> [솔루션 특징]
                     </h4>
-                    <p id="modalFeatures" class="text-slate-700 leading-relaxed bg-slate-50 p-4 rounded-xl border border-slate-100">
-                        Features content...
-                    </p>
-                </section>
+                    <p class="feature-box">전문가 밀착 케어를 통한 개인별 맞춤형 취업 전략 수립 및 실시간 피드백 시스템</p>
+                </div>
 
-                <section>
-                    <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3 flex items-center gap-2">
-                        <i data-lucide="check-circle-2" class="w-4 h-4"></i> [주요 서비스 구성]
+                <div class="modal-section">
+                    <h4 class="modal-section-title">
+                        <span class="material-symbols-outlined">tile_small</span> [주요 서비스 구성]
                     </h4>
-                    <div id="modalComposition" class="grid gap-4">
-                        <!-- Composition items injected by JS -->
+                    <div class="composition-list">
+                        <div class="composition-item">
+                            <div class="composition-bar"></div>
+                            <div class="composition-content">
+                                <h5>1:1 역량 피드백</h5>
+                                <p>진단 검사 결과를 바탕으로 한 약점 보완 및 강점 극대화 전략 수립</p>
+                            </div>
+                        </div>
+                        <div class="composition-item">
+                            <div class="composition-bar"></div>
+                            <div class="composition-content">
+                                <h5>실전 모의 면접</h5>
+                                <p>화상 시스템을 활용한 직무별 전문가의 압박 면접 및 태도 교정</p>
+                            </div>
+                        </div>
                     </div>
-                </section>
+                </div>
 
-                <section>
-                    <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3 flex items-center gap-2">
-                        <i data-lucide="award" class="w-4 h-4"></i> [도입 기대효과]
+                <div class="modal-section">
+                    <h4 class="modal-section-title">
+                        <span class="material-symbols-outlined">trending_up</span> [도입 기대효과]
                     </h4>
-                    <p id="modalEffects" class="text-slate-700 leading-relaxed">
-                        Effects content...
-                    </p>
-                </section>
+                    <p class="effects-text">지원자의 심리적 안정감 확보 및 구체적인 취업 실행력 강화</p>
+                </div>
 
-                <section class="bg-brand-primary p-6 rounded-2xl text-white flex justify-between items-center">
+                <div class="kpi-box">
                     <div>
-                        <h4 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">[성과 지표 (KPI)]</h4>
-                        <p id="modalKpiLabel" class="text-lg font-bold">KPI Label</p>
+                        <div class="kpi-label">[성과 지표 (KPI)]</div>
+                        <div class="kpi-title">상담 후 면접 합격률</div>
                     </div>
-                    <div id="modalKpiValue" class="text-3xl font-bold text-brand-accent font-mono">
-                        VALUE
-                    </div>
-                </section>
+                    <div class="kpi-value">35% 향상</div>
+                </div>
             </div>
         </div>
     </div>
 
+    
+
     <script>
-        // --- Data ---
-        const SERVICES = [
-            {
-                id: 'consulting',
-                title: '온라인 취업상담',
-                tag: '주인공',
-                description: '밀착 케어의 핵심 / 진단 기반 역량 피드백 설계',
-                icon: 'message-square',
-                details: {
-                    features: '전문가 밀착 케어를 통한 개인별 맞춤형 취업 전략 수립 및 실시간 피드백 시스템',
-                    composition: [
-                        { title: '1:1 역량 피드백', content: '진단 검사 결과를 바탕으로 한 약점 보완 및 강점 극대화 전략 수립' },
-                        { title: '실전 모의 면접', content: '화상 시스템을 활용한 직무별 전문가의 압박 면접 및 태도 교정' }
-                    ],
-                    effects: '지원자의 심리적 안정감 확보 및 구체적인 취업 실행력 강화',
-                    kpi: { label: '상담 후 면접 합격률', value: '35% 향상' }
-                }
-            },
-            {
-                id: 'diagnosis',
-                title: '취업진단검사',
-                tag: '시작점',
-                description: '성장 지표 측정 / Pre-Post 검사로 성장치 시각화',
-                icon: 'line-chart',
-                details: {
-                    features: '과학적 역량 측정 도구를 활용하여 교육 전후의 변화를 정량적으로 추적',
-                    composition: [
-                        { title: '역량 정밀 진단', content: '인지능력, 인성, 직무 역량을 다각도로 측정하는 표준화된 검사' },
-                        { title: '성장 지표 시각화', content: 'Pre-Post 비교 리포트를 통해 교육 효과를 데이터로 입증' }
-                    ],
-                    effects: '객관적인 자기 객관화 및 데이터 기반의 맞춤형 학습 경로 설정',
-                    kpi: { label: '역량 성장 지수(Avg. Growth)', value: '22% 증가' }
-                }
-            },
-            {
-                id: 'lms',
-                title: '온라인 교육(LMS)',
-                tag: '인프라',
-                description: '학습 환경 제공 / 커스텀 커리큘럼 및 진도 관리',
-                icon: 'play-circle',
-                details: {
-                    features: '언제 어디서나 학습 가능한 클라우드 기반의 통합 학습 관리 시스템',
-                    composition: [
-                        { title: '커스텀 커리큘럼', content: '직무별, 수준별 단계적 학습 로드맵 및 맞춤형 강의 배정' },
-                        { title: '실시간 진도 관리', content: '학습 수료율 트래킹 및 미이수자 대상 자동 독려 시스템' }
-                    ],
-                    effects: '대규모 인원의 효율적 교육 운영 및 표준화된 교육 품질 유지',
-                    kpi: { label: '평균 교육 수료율', value: '95% 달성' }
-                }
-            },
-            {
-                id: 'recommendation',
-                title: '개인화 추천',
-                tag: '가이드',
-                description: '맞춤형 경로 제시 / 교육 및 상담사 자동 매칭',
-                icon: 'target',
-                details: {
-                    features: 'AI 매칭 엔진을 활용하여 지원자에게 가장 적합한 자원(공고, 교육, 상담) 연결',
-                    composition: [
-                        { title: '직무 맞춤형 공고 추천', content: '역량 데이터와 기업 요구사항을 분석하여 합격 가능성 높은 공고 매칭' },
-                        { title: '상담사 최적 매칭', content: '지원자의 성향과 고민 분야에 특화된 전문가를 알고리즘으로 연결' }
-                    ],
-                    effects: '정보 탐색 비용 감소 및 구직 활동의 효율성 극대화',
-                    kpi: { label: '추천 공고 클릭률(CTR)', value: '45% 증가' }
-                }
-            },
-            {
-                id: 'contents',
-                title: '취업 콘텐츠 관리',
-                tag: '자원',
-                description: '전문 자료실 / 직무/산업 트렌드 DB 제공',
-                icon: 'database',
-                details: {
-                    features: '최신 채용 트렌드와 직무 전문 지식을 집약한 방대한 지식 라이브러리',
-                    composition: [
-                        { title: '산업/직무 트렌드 DB', content: '매주 업데이트되는 최신 시장 분석 리포트 및 직무 가이드' },
-                        { title: '합격 사례 아카이브', content: '실제 합격자의 자기소개서 및 면접 복기 데이터 큐레이션' }
-                    ],
-                    effects: '정보 비대칭 해소 및 전략적 취업 준비를 위한 양질의 소스 제공',
-                    kpi: { label: '콘텐츠 활용도(다운로드)', value: '월 1,200건+' }
-                }
-            },
-            {
-                id: 'chatbot',
-                title: '챗봇 시스템',
-                tag: '비서',
-                description: '상담/학습 서포트 / 상담 예약 및 Q&A 자동화',
-                icon: 'bot',
-                details: {
-                    features: '24/7 끊김 없는 사용자 지원을 통해 운영 효율성과 편의성 동시 확보',
-                    composition: [
-                        { title: '상담 예약 자동화', content: '상담사 스케줄과 연동된 실시간 예약 및 알림톡 발송' },
-                        { title: '지능형 FAQ 응대', content: '반복되는 문의에 대한 즉각적인 답변 및 학습 가이드 제공' }
-                    ],
-                    effects: '운영 인력의 단순 업무 리소스 80% 절감 및 사용자 만족도 제고',
-                    kpi: { label: '단순 문의 자동 응대율', value: '82% 기록' }
-                }
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                lucide.createIcons();
             }
-        ];
-
-        // --- Logic ---
-        const serviceGrid = document.getElementById('serviceGrid');
-        const modal = document.getElementById('serviceModal');
-        const closeModal = document.getElementById('closeModal');
-
-        // Render Cards
-        function renderCards() {
-            SERVICES.forEach(service => {
-                const card = document.createElement('div');
-                card.className = 'card-hover p-8 rounded-3xl cursor-pointer group relative overflow-hidden';
-                card.innerHTML = `
-                    <div class="absolute top-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                        <i data-lucide="arrow-right" class="w-4 h-4 text-brand-accent"></i>
-                    </div>
-                    <div class="mb-6 inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-slate-100 text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition-colors">
-                        <i data-lucide="${service.icon}" class="w-6 h-6"></i>
-                    </div>
-                    <div class="mb-4">
-                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest border border-slate-200 px-2 py-0.5 rounded-md mb-2 inline-block">
-                            ${service.tag}
-                        </span>
-                        <h4 class="text-xl font-bold text-slate-900">${service.title}</h4>
-                    </div>
-                    <p class="text-sm text-slate-500 leading-relaxed">${service.description}</p>
-                `;
-                card.onclick = () => openModal(service);
-                serviceGrid.appendChild(card);
-            });
-            lucide.createIcons(); // Initialize icons for dynamic content
         }
 
-        // Open Modal
-        function openModal(service) {
-            document.getElementById('modalIcon').innerHTML = `<i data-lucide="${service.icon}" class="w-6 h-6"></i>`;
-            document.getElementById('modalTag').innerText = service.tag;
-            document.getElementById('modalTitle').innerText = service.title;
-            document.getElementById('modalDesc').innerText = service.description;
-            document.getElementById('modalFeatures').innerText = service.details.features;
-            document.getElementById('modalEffects').innerText = service.details.effects;
-            document.getElementById('modalKpiLabel').innerText = service.details.kpi.label;
-            document.getElementById('modalKpiValue').innerText = service.details.kpi.value;
-
-            const compositionContainer = document.getElementById('modalComposition');
-            compositionContainer.innerHTML = '';
-            service.details.composition.forEach(item => {
-                const div = document.createElement('div');
-                div.className = 'flex gap-4 p-4 rounded-xl border border-slate-100 hover:border-brand-accent/30 transition-colors';
-                div.innerHTML = `
-                    <div class="w-1 h-full bg-brand-accent rounded-full"></div>
-                    <div>
-                        <p class="font-bold text-slate-900 text-sm mb-1">${item.title}</p>
-                        <p class="text-sm text-slate-500">${item.content}</p>
-                    </div>
-                `;
-                compositionContainer.appendChild(div);
-            });
-
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevent scroll
-            lucide.createIcons();
-        }
-
-        // Close Modal
-        closeModal.onclick = () => {
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
-        };
-
-        window.onclick = (event) => {
-            if (event.target == modal) {
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
                 modal.classList.remove('active');
                 document.body.style.overflow = '';
             }
-        };
+        }
 
-        // Init
+        document.addEventListener('click', (event) => {
+            if (event.target.classList.contains('service-modal')) {
+                event.target.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
         document.addEventListener('DOMContentLoaded', () => {
-            renderCards();
             lucide.createIcons();
         });
     </script>
