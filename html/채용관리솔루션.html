@@ -3,96 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>잡클라우드-역량강화 솔루션</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <!-- <script src="./js/main.js"></script> -->
-     <script src="./js/main_test.js"></script>
-    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <title>잡클라우드-채용관리솔루션</title>
+    <!-- Google Material Symbols -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="./css/font.css">
     <link rel="stylesheet" href="./css/style.css">
-    
 </head>
-<body>
+<body class="sub-page">
 
-    <header class="header">
-        <div class="inner">
-            <div class="header__wrap">
-                <h1 class="header__logo">
-                    <a href="#">
-                        <img src="./images/logo_on.png" alt="Jobcloud Logo" class="logo-on">
-                        <img src="./images/logo_off.png" alt="Jobcloud Logo" class="logo-off">
-                    </a>
-                </h1>
-                <nav class="header__nav--pc">
-                    <a href="#">홈</a>
-                    <a href="#">취업지원 솔루션</a>
-                    <a href="#">역량개발 솔루션</a>
-                    <a href="#">채용관리 솔루션</a>
-                </nav>
-                <div class="header__utils">
-                    <a href="#" class="btn-contact">문의하기</a>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <h1 class="navbar__logo">
+                <a href="./잡클라우드-메인_ver02.html">
+                    <!-- <img src="./images/ver02/logo_on.png" alt="잡클라우드"> -->
+                    <img src="./images/ver02/logo_ver2.png" alt="잡클라우드">
+                </a>
+            </h1>
+            
+            <div class="nav-links">
+                <a href="./잡클라우드-메인_ver02.html" class="nav-link">홈</a>
+                <a href="#" class="nav-link">회사소개</a>
+                
+                <div class="solutions-dropdown">
+                    <button class="solutions-dropdown-btn">
+                        솔루션
+                        <span class="material-symbols-outlined">expand_more</span>
+                    </button>
+                    <div class="solutions-dropdown-menu">
+                        <a href="./역량강화솔루션.html" class="solutions-dropdown-item">역량강화 솔루션</a>
+                        <a href="./취업지원솔루션.html" class="solutions-dropdown-item">취업지원 솔루션</a>
+                        <a href="./채용관리솔루션.html" class="solutions-dropdown-item">채용지원 솔루션</a>
+                        <a href="./학사관리솔루션.html" class="solutions-dropdown-item">학사관리 솔루션</a>
+                    </div>
                 </div>
-                <button class="header__hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+
+                <a href="#cases" class="nav-link">고객사례</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+            </div>
+
+            <div class="nav-actions">
+                <button class="btn btn-dark">제휴 신청</button>
+                <button id="mobile-menu-btn">
+                    <span class="material-symbols-outlined">menu</span>
                 </button>
             </div>
         </div>
-        <div class="header__nav--mobile">
-            <a href="#">Service</a>
-            <a href="#">Solutions</a>
-            <a href="#">Portfolio</a>
-            <a href="#">Partners</a>
-            <a href="#">Contact</a>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu">
+        <div class="mobile-menu-header">
+            <h1 class="mobile__logo">
+                <a href="./잡클라우드-메인_ver02.html">
+                    <img src="./images/ver02/logo_ver2.png" alt="잡클라우드">
+                </a>
+            </h1>
+            <button id="mobile-menu-close">
+                <span class="material-symbols-outlined">close</span>
+            </button>
         </div>
-    </header>
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-section">
+                <p class="mobile-menu-section-title">Menu</p>
+                <a href="index.html" class="mobile-menu-link">홈</a>
+                <a href="#" class="mobile-menu-link">회사소개</a>
+            </div>
+            <div class="mobile-menu-section">
+                <p class="mobile-menu-section-title">Solutions</p>
+                <a href="#" class="mobile-menu-link">역량강화 솔루션</a>
+                <a href="#" class="mobile-menu-link">취업지원 솔루션</a>
+                <a href="#" class="mobile-menu-link">채용지원 솔루션</a>
+                <a href="#" class="mobile-menu-link">학사관리 솔루션</a>
+            </div>
+            <div class="mobile-menu-section">
+                <p class="mobile-menu-section-title">Support</p>
+                <a href="#cases" class="mobile-menu-link">고객사례</a>
+                <a href="#faq" class="mobile-menu-link">FAQ</a>
+            </div>
+        </div>
+        <div class="mobile-menu-footer">
+            <button class="btn btn-dark btn-large" style="width: 100%;">제휴 신청하기</button>
+        </div>
+    </div>
     <div class="fake-scrollbar">
         <div class="fake-scrollbar__thumb"></div>
     </div>
-    <style>
-        body {
-            background-color: #f8fafc;
-        }      
-        .header {
-            background-color: #0F172A;
-        }
-        .sub-main {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 500px;
-            margin-top: 80px;
-            background-color: #0F172A;
-            text-align: center;
-        }
-        .sub-main h2 {
-            margin-bottom: 10px;
-            color: #10B981;
-            font-size: 18px;
-            letter-spacing: 0.2em;
-        }
-        .sub-main h3 {
-            margin-bottom: 40px;
-            color: #fff;
-            font-size: 58px;
-            font-weight: 800;
-            line-height: 1.3;
-        }
-        .sub-main .txt {
-            font-size: 20px;
-            font-weight: 100;
-            line-height: 1.6;
-        }
-    </style>
     <section class="sub-main">
-        <h2>역량강화 솔루션</h2>
-        <h3>데이터 기반의 정밀 진단으로 보완책을 제시하고,<br> 구직자의 경쟁력을 압도적으로 높이세요</h3>
-        <p class="txt">전문가의 밀착 케어와 체계적인 LMS(학습관리)가 결합된<br> 고도화된 인재 양성 시스템을 통해 기업의 인재 경쟁력을 확보하십시오.</p>
+        <h2>채용관리 솔루션</h2>
+        <h3>채용 업무의 복잡함은 줄이고 인재 매칭의 정교함을<br> 높이는 기업 전용 스마트 채용 솔루션을 도입하세요.</h3>
+        <p class="txt">AI 기반 인재 매칭과 화상 면접, 통합 프로세스 관리를<br> 통해 채용 효율을 극대화하는 올인원 채용 플랫폼.</p>
     </section>
     <main class="container">
         <!-- Core Services Section -->
@@ -223,9 +222,9 @@
                 </div>
             </div>
         </section>
+        
     </main>
 
-    <!-- Footer -->
     <section class="partnership">
         <div class="partnership__content">
             <h2>JOBCLOUD</h2>
@@ -233,25 +232,60 @@
             <a href="#" class="partnership__content-button">제휴 문의하기</a>
         </div>
     </section>
+
+    <!-- Footer -->
     <footer class="footer">
-        <div class="inner">
-            <div class="footer__top">
-                <div class="footer__logo">
-                    JOBCLOUD
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="footer-logo">
+                        <img src="./images/ver02/logo.png" alt="">
+                    </a>
+                    <p class="footer-desc">
+                        교육 데이터와 채용을 연결하는 No.1 데이터 통합 커리어 솔루션입니다.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><span class="material-symbols-outlined">share</span></a>
+                        <a href="#" class="social-link"><span class="material-symbols-outlined">public</span></a>
+                        <a href="#" class="social-link"><span class="material-symbols-outlined">chat</span></a>
+                    </div>
                 </div>
-                <div class="footer__links">
-                    <a href="#">회사소개</a>
-                    <a href="#">서비스</a>
-                    <a href="#">문의하기</a>
+
+                <div>
+                    <h4 class="footer-nav-title">Solution</h4>
+                    <ul class="footer-nav-list">
+                        <li><a href="#">역량강화 솔루션</a></li>
+                        <li><a href="#">취업지원 솔루션</a></li>
+                        <li><a href="#">채용지원 솔루션</a></li>
+                        <li><a href="#">학사관리 솔루션</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-nav-title">Company</h4>
+                    <ul class="footer-nav-list">
+                        <li><a href="#">회사소개</a></li>
+                        <li><a href="#">인재채용</a></li>
+                        <li><a href="#">기술블로그</a></li>
+                        <li><a href="#">보도자료</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-nav-title">Contact</h4>
+                    <ul class="footer-nav-list">
+                        <li><span class="material-symbols-outlined" style="font-size: 18px;">mail</span> contact@jobcloud.ai</li>
+                        <li><span class="material-symbols-outlined" style="font-size: 18px;">phone</span> 02-1234-5678</li>
+                    </ul>
                 </div>
             </div>
-            <div class="footer__bottom">
-                <div class="footer__info">
-                    <span>잡클라우드</span>
+            
+            <div class="footer-bottom">
+                <p>© 2026 Jobcloud Inc. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">이용약관</a>
+                    <a href="#" class="footer-legal-bold">개인정보처리방침</a>
                 </div>
-                <p class="footer__copyright">
-                    &copy; 2026 JOBCLOUD Inc. All rights reserved.
-                </p>
             </div>
         </div>
     </footer>
@@ -282,7 +316,20 @@
                     <h4 class="modal-section-title">
                        <span class="material-symbols-outlined">verified</span> [솔루션 특징]
                     </h4>
-                    <p class="feature-box">전문가 밀착 케어를 통한 개인별 맞춤형 취업 전략 수립 및 실시간 피드백 시스템</p>
+                    <ul class="feature-box">
+                        <li>
+                            <p><span>실전 환경</span> 최신 AI 전형 시스템 완벽 시뮬레이션</p>
+                        </li>
+                        <li>
+                            <p><span>잠재력 측정</span> 비언어적 표현 및 상황 대처 능력 정밀 분석</p>
+                        </li>
+                        <li>
+                            <p><span>신뢰 지표</span> 데이터 기반의 객관적 잠재 역량 평가</p>
+                        </li>
+                        <li>
+                            <p><span>부정행위 방지</span> 실시간 모니터링을 통한 검사 신뢰도 확보</p>
+                        </li>
+                    </ul>
                 </div>
 
                 <div class="modal-section">

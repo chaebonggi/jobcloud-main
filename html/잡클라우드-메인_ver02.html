@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jobcloud - 데이터 통합 커리어 솔루션</title>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <title>잡클라우드</title>
+    <!-- Google Material Symbols -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -12,28 +13,28 @@
 
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="container navbar-container">
-            <a href="index.html" class="logo">
-                <div class="logo-icon">
-                    <i data-lucide="refresh-cw"></i>
-                </div>
-                <span>Jobcloud</span>
-            </a>
+        <div class="navbar-container">
+            <h1 class="navbar__logo">
+                <a href="./잡클라우드-메인_ver02.html">
+                    <!-- <img src="./images/ver02/logo_on.png" alt="잡클라우드"> -->
+                    <img src="./images/ver02/logo_ver2.png" alt="잡클라우드">
+                </a>
+            </h1>
             
             <div class="nav-links">
-                <a href="index.html" class="nav-link">홈</a>
+                <a href="./잡클라우드-메인_ver02.html" class="nav-link">홈</a>
                 <a href="#" class="nav-link">회사소개</a>
                 
                 <div class="solutions-dropdown">
                     <button class="solutions-dropdown-btn">
                         솔루션
-                        <i data-lucide="chevron-down"></i>
+                        <span class="material-symbols-outlined">expand_more</span>
                     </button>
                     <div class="solutions-dropdown-menu">
-                        <a href="#" class="solutions-dropdown-item">역량강화 솔루션</a>
-                        <a href="#" class="solutions-dropdown-item">취업지원 솔루션</a>
-                        <a href="#" class="solutions-dropdown-item">채용지원 솔루션</a>
-                        <a href="#" class="solutions-dropdown-item">학사관리 솔루션</a>
+                        <a href="./역량강화솔루션.html" class="solutions-dropdown-item">역량강화 솔루션</a>
+                        <a href="./취업지원솔루션.html" class="solutions-dropdown-item">취업지원 솔루션</a>
+                        <a href="./채용관리솔루션.html" class="solutions-dropdown-item">채용지원 솔루션</a>
+                        <a href="./학사관리솔루션.html" class="solutions-dropdown-item">학사관리 솔루션</a>
                     </div>
                 </div>
 
@@ -42,9 +43,9 @@
             </div>
 
             <div class="nav-actions">
-                <button class="btn btn-dark">데모 신청</button>
+                <button class="btn btn-dark">제휴 신청</button>
                 <button id="mobile-menu-btn">
-                    <i data-lucide="menu"></i>
+                    <span class="material-symbols-outlined">menu</span>
                 </button>
             </div>
         </div>
@@ -53,14 +54,13 @@
     <!-- Mobile Menu -->
     <div id="mobile-menu">
         <div class="mobile-menu-header">
-            <a href="index.html" class="logo">
-                <div class="logo-icon logo-icon-sm">
-                    <i data-lucide="refresh-cw"></i>
-                </div>
-                <span>Jobcloud</span>
-            </a>
+            <h1 class="mobile__logo">
+                <a href="./잡클라우드-메인_ver02.html">
+                    <img src="./images/ver02/logo_ver2.png" alt="잡클라우드">
+                </a>
+            </h1>
             <button id="mobile-menu-close">
-                <i data-lucide="x"></i>
+                <span class="material-symbols-outlined">close</span>
             </button>
         </div>
         <div class="mobile-menu-content">
@@ -83,7 +83,7 @@
             </div>
         </div>
         <div class="mobile-menu-footer">
-            <button class="btn btn-dark btn-large" style="width: 100%;">데모 신청하기</button>
+            <button class="btn btn-dark btn-large" style="width: 100%;">제휴 신청하기</button>
         </div>
     </div>
 
@@ -98,16 +98,19 @@
             <div class="container">
                 <div class="hero-content">
                     <h1 class="hero-title">
-                        개인의 성장이<br />
-                        <span class="text-gradient">채용의 성공으로</span><br />
+                        개인의 성장이  
+
+                        <span class="text-gradient">채용의 성공으로</span>  
+
                         이어지는 데이터 연결
                     </h1>
                     <p class="hero-description">
-                        Jobcloud는 교육 데이터와 채용 프로세스를 통합하여<br />
+                        Jobcloud는 교육 데이터와 채용 프로세스를 통합하여  
+
                         기업에게는 검증된 인재를, 구직자에게는 최적의 커리어를 제공합니다.
                     </p>
                     <div class="hero-btns">
-                        <button class="btn btn-primary btn-large">솔루션 시작하기</button>
+                        <button class="btn btn-primary btn-large">제휴 신청하기</button>
                         <button class="btn btn-outline-white btn-large">회사소개 보기</button>
                     </div>
                 </div>
@@ -125,10 +128,10 @@
                 <div class="solution-grid">
                     <!-- Solution Card 1 -->
                     <a href="#" class="solution-card">
-                        <div class="card-hover-bg" style="background: linear-gradient(to bottom right, #16a34a, #15803d);"></div>
+                        <div class="card-hover-bg" style="background: linear-gradient(to bottom right, #16a34a, #15803d );"></div>
                         <div class="card-inner">
                             <div class="solution-icon icon-green">
-                                <i data-lucide="trending-up"></i>
+                                <span class="material-symbols-outlined">trending_up</span>
                             </div>
                             <span class="card-label label-green">성장 (Growth)</span>
                             <h3 class="card-title">역량강화 솔루션</h3>
@@ -136,7 +139,7 @@
                             <p class="card-desc">개인의 잠재력을 데이터로 증명하고, 맞춤형 학습 경로를 통해 실무형 인재로 거듭나게 합니다.</p>
                             <div class="card-footer footer-green">
                                 <span>상세 솔루션 보기</span>
-                                <i data-lucide="chevron-right"></i>
+                                <span class="material-symbols-outlined">chevron_right</span>
                             </div>
                         </div>
                     </a>
@@ -146,7 +149,7 @@
                         <div class="card-hover-bg" style="background: linear-gradient(to bottom right, #0f172a, #16a34a);"></div>
                         <div class="card-inner">
                             <div class="solution-icon icon-blue">
-                                <i data-lucide="target"></i>
+                                <span class="material-symbols-outlined">target</span>
                             </div>
                             <span class="card-label label-blue">성공 (Success)</span>
                             <h3 class="card-title">취업지원 솔루션</h3>
@@ -154,7 +157,7 @@
                             <p class="card-desc">단순한 정보 제공을 넘어, AI 기술과 전문가의 통찰력을 결합하여 최적의 합격 전략을 제시합니다.</p>
                             <div class="card-footer footer-blue">
                                 <span>상세 솔루션 보기</span>
-                                <i data-lucide="chevron-right"></i>
+                                <span class="material-symbols-outlined">chevron_right</span>
                             </div>
                         </div>
                     </a>
@@ -164,7 +167,7 @@
                         <div class="card-hover-bg" style="background: linear-gradient(to bottom right, #1e293b, #0f172a);"></div>
                         <div class="card-inner">
                             <div class="solution-icon icon-slate">
-                                <i data-lucide="zap"></i>
+                                <span class="material-symbols-outlined">bolt</span>
                             </div>
                             <span class="card-label label-slate">효율 (Efficiency)</span>
                             <h3 class="card-title">채용지원 솔루션</h3>
@@ -172,7 +175,7 @@
                             <p class="card-desc">복잡한 채용 과정을 데이터 중심으로 통합하여, 인사 담당자의 리소스를 혁신적으로 절감합니다.</p>
                             <div class="card-footer footer-slate">
                                 <span>상세 솔루션 보기</span>
-                                <i data-lucide="chevron-right"></i>
+                                <span class="material-symbols-outlined">chevron_right</span>
                             </div>
                         </div>
                     </a>
@@ -182,7 +185,7 @@
                         <div class="card-hover-bg" style="background: linear-gradient(to bottom right, #f59e0b, #ea580c);"></div>
                         <div class="card-inner">
                             <div class="solution-icon icon-amber">
-                                <i data-lucide="graduation-cap"></i>
+                                <span class="material-symbols-outlined">school</span>
                             </div>
                             <span class="card-label label-amber">운영 (Management)</span>
                             <h3 class="card-title">학사관리 솔루션</h3>
@@ -190,7 +193,7 @@
                             <p class="card-desc">LMS부터 평가 관리까지, 교육 운영의 모든 과정을 디지털로 전환하여 효율을 극대화합니다.</p>
                             <div class="card-footer footer-amber">
                                 <span>상세 솔루션 보기</span>
-                                <i data-lucide="chevron-right"></i>
+                                <span class="material-symbols-outlined">chevron_right</span>
                             </div>
                         </div>
                     </a>
@@ -203,7 +206,8 @@
             <div class="container vision-container">
                 <div class="vision-text">
                     <h2 class="vision-title">
-                        데이터 통합이 만드는<br />
+                        데이터 통합이 만드는  
+
                         <span class="vision-title-highlight">압도적인 채용 경쟁력</span>
                     </h2>
                     <p class="vision-desc">
@@ -215,7 +219,7 @@
                     <div class="vision-grid">
                         <div class="vision-item">
                             <div class="vision-icon icon-vision-green">
-                                <i data-lucide="database"></i>
+                                <span class="material-symbols-outlined">database</span>
                             </div>
                             <div>
                                 <h4>데이터 통합 관리</h4>
@@ -224,7 +228,7 @@
                         </div>
                         <div class="vision-item">
                             <div class="vision-icon icon-vision-green">
-                                <i data-lucide="refresh-cw"></i>
+                                <span class="material-symbols-outlined">sync</span>
                             </div>
                             <div>
                                 <h4>실시간 선순환 구조</h4>
@@ -233,7 +237,7 @@
                         </div>
                         <div class="vision-item">
                             <div class="vision-icon icon-vision-slate">
-                                <i data-lucide="bar-chart-3"></i>
+                                <span class="material-symbols-outlined">bar_chart</span>
                             </div>
                             <div>
                                 <h4>정밀 매칭 알고리즘</h4>
@@ -242,7 +246,7 @@
                         </div>
                         <div class="vision-item">
                             <div class="vision-icon icon-vision-amber">
-                                <i data-lucide="shield-check"></i>
+                                <span class="material-symbols-outlined">verified_user</span>
                             </div>
                             <div>
                                 <h4>신뢰 기반 인재 풀</h4>
@@ -257,7 +261,7 @@
                         <!-- Central Hub -->
                         <div class="central-hub">
                             <div class="ping-effect"></div>
-                            <i data-lucide="database" class="hub-icon"></i>
+                            <span class="material-symbols-outlined hub-icon">database</span>
                             <span class="hub-title">Data Hub</span>
                             <span class="hub-subtitle">Real-time Sync</span>
                         </div>
@@ -272,7 +276,7 @@
 
                         <!-- Nodes -->
                         <div class="vision-node node-top">
-                            <i data-lucide="graduation-cap" class="vision-node-icon"></i>
+                            <span class="material-symbols-outlined vision-node-icon">school</span>
                             <div class="node-tooltip">
                                 <div class="node-tooltip-label">LMS</div>
                                 <div class="node-tooltip-text">역량 진단 및 교육</div>
@@ -280,7 +284,7 @@
                         </div>
                         
                         <div class="vision-node node-right">
-                            <i data-lucide="cpu" class="vision-node-icon"></i>
+                            <span class="material-symbols-outlined vision-node-icon">memory</span>
                             <div class="node-tooltip">
                                 <div class="node-tooltip-label">AI Engine</div>
                                 <div class="node-tooltip-text">AI 분석 및 매칭</div>
@@ -288,7 +292,7 @@
                         </div>
                         
                         <div class="vision-node node-left">
-                            <i data-lucide="user-check" class="vision-node-icon"></i>
+                            <span class="material-symbols-outlined vision-node-icon">person_check</span>
                             <div class="node-tooltip">
                                 <div class="node-tooltip-label">ATS</div>
                                 <div class="node-tooltip-text">최적 인재 채용</div>
@@ -319,68 +323,88 @@
 
                 <div class="swiper cases-swiper">
                     <div class="swiper-wrapper">
-                    <!-- Case 1 -->
-                    <div class="swiper-slide case-card">
-                        <div class="case-header">
-                            <h3 class="case-title">A 대학교</h3>
-                            <p class="case-subtitle">교육 운영 효율화</p>
-                        </div>
-                        <div class="case-content">
-                            <p class="case-desc">Jobcloud의 통합 LMS 도입으로 학사 행정 업무를 70% 단축하고, 학생 역량 데이터를 기반으로 맞춤형 취업 지원을 제공하게 되었습니다.</p>
-                            <div class="case-stats">
-                                <div class="stat-item">
-                                    <div class="stat-value">70%</div>
-                                    <div class="stat-label">업무 효율화</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-value">85%</div>
-                                    <div class="stat-label">취업률 증가</div>
+                        <!-- Case 1 -->
+                        <div class="swiper-slide case-card">
+                            <div class="case-header">
+                                <h3 class="case-title">A 대학교</h3>
+                                <p class="case-subtitle">교육 운영 효율화</p>
+                            </div>
+                            <div class="case-content">
+                                <p class="case-desc">Jobcloud의 통합 LMS 도입으로 학사 행정 업무를 70% 단축하고, 학생 역량 데이터를 기반으로 맞춤형 취업 지원을 제공하게 되었습니다.</p>
+                                <div class="case-stats">
+                                    <div class="stat-item">
+                                        <div class="stat-value">70%</div>
+                                        <div class="stat-label">업무 효율화</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-value">85%</div>
+                                        <div class="stat-label">취업률 증가</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Case 2 -->
-                    <div class="swiper-slide case-card">
-                        <div class="case-header">
-                            <h3 class="case-title">B 기업</h3>
-                            <p class="case-subtitle">채용 프로세스 혁신</p>
-                        </div>
-                        <div class="case-content">
-                            <p class="case-desc">AI 기반 매칭 알고리즘을 통해 미스매칭을 80% 감소시키고, 채용 소요 기간을 평균 3주에서 1주로 단축했습니다.</p>
-                            <div class="case-stats">
-                                <div class="stat-item">
-                                    <div class="stat-value">80%</div>
-                                    <div class="stat-label">미스매칭 감소</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-value">66%</div>
-                                    <div class="stat-label">채용 기간 단축</div>
+                        <!-- Case 2 -->
+                        <div class="swiper-slide case-card">
+                            <div class="case-header">
+                                <h3 class="case-title">B 기업</h3>
+                                <p class="case-subtitle">채용 프로세스 혁신</p>
+                            </div>
+                            <div class="case-content">
+                                <p class="case-desc">AI 기반 매칭 알고리즘을 통해 미스매칭을 80% 감소시키고, 채용 소요 기간을 평균 3주에서 1주로 단축했습니다.</p>
+                                <div class="case-stats">
+                                    <div class="stat-item">
+                                        <div class="stat-value">80%</div>
+                                        <div class="stat-label">미스매칭 감소</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-value">66%</div>
+                                        <div class="stat-label">채용 기간 단축</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Case 3 -->
-                    <div class="swiper-slide case-card">
-                        <div class="case-header">
-                            <h3 class="case-title">C 교육기관</h3>
-                            <p class="case-subtitle">학생 역량 강화</p>
-                        </div>
-                        <div class="case-content">
-                            <p class="case-desc">정밀한 역량 진단과 맞춤형 학습 경로 제공으로 학생 만족도를 92%까지 높이고, 기업 채용 담당자의 신뢰도를 획기적으로 향상시켰습니다.</p>
-                            <div class="case-stats">
-                                <div class="stat-item">
-                                    <div class="stat-value">92%</div>
-                                    <div class="stat-label">학생 만족도</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-value">95%</div>
-                                    <div class="stat-label">기업 신뢰도</div>
+                        <!-- Case 3 -->
+                        <div class="swiper-slide case-card">
+                            <div class="case-header">
+                                <h3 class="case-title">C 교육기관</h3>
+                                <p class="case-subtitle">학생 역량 강화</p>
+                            </div>
+                            <div class="case-content">
+                                <p class="case-desc">정밀한 역량 진단과 맞춤형 학습 경로 제공으로 학생 만족도를 92%까지 높이고, 기업 채용 담당자의 신뢰도를 획기적으로 향상시켰습니다.</p>
+                                <div class="case-stats">
+                                    <div class="stat-item">
+                                        <div class="stat-value">92%</div>
+                                        <div class="stat-label">학생 만족도</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-value">95%</div>
+                                        <div class="stat-label">기업 신뢰도</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        <!-- Case 3 -->
+                        <div class="swiper-slide case-card">
+                            <div class="case-header">
+                                <h3 class="case-title">C 교육기관</h3>
+                                <p class="case-subtitle">학생 역량 강화</p>
+                            </div>
+                            <div class="case-content">
+                                <p class="case-desc">정밀한 역량 진단과 맞춤형 학습 경로 제공으로 학생 만족도를 92%까지 높이고, 기업 채용 담당자의 신뢰도를 획기적으로 향상시켰습니다.</p>
+                                <div class="case-stats">
+                                    <div class="stat-item">
+                                        <div class="stat-value">92%</div>
+                                        <div class="stat-label">학생 만족도</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-value">95%</div>
+                                        <div class="stat-label">기업 신뢰도</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="swiper-pagination"></div>
                     <div class="swiper-button-prev"></div>
@@ -392,21 +416,21 @@
         <!-- FAQ Section -->
         <section id="faq" class="faq-section">
             <div class="container">
-                <div class="faq-max-width">
+                <div class="faq-wrap">
                     <div class="section-title-group">
                         <h2 class="section-title">자주하는 질문</h2>
                         <p class="section-subtitle">서비스 도입에 대해 궁금하신 점을 확인해 보세요.</p>
                     </div>
 
-                    <div class="faq-accordion" id="faq-accordion">
+                    <div class="faq-container">
                         <!-- FAQ Item 1 -->
                         <div class="faq-item">
-                            <button class="faq-btn">
+                            <button class="faq-trigger">
                                 <span class="faq-question">기존에 사용 중인 인사 시스템(ERP/HRM)과 연동이 가능한가요?</span>
-                                <i data-lucide="plus" class="faq-icon"></i>
+                                <span class="material-symbols-outlined faq-icon">add</span>
                             </button>
-                            <div class="faq-content">
-                                <div class="faq-answer">
+                            <div class="faq-panel">
+                                <div class="faq-inner">
                                     네, Jobcloud는 표준 REST API를 제공하여 대부분의 기존 인사 시스템과 유연하게 연동됩니다. 데이터 동기화 방식은 기업의 보안 정책에 맞춰 커스터마이징이 가능합니다.
                                 </div>
                             </div>
@@ -414,12 +438,12 @@
 
                         <!-- FAQ Item 2 -->
                         <div class="faq-item">
-                            <button class="faq-btn">
+                            <button class="faq-trigger">
                                 <span class="faq-question">솔루션 도입까지 소요되는 기간은 어느 정도인가요?</span>
-                                <i data-lucide="plus" class="faq-icon"></i>
+                                <span class="material-symbols-outlined faq-icon">add</span>
                             </button>
-                            <div class="faq-content">
-                                <div class="faq-answer">
+                            <div class="faq-panel">
+                                <div class="faq-inner">
                                     표준형 솔루션의 경우 계약 후 1주일 이내에 즉시 사용이 가능합니다. 기업 맞춤형 LMS 구축이나 복잡한 API 연동이 포함된 경우 평균 4~8주 정도의 기간이 소요됩니다.
                                 </div>
                             </div>
@@ -427,12 +451,12 @@
 
                         <!-- FAQ Item 3 -->
                         <div class="faq-item">
-                            <button class="faq-btn">
+                            <button class="faq-trigger">
                                 <span class="faq-question">데이터 보안은 어떻게 보장되나요?</span>
-                                <i data-lucide="plus" class="faq-icon"></i>
+                                <span class="material-symbols-outlined faq-icon">add</span>
                             </button>
-                            <div class="faq-content">
-                                <div class="faq-answer">
+                            <div class="faq-panel">
+                                <div class="faq-inner">
                                     Jobcloud는 ISO 27001 인증을 획득했으며, 모든 데이터는 엔드-투-엔드 암호화로 보호됩니다. 정기적인 보안 감사와 침투 테스트를 통해 최고 수준의 보안을 유지하고 있습니다.
                                 </div>
                             </div>
@@ -440,35 +464,27 @@
 
                         <!-- FAQ Item 4 -->
                         <div class="faq-item">
-                            <button class="faq-btn">
+                            <button class="faq-trigger">
                                 <span class="faq-question">AI 매칭 알고리즘의 정확도는 어느 정도인가요?</span>
-                                <i data-lucide="plus" class="faq-icon"></i>
+                                <span class="material-symbols-outlined faq-icon">add</span>
                             </button>
-                            <div class="faq-content">
-                                <div class="faq-answer">
-                                    우리의 AI 매칭 알고리즘은 95% 이상의 정확도를 자랑합니다. 지속적인 머신러닝을 통해 매칭 정확도를 계속 개선하고 있으며, 기업과 인재의 피드백을 반영하여 알고리즘을 최적화합니다.
+                            <div class="faq-panel">
+                                <div class="faq-inner">
+                                    Jobcloud의 AI 엔진은 100만 건 이상의 교육 및 채용 매칭 데이터를 학습하여 90% 이상의 매칭 정확도를 보장합니다. 지속적인 피드백 루프를 통해 알고리즘을 고도화하고 있습니다.
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="cta-section">
-            <div class="container">
-                <h2 class="cta-title">지금 바로 통합 커리어 솔루션을 경험하세요</h2>
-                <p class="cta-desc">
-                    기업의 채용 효율을 높이고, 인재의 성장을 가속화하는<br />
-                    Jobcloud의 혁신적인 데이터 플랫폼을 만나보세요.
-                </p>
-                <div class="cta-btns">
-                    <button class="btn btn-white btn-large">도입 문의하기</button>
-                    <button class="btn btn-outline-primary btn-large">무료 데모 체험</button>
-                </div>
+        </section>      
+        <section class="partnership">
+            <div class="partnership__content">
+                <h2>JOBCLOUD</h2>
+                <p>제휴, 도입을 희망하시는 경우 간편하게 문의해 보세요.</p>
+                <a href="#" class="partnership__content-button">제휴 문의하기</a>
             </div>
-        </section>
+        </section> 
     </main>
 
     <!-- Footer -->
@@ -476,23 +492,29 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="index.html" class="footer-logo">
-                        <div class="logo-icon logo-icon-sm">
-                            <i data-lucide="refresh-cw"></i>
-                        </div>
-                        <span>Jobcloud</span>
+                    <a href="#" class="footer-logo">
+                        <img src="./images/ver02/logo.png" alt="">
                     </a>
                     <p class="footer-desc">
-                        Jobcloud는 데이터와 AI 기술을 통해 개인의 역량 성장이 기업의 채용 성공으로 이어지는 
-                        가장 효율적인 커리어 생태계를 구축합니다.
+                        교육 데이터와 채용을 연결하는 No.1 데이터 통합 커리어 솔루션입니다.
                     </p>
                     <div class="social-links">
-                        <a href="#" class="social-link"><i data-lucide="linkedin"></i></a>
-                        <a href="#" class="social-link"><i data-lucide="twitter"></i></a>
-                        <a href="#" class="social-link"><i data-lucide="github"></i></a>
+                        <a href="#" class="social-link"><span class="material-symbols-outlined">share</span></a>
+                        <a href="#" class="social-link"><span class="material-symbols-outlined">public</span></a>
+                        <a href="#" class="social-link"><span class="material-symbols-outlined">chat</span></a>
                     </div>
                 </div>
-                
+
+                <div>
+                    <h4 class="footer-nav-title">Solution</h4>
+                    <ul class="footer-nav-list">
+                        <li><a href="#">역량강화 솔루션</a></li>
+                        <li><a href="#">취업지원 솔루션</a></li>
+                        <li><a href="#">채용지원 솔루션</a></li>
+                        <li><a href="#">학사관리 솔루션</a></li>
+                    </ul>
+                </div>
+
                 <div>
                     <h4 class="footer-nav-title">Company</h4>
                     <ul class="footer-nav-list">
@@ -506,9 +528,8 @@
                 <div>
                     <h4 class="footer-nav-title">Contact</h4>
                     <ul class="footer-nav-list">
-                        <li><i data-lucide="mail"></i> contact@jobcloud.ai</li>
-                        <li><i data-lucide="phone"></i> 02-1234-5678</li>
-                        <li><i data-lucide="map-pin"></i> 서울특별시 강남구 테헤란로 123</li>
+                        <li><span class="material-symbols-outlined" style="font-size: 18px;">mail</span> contact@jobcloud.ai</li>
+                        <li><span class="material-symbols-outlined" style="font-size: 18px;">phone</span> 02-1234-5678</li>
                     </ul>
                 </div>
             </div>
@@ -518,12 +539,11 @@
                 <div class="footer-legal">
                     <a href="#">이용약관</a>
                     <a href="#" class="footer-legal-bold">개인정보처리방침</a>
-                    <a href="#">쿠키정책</a>
                 </div>
             </div>
         </div>
     </footer>
-
+    
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./js/run.js"></script>
 </body>

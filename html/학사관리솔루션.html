@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>잡클라우드-학사관리솔루션</title>
+    <!-- Google Material Symbols -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="sub-page">
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <h1 class="navbar__logo">
+                <a href="./잡클라우드-메인_ver02.html">
+                    <!-- <img src="./images/ver02/logo_on.png" alt="잡클라우드"> -->
+                    <img src="./images/ver02/logo_ver2.png" alt="잡클라우드">
+                </a>
+            </h1>
+            
+            <div class="nav-links">
+                <a href="./잡클라우드-메인_ver02.html" class="nav-link">홈</a>
+                <a href="#" class="nav-link">회사소개</a>
+                
+                <div class="solutions-dropdown">
+                    <button class="solutions-dropdown-btn">
+                        솔루션
+                        <span class="material-symbols-outlined">expand_more</span>
+                    </button>
+                    <div class="solutions-dropdown-menu">
+                        <a href="./역량강화솔루션.html" class="solutions-dropdown-item">역량강화 솔루션</a>
+                        <a href="./취업지원솔루션.html" class="solutions-dropdown-item">취업지원 솔루션</a>
+                        <a href="./채용관리솔루션.html" class="solutions-dropdown-item">채용지원 솔루션</a>
+                        <a href="./학사관리솔루션.html" class="solutions-dropdown-item">학사관리 솔루션</a>
+                    </div>
+                </div>
+
+                <a href="#cases" class="nav-link">고객사례</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+            </div>
+
+            <div class="nav-actions">
+                <button class="btn btn-dark">제휴 신청</button>
+                <button id="mobile-menu-btn">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu">
+        <div class="mobile-menu-header">
+            <h1 class="mobile__logo">
+                <a href="./잡클라우드-메인_ver02.html">
+                    <img src="./images/ver02/logo_ver2.png" alt="잡클라우드">
+                </a>
+            </h1>
+            <button id="mobile-menu-close">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-section">
+                <p class="mobile-menu-section-title">Menu</p>
+                <a href="index.html" class="mobile-menu-link">홈</a>
+                <a href="#" class="mobile-menu-link">회사소개</a>
+            </div>
+            <div class="mobile-menu-section">
+                <p class="mobile-menu-section-title">Solutions</p>
+                <a href="#" class="mobile-menu-link">역량강화 솔루션</a>
+                <a href="#" class="mobile-menu-link">취업지원 솔루션</a>
+                <a href="#" class="mobile-menu-link">채용지원 솔루션</a>
+                <a href="#" class="mobile-menu-link">학사관리 솔루션</a>
+            </div>
+            <div class="mobile-menu-section">
+                <p class="mobile-menu-section-title">Support</p>
+                <a href="#cases" class="mobile-menu-link">고객사례</a>
+                <a href="#faq" class="mobile-menu-link">FAQ</a>
+            </div>
+        </div>
+        <div class="mobile-menu-footer">
+            <button class="btn btn-dark btn-large" style="width: 100%;">제휴 신청하기</button>
+        </div>
+    </div>
+    <div class="fake-scrollbar">
+        <div class="fake-scrollbar__thumb"></div>
+    </div>
+    <section class="sub-main">
+        <h2>학사관리 솔루션</h2>
+        <h3>교육 운영의 투명성과 신뢰를 구축하고,<br> 복잡한 선발과 행정 업무는 시스템으로 자동화하세요.</h3>
+        <p class="txt">선발 평가부터 온·오프라인 교육 운영, 기업 맞춤형 환경까지<br> 통합 관리하는 데이터 기반 학사 운영 인프라.</p>
+    </section>
+    <main class="container">
+        <!-- Core Services Section -->
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-title-group">
+                    <h3>Module</h3>
+                    <h2>주요 서비스 구성</h2>
+                </div>
+            </div>
+
+            <div class="card-grid">
+                <!-- 서비스 카드 1 -->
+                <div class="service-card" onclick="openModal('modal-consulting')">
+                    <div class="card-icon">
+                        <span class="material-symbols-outlined">support_agent</span>
+                    </div>
+                    <div class="tag-wrap">
+                        <span class="card-tag">취업지원</span>
+                    </div>
+                    <h4 class="card-title">온라인 취업상담</h4>
+                    <p class="card-description">단순 상담을 넘어, 진단 결과와 학습 이력을 토대로 한 '역량 피드백' 중심 설계</p>
+                </div>
+
+                <!-- 서비스 카드 2 -->
+                <div class="service-card" onclick="openModal('modal-diagnosis')">
+                    <div class="card-icon">
+                       <span class="material-symbols-outlined">fact_check</span>
+                    </div>
+                    <div class="tag-wrap">
+                        <span class="card-tag">취업지원</span>
+                        <span class="card-tag">역량강화</span>
+                    </div>
+                    <h4 class="card-title">취업진단검사</h4>
+                    <p class="card-description">입과 시(Pre)와 수료 시(Post) 검사를 통해 역량 성장치(KPI) 시각화</p>
+                </div>
+
+                <!-- 서비스 카드 3 -->
+                <div class="service-card" onclick="openModal('modal-lms')">
+                    <div class="card-icon">
+                        <span class="material-symbols-outlined">play_lesson</span>
+                    </div>
+                    <div class="tag-wrap">
+                        <span class="card-tag">취업지원</span>
+                        <span class="card-tag">역량강화</span>
+                    </div>
+                    <h4 class="card-title">온라인 교육(LMS)</h4>
+                    <p class="card-description">기관만의 커스텀 커리큘럼 구성 가능 및 학습 진도율 실시간 관리</p>
+                </div>
+
+                <!-- 서비스 카드 4 -->
+                <div class="service-card" onclick="openModal('modal-recommendation')">
+                    <div class="card-icon">
+                        <span class="material-symbols-outlined">auto_awesome_mosaic</span>
+                    </div>
+                    <div class="tag-wrap">
+                        <span class="card-tag">취업지원</span>
+                        <span class="card-tag">역량강화</span>
+                    </div>
+                    <h4 class="card-title">개인화 추천</h4>
+                    <p class="card-description">진단 점수가 낮은 역량을 보완할 수 있는 교육 콘텐츠 및 상담사 자동 매칭</p>
+                </div>
+
+                <!-- 서비스 카드 5 -->
+                <div class="service-card" onclick="openModal('modal-contents')">
+                    <div class="card-icon">
+                        <span class="material-symbols-outlined">article_person</span>
+                    </div>
+                    <div class="tag-wrap">
+                        <span class="card-tag">취업지원</span>
+                        <span class="card-tag">역량강화</span>
+                    </div>
+                    <h4 class="card-title">취업 콘텐츠 관리</h4>
+                    <p class="card-description">직무별 실무 가이드, 최신 산업 트렌드 등 역량 강화에 특화된 DB 제공</p>
+                </div>
+
+                <!-- 서비스 카드 6 -->
+                <div class="service-card" onclick="openModal('modal-chatbot')">
+                    <div class="card-icon">
+                        <span class="material-symbols-outlined">smart_toy</span>
+                    </div>
+                    <div class="tag-wrap">
+                        <span class="card-tag">취업지원</span>
+                        <span class="card-tag">역량강화</span>
+                    </div>
+                    <h4 class="card-title">챗봇 시스템</h4>
+                    <p class="card-description">상담 예약 관리 및 학습 Q&A 대응으로 상담사 업무 효율화</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Management Points Section -->
+        <section>
+            <div class="admin-section">
+                <div class="admin-bg"></div>
+                
+                <div class="admin-content">
+                    <div class="admin-header">
+                        <h3>Admin Control</h3>
+                        <h2>관리 포인트 3종</h2>
+                        <p>운영 효율을 극대화하는 관리자 전용 시스템 아키텍처</p>
+                    </div>
+
+                    <div class="admin-grid">
+                        <div class="admin-item">
+                            <div class="admin-icon">
+                                <span class="material-symbols-outlined">monitoring</span>
+                            </div>
+                            <h4>역량 성장 대시보드</h4>
+                            <p>개인 및 그룹별 역량 변화 추이를 한눈에 파악하고 성성과를 시각화하는 통합 관제 센터</p>
+                        </div>
+                        <div class="admin-item">
+                            <div class="admin-icon">
+                                <span class="material-symbols-outlined">manage_accounts</span>
+                            </div>
+                            <h4>상담 관리 시스템</h4>
+                            <p>상담 이력, 만족도, 피드백 데이터를 체계적으로 기록하고 상담 품질을 모니터링하는 전용 툴</p>
+                        </div>
+                        <div class="admin-item">
+                            <div class="admin-icon">
+                                <span class="material-symbols-outlined">backup</span>
+                            </div>
+                            <h4>고용정보 데이터 통합 관리</h4>
+                            <p>지원자 정보, 교육 이수 현황, 취업 성공 데이터를 통합하여 고용 정책 수립의 근거 데이터 제공</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <section class="partnership">
+        <div class="partnership__content">
+            <h2>JOBCLOUD</h2>
+            <p>제휴, 도입을 희망하시는 경우 간편하게 문의해 보세요.</p>
+            <a href="#" class="partnership__content-button">제휴 문의하기</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="footer-logo">
+                        <img src="./images/ver02/logo.png" alt="">
+                    </a>
+                    <p class="footer-desc">
+                        교육 데이터와 채용을 연결하는 No.1 데이터 통합 커리어 솔루션입니다.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><span class="material-symbols-outlined">share</span></a>
+                        <a href="#" class="social-link"><span class="material-symbols-outlined">public</span></a>
+                        <a href="#" class="social-link"><span class="material-symbols-outlined">chat</span></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-nav-title">Solution</h4>
+                    <ul class="footer-nav-list">
+                        <li><a href="#">역량강화 솔루션</a></li>
+                        <li><a href="#">취업지원 솔루션</a></li>
+                        <li><a href="#">채용지원 솔루션</a></li>
+                        <li><a href="#">학사관리 솔루션</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-nav-title">Company</h4>
+                    <ul class="footer-nav-list">
+                        <li><a href="#">회사소개</a></li>
+                        <li><a href="#">인재채용</a></li>
+                        <li><a href="#">기술블로그</a></li>
+                        <li><a href="#">보도자료</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-nav-title">Contact</h4>
+                    <ul class="footer-nav-list">
+                        <li><span class="material-symbols-outlined" style="font-size: 18px;">mail</span> contact@jobcloud.ai</li>
+                        <li><span class="material-symbols-outlined" style="font-size: 18px;">phone</span> 02-1234-5678</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2026 Jobcloud Inc. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">이용약관</a>
+                    <a href="#" class="footer-legal-bold">개인정보처리방침</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal 1: 온라인 취업상담 -->
+    <div id="modal-consulting" class="service-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close-btn" onclick="closeModal('modal-consulting')">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+                <div class="modal-header-top">
+                    <div class="modal-icon">
+                        <span class="material-symbols-outlined">support_agent</span>
+                    </div>
+                    <div>
+                        <div>
+                            <span class="modal-tag">취업지원</span>
+                        </div>
+                        <h2 class="modal-title">온라인 취업상담</h2>
+                    </div>
+                </div>
+                <p class="modal-description">솔루션 내 역할 / 밀착 케어의 핵심</p>
+            </div>
+
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h4 class="modal-section-title">
+                       <span class="material-symbols-outlined">verified</span> [솔루션 특징]
+                    </h4>
+                    <ul class="feature-box">
+                        <li>
+                            <p><span>실전 환경</span> 최신 AI 전형 시스템 완벽 시뮬레이션</p>
+                        </li>
+                        <li>
+                            <p><span>잠재력 측정</span> 비언어적 표현 및 상황 대처 능력 정밀 분석</p>
+                        </li>
+                        <li>
+                            <p><span>신뢰 지표</span> 데이터 기반의 객관적 잠재 역량 평가</p>
+                        </li>
+                        <li>
+                            <p><span>부정행위 방지</span> 실시간 모니터링을 통한 검사 신뢰도 확보</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="modal-section">
+                    <h4 class="modal-section-title">
+                        <span class="material-symbols-outlined">tile_small</span> [주요 서비스 구성]
+                    </h4>
+                    <div class="composition-list">
+                        <div class="composition-item">
+                            <div class="composition-bar"></div>
+                            <div class="composition-content">
+                                <h5>1:1 역량 피드백</h5>
+                                <p>진단 검사 결과를 바탕으로 한 약점 보완 및 강점 극대화 전략 수립</p>
+                            </div>
+                        </div>
+                        <div class="composition-item">
+                            <div class="composition-bar"></div>
+                            <div class="composition-content">
+                                <h5>실전 모의 면접</h5>
+                                <p>화상 시스템을 활용한 직무별 전문가의 압박 면접 및 태도 교정</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-section">
+                    <h4 class="modal-section-title">
+                        <span class="material-symbols-outlined">trending_up</span> [도입 기대효과]
+                    </h4>
+                    <p class="effects-text">지원자의 심리적 안정감 확보 및 구체적인 취업 실행력 강화</p>
+                </div>
+
+                <div class="kpi-box">
+                    <div>
+                        <div class="kpi-label">[성과 지표 (KPI)]</div>
+                        <div class="kpi-title">상담 후 면접 합격률</div>
+                    </div>
+                    <div class="kpi-value">35% 향상</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <script>
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                lucide.createIcons();
+            }
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        document.addEventListener('click', (event) => {
+            if (event.target.classList.contains('service-modal')) {
+                event.target.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>

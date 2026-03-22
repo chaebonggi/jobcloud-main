@@ -1,13 +1,7 @@
 // Initialize on DOM load
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize Lucide icons
-    lucide.createIcons();
-
     // Mobile Menu Toggle
     initMobileMenu();
-
-    // Vision Animation
-    initVisionAnimation();
 
     // FAQ Accordion
     initFAQAccordion();
@@ -48,36 +42,30 @@ function initMobileMenu() {
     }
 }
 
-// Vision Animation Functions
-function initVisionAnimation() {
-    // CSS animations handle all vision animations smoothly
-    // No JavaScript needed - pure CSS keyframes for smooth performance
-}
-
-// FAQ Accordion Functions - Using CSS Grid for smooth transitions
+// FAQ Accordion Functions - Optimized with new naming
 function initFAQAccordion() {
     const faqItems = document.querySelectorAll('.faq-item');
 
     faqItems.forEach((item) => {
-        const btn = item.querySelector('.faq-btn');
+        const trigger = item.querySelector('.faq-trigger');
 
-        if (btn) {
-            btn.addEventListener('click', () => {
+        if (trigger) {
+            trigger.addEventListener('click', (e) => {
+                e.preventDefault();
                 const isActive = item.classList.contains('active');
                 const currentlyActiveItem = document.querySelector('.faq-item.active');
 
-                // Close other items and open this one simultaneously
+                // Simultaneous open/close logic
                 if (isActive) {
                     item.classList.remove('active');
                 } else {
+                    // Close others
                     if (currentlyActiveItem && currentlyActiveItem !== item) {
                         currentlyActiveItem.classList.remove('active');
                     }
+                    // Open this one
                     item.classList.add('active');
                 }
-
-                // Refresh Lucide icons
-                lucide.createIcons();
             });
         }
     });
@@ -107,15 +95,15 @@ function initCasesSwiper() {
     const swiper = new Swiper('.cases-swiper', {
         slidesPerView: 1,
         spaceBetween: 20,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-            dynamicBullets: true,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
+        // pagination: {
+        //     el: '.swiper-pagination',
+        //     clickable: true,
+        //     dynamicBullets: true,
+        // },
+        // navigation: {
+        //     nextEl: '.swiper-button-next',
+        //     prevEl: '.swiper-button-prev',
+        // },
         breakpoints: {
             640: {
                 slidesPerView: 2,
