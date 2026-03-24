@@ -1,0 +1,336 @@
+
+<!DOCTYPE html>
+<html lang="ko" class="chart_page">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>역량진단</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/mentoring.css">
+
+    <script src="https://www.gpmu.co.kr/js/jquery/1.12.4/jquery-1.12.4.min.js" type="text/javascript"></script>
+    <script src="https://www.gpmu.co.kr/js/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="https://www.gpmu.co.kr/js/kendo/2015.3.930/kendo.all.min.js"></script>
+ 
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">G</div>
+                <div class="logo-text">그린대로 <span>멘토링</span></div>
+            </div>
+            <nav>
+                <a href="#">사업소개</a>
+                <a href="#">멘토찾기</a>
+                <a href="#">커뮤니티</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <article class="chart-wrap pd_style01">
+            <div class="innerSection">
+                <div class="chart-container">
+                    <div class="chart-cont">
+                        <div class="chart-item score-group">                        
+                            <div class="item-box">
+                                <div class="item">
+                                    <h3>나의 역량 점수</h3>
+                                    <div class="score-info">
+                                        <p class="scroe">85.5</p>
+                                        <div class="btn-wrap">
+                                            <p class="txt">2026-03-24 진단결과 기준</p>
+                                        </div>
+                                    </div>                                
+                                </div>
+                                <div class="item">
+                                    <h3>나의 역량 성장도</h3>
+                                    <div id="linechart01"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chart-item chart-group">                        
+                            <div class="chart-list">
+                                <div class="ct-item">
+                                    <h3>문항별 진단결과</h3>
+                                    <div class="ct-cont">                                
+                                        <div id="radarchart01"></div>
+                                        <div class="custom-legend">
+                                            <div class="legend-item">
+                                                <div class="legend-bar color-prep"></div>
+                                                <div class="legend-text">창업준비</div>
+                                            </div>
+                                            <div class="legend-item">
+                                                <div class="legend-bar color-mgmt"></div>
+                                                <div class="legend-text">경영관리</div>
+                                            </div>
+                                            <div class="legend-item">
+                                                <div class="legend-bar color-tech"></div>
+                                                <div class="legend-text">영농기술</div>
+                                            </div>
+                                            <div class="legend-item">
+                                                <div class="legend-bar color-life"></div>
+                                                <div class="legend-text">농촌생활</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                                <div class="item-group">
+                                    <div class="c-item">
+                                        <h3>점수현황</h3>
+                                        <div class="ct-cont">                                   
+                                            <div id="barchart01"></div>
+                                        </div>
+                                    </div>   
+                                </div>                                
+                            </div>                       
+                        </div>                    
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+    
+    <footer>
+        <div class="footer-copy">© 2026 그린대로 귀농귀촌 통합 플랫폼. All rights reserved.</div>
+        <div class="footer-links">
+            <a href="#">개인정보처리방침</a>
+            <a href="#">이용약관</a>
+            <a href="#">운영가이드라인</a>
+        </div>
+    </footer>
+
+    <script>
+        $(document).ready(function () {
+           
+
+            // 차트 관련
+            function radarchart01() {
+                // 카테고리 정의 - 4개로 수정
+                var cate = ["창업준비", "경영관리", "영농기술", "농촌생활"];
+                
+                // 각 카테고리별 색상 매핑
+                var categoryColors = {
+                    "창업준비": "#4CAF50",
+                    "경영관리": "#FFD700",
+                    "영농기술": "#F44336",
+                    "농촌생활": "#E57373"
+                };
+                
+                // 데이터 정의
+                var seriesData = [
+                    {
+                        name: "개인 성취도",
+                        data: [80, 60, 50, 70],
+                        color: "#d4d4d4",
+                        opacity: 0.5,
+                        markers: {
+                            visible: false
+                        },
+                        line: {
+                            width: 1,
+                            color: "#999"
+                        }
+                    }
+                ];
+
+                $("#radarchart01").kendoChart({
+                    theme: "bootstrap",
+                    legend: { visible: false },
+                    seriesDefaults: { 
+                        type: "radarArea"
+                    },
+                    series: seriesData,
+                    categoryAxis: {
+                        categories: cate,
+                        majorGridLines: {
+                            visible: true,
+                            color: "#ddd"
+                        },
+                        labels: {
+                            // HTML 템플릿 대신 순수 텍스트 사용 (오류 방지)
+                            font: "500 13px 'Noto Sans KR'",
+                            color: "#666"
+                        }
+                    },
+                    valueAxis: {
+                        visible: false,
+                        max: 100,
+                        min: 0,
+                        majorGridLines: { 
+                            visible: true,
+                            color: "#ddd" 
+                        }
+                    },
+                    chartArea: {
+                        background: "transparent",
+                        margin: 60 // 차트 전체 여백을 크게 주어 텍스트 잘림 방지
+                    },
+                    tooltip: {
+                        visible: true,
+                        format: "{0}점"
+                    },
+                    render: function(e) {
+                        // 차트가 렌더링된 후 실행되는 이벤트
+                        var chart = e.sender;
+                        var svg = $(chart.element).find("svg")[0];
+                        if (svg) {
+                            var textElements = svg.querySelectorAll("text");
+                            textElements.forEach(function(textEl) {
+                                var text = textEl.textContent.trim();
+                                if (categoryColors[text]) {
+                                    // SVG 텍스트 요소의 색상을 직접 변경
+                                    textEl.setAttribute("fill", categoryColors[text]);
+                                    textEl.style.fill = categoryColors[text];
+                                    textEl.style.fontWeight = "bold";
+                                }
+                            });
+                        }
+                    }
+                });
+            }
+
+            function barchart01() {
+                var cate = ["전체", "창업준비", "영농기술", "농촌생활", "경영관리"];
+
+                $("#barchart01").kendoChart({
+                    legend: {
+                        position: "top",
+                        align: "end"
+                    },
+                    seriesDefaults: {
+                        type: "bar",
+                        overlay: null,
+                        labels: {
+                            visible: true,
+                            position: "outsideEnd",
+                            format: "{0}점"
+                        },
+                        border: {
+                            width: 0
+                        },
+                        dropShadow: false
+                    },
+                    series: [
+                        {
+                            name: "내 점수",
+                            data: [10, 20, 30, 40, 50],
+                            color: "#0071b9"
+                        },
+                        {
+                            name: "항목별 평균 점수",
+                            data: [30, 40, 40, 30, 30],
+                            color: "#dee0ff"
+                        }
+                    ],
+                    categoryAxis: {
+                        categories: cate,
+                        majorGridLines: { visible: false },
+                        line: {
+                            visible: true,
+                            color: "#000"
+                        }
+                    },
+                    valueAxis: {
+                        max: 60, // 최대값을 높여 라벨 공간 확보
+                        min: 0,
+                        visible: false
+                    },
+                    chartArea: {
+                        background: "transparent",
+                        margin: { right: 80 } // 오른쪽 여백을 늘려 라벨 잘림 방지
+                    }
+                });
+            }
+
+            
+
+            function linechart01() {
+                $("#linechart01").kendoChart({
+                    dataSource: {
+                        data: [
+                            { value: 65, status: "사전진단" },
+                            { value: 85.5, status: "사후진단" }
+                        ]
+                    },
+                    series: [{
+                        type: "line",
+                        field: "value",
+                        color: "#0071b9",
+                        noteTextField: "noteText"
+                    }],
+                    categoryAxis: {
+                        field: "status",
+                        line: {
+                            visible: true,
+                            color: "#0071b9"
+                        },
+                        majorGridLines: {
+                            visible: false
+                        },
+                        minorGridLines: {
+                            visible: false
+                        },
+                        labels: {
+                            visible: true,
+                            
+                            color: "#aadeff"
+                        }
+                    },
+                    valueAxis: {
+                        min: 0,
+                        max: 100,
+                        labels: {
+                            visible: false
+                        },
+                        line: {
+                            visible: false
+                        },
+                        majorGridLines: {
+                            visible: false
+                        }
+                    },
+                    chartArea: {
+                        background: 'transparent'
+                    },
+                    tooltip: {
+                        visible: true,
+                        color: "#ffffff",
+                        background: "transparent",
+                        border: {
+                            width: 0
+                        },
+                        shadow: {
+                            blur: 0
+                        },
+                        template: "#= category #: #= value #점"
+                    }
+                });
+            }
+
+            radarchart01();
+            barchart01();
+            linechart01();
+
+            $(document).bind("kendo:skinChange", function () {
+                radarchart01();
+                barchart01();
+                linechart01();
+            });
+            
+
+        });
+
+    </script>
+
+</body>
+
+</html>
