@@ -591,6 +591,8 @@ footer {
 
 /* 멘토링 차트 */
 .chart_page main, .chart_page .header-container {max-width: 1200px;}
+.chart_page .header-container {justify-content: center;}
+.chart_page .logo-img img {max-width: 120px;}
 .chart-wrap .score-group .item-box {
     display: flex;
     gap: 20px;
@@ -726,3 +728,24 @@ footer {
 .color-mgmt { background-color: #FFD700; } /* 경영관리 - 노랑 */
 .color-tech { background-color: #F44336; } /* 영농기술 - 빨강 */
 .color-life { background-color: #F44336; } /* 농촌생활 - 연한 빨강 */
+
+.chart-wrap .etc-tip {
+    padding: 20px 10px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    text-align: center;
+    line-height: 1.5;
+}
+.chart-wrap .etc-tip .etc-name {
+    color: #000;
+    font-size: 18px;
+    font-weight: 700;
+}
+.chart-wrap .etc-tip .etc-txt {
+    color: #ff0606;
+    font-size: 18px;
+    font-weight: 500;
+}
