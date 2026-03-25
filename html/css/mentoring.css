@@ -482,6 +482,9 @@ main {
     align-items: center;
     list-style: none;
 }
+.faq-summary span {
+    color: #fff;
+}
 
 .faq-summary::-webkit-details-marker {
     display: none;
