@@ -1,16 +1,23 @@
-// Initialize on DOM load
+/**
+ * Jobcloud UI Common Scripts
+ * Optimized for Smooth Transitions and Swiper
+ */
+
 document.addEventListener('DOMContentLoaded', () => {
-    // Mobile Menu Toggle
+    // 1. Mobile Menu Toggle
     initMobileMenu();
 
-    // FAQ Accordion
+    // 2. FAQ Accordion (Smooth Parallel Transition)
     initFAQAccordion();
 
-    // Smooth scroll for anchor links
+    // 3. Initialize Swiper for cases
+    initCasesSwiper();
+
+    // 4. Smooth Scroll for Anchor Links
     initSmoothScroll();
 
-    // Initialize Swiper for cases
-    initCasesSwiper();
+    // 5. Header scroll effect
+    initHeaderScroll();
 });
 
 // Mobile Menu Functions
@@ -22,27 +29,28 @@ function initMobileMenu() {
     if (mobileMenuBtn && mobileMenu) {
         mobileMenuBtn.addEventListener('click', () => {
             mobileMenu.style.transform = 'translateX(0)';
+            document.body.style.overflow = 'hidden'; // Prevent scroll
         });
     }
 
     if (mobileMenuClose && mobileMenu) {
         mobileMenuClose.addEventListener('click', () => {
             mobileMenu.style.transform = 'translateX(100%)';
+            document.body.style.overflow = ''; // Restore scroll
         });
     }
 
-    // Close mobile menu when clicking on a link
-    if (mobileMenu) {
-        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-        mobileMenuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.style.transform = 'translateX(100%)';
-            });
+    // Close mobile menu on link click
+    const mobileLinks = mobileMenu?.querySelectorAll('a');
+    mobileLinks?.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.style.transform = 'translateX(100%)';
+            document.body.style.overflow = '';
         });
-    }
+    });
 }
 
-// FAQ Accordion Functions - Optimized with new naming
+// FAQ Accordion Functions (Optimized for no-scroll-jump)
 function initFAQAccordion() {
     const faqItems = document.querySelectorAll('.faq-item');
 
@@ -55,7 +63,7 @@ function initFAQAccordion() {
                 const isActive = item.classList.contains('active');
                 const currentlyActiveItem = document.querySelector('.faq-item.active');
 
-                // Simultaneous open/close logic
+                // Simultaneous open/close logic for smooth transition without height jump
                 if (isActive) {
                     item.classList.remove('active');
                 } else {
@@ -71,18 +79,55 @@ function initFAQAccordion() {
     });
 }
 
-// Smooth Scroll Functions
+// Swiper Initialization for Cases
+function initCasesSwiper() {
+    const swiperEl = document.querySelector('.cases-swiper');
+    if (swiperEl) {
+        new Swiper('.cases-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 24,
+            loop: false,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 24,
+                },
+                1280: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+            },
+            speed: 600,
+            grabCursor: true,
+        });
+    }
+}
+
+// Smooth Scroll for Anchor Links
 function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
-            if (href !== '#' && document.querySelector(href)) {
+            if (href === '#' || !href.startsWith('#')) return;
+            
+            const targetId = href.substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
                 e.preventDefault();
-                const target = document.querySelector(href);
-                const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+                const navHeight = 80;
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
                 
                 window.scrollTo({
-                    top: offsetTop,
+                    top: targetPosition,
                     behavior: 'smooth'
                 });
             }
@@ -90,32 +135,16 @@ function initSmoothScroll() {
     });
 }
 
-// Swiper Initialization for Cases
-function initCasesSwiper() {
-    const swiper = new Swiper('.cases-swiper', {
-        slidesPerView: 1,
-        spaceBetween: 20,
-        // pagination: {
-        //     el: '.swiper-pagination',
-        //     clickable: true,
-        //     dynamicBullets: true,
-        // },
-        // navigation: {
-        //     nextEl: '.swiper-button-next',
-        //     prevEl: '.swiper-button-prev',
-        // },
-        breakpoints: {
-            640: {
-                slidesPerView: 2,
-                spaceBetween: 20,
-            },
-            1024: {
-                slidesPerView: 3,
-                spaceBetween: 24,
-            },
-        },
-        speed: 500,
-        loop: false,
-        autoplay: false,
-    });
+// Header scroll effect
+function initHeaderScroll() {
+    const nav = document.querySelector('.navbar');
+    if (nav) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    }
 }

@@ -82,7 +82,7 @@
             </div>
         </div>
         <div class="mobile-menu-footer">
-            <button class="btn btn-dark btn-large" style="width: 100%;">제휴 신청하기</button>
+            <button class="btn btn-dark btn-large btn-full-width">제휴 신청하기</button>
         </div>
     </div>
     <div class="fake-scrollbar">
@@ -106,7 +106,7 @@
 
             <div class="card-grid">
                 <!-- 서비스 카드 1 -->
-                <div class="service-card" onclick="openModal('modal-consulting')">
+                <div class="service-card" onclick="openModal('modal-01')">
                     <div class="card-icon">
                         <span class="material-symbols-outlined">support_agent</span>
                     </div>
@@ -118,7 +118,7 @@
                 </div>
 
                 <!-- 서비스 카드 2 -->
-                <div class="service-card" onclick="openModal('modal-diagnosis')">
+                <div class="service-card" onclick="openModal('modal-02')">
                     <div class="card-icon">
                        <span class="material-symbols-outlined">fact_check</span>
                     </div>
@@ -274,8 +274,8 @@
                 <div>
                     <h4 class="footer-nav-title">Contact</h4>
                     <ul class="footer-nav-list">
-                        <li><span class="material-symbols-outlined" style="font-size: 18px;">mail</span> contact@jobcloud.ai</li>
-                        <li><span class="material-symbols-outlined" style="font-size: 18px;">phone</span> 02-1234-5678</li>
+                        <li><span class="material-symbols-outlined footer-icon">mail</span> contact@jobcloud.ai</li>
+                        <li><span class="material-symbols-outlined footer-icon">phone</span> 02-1234-5678</li>
                     </ul>
                 </div>
             </div>
@@ -291,10 +291,10 @@
     </footer>
 
     <!-- Modal 1: 온라인 취업상담 -->
-    <div id="modal-consulting" class="service-modal">
+    <div id="modal-01" class="service-modal">
         <div class="modal-content">
             <div class="modal-header">
-                <button class="close-btn" onclick="closeModal('modal-consulting')">
+                <button class="close-btn" onclick="closeModal('modal-01')">
                     <span class="material-symbols-outlined">close</span>
                 </button>
                 <div class="modal-header-top">
@@ -304,6 +304,99 @@
                     <div>
                         <div>
                             <span class="modal-tag">취업지원</span>
+                        </div>
+                        <h2 class="modal-title">온라인 취업상담</h2>
+                    </div>
+                </div>
+                <p class="modal-description">솔루션 내 역할 / 밀착 케어의 핵심</p>
+            </div>
+
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h4 class="modal-section-title">
+                       <span class="material-symbols-outlined">verified</span> [솔루션 특징]
+                    </h4>
+                    <ul class="feature-box">
+                        <li>
+                            <p><span>실시간 상담</span> 유선 및 채팅을 통한 즉각적인 1:1 상담</p>
+                        </li>
+                        <li>
+                            <p><span>개인 맞춤 분석</span> 현재 상황 및 고민사항 정밀 진단</p>
+                        </li>
+                        <li>
+                            <p><span>전략 컨설팅</span> 성공 취업을 위한 맞춤형 로드맵 설계</p>
+                        </li>
+                        <li>
+                            <p><span>정보 큐레이션</span> 상황별 필수 취업 정보 및 자원 연결</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="modal-section">
+                    <h4 class="modal-section-title">
+                        <span class="material-symbols-outlined">tile_small</span> [주요 서비스 구성]
+                    </h4>
+                    <div class="composition-list">
+                        <div class="composition-item">
+                            <div class="composition-bar"></div>
+                            <div class="composition-content">
+                                <h5>개인별 현황 정밀 파악</h5>
+                                <p>전문 상담사가 유선 및 채팅으로 사용자의 현재 취업 준비 상태와 고민을 깊이 있게 파악합니다.</p>
+                            </div>
+                        </div>
+                        <div class="composition-item">
+                            <div class="composition-bar"></div>
+                            <div class="composition-content">
+                                <h5>맞춤형 취업 전략 컨설팅</h5>
+                                <p>파악된 상황을 바탕으로 필요한 취업 정보를 제공하고, 성공적인 취업을 위한 구체적인 전략을 설계해 드립니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-section">
+                    <h4 class="modal-section-title">
+                        <span class="material-symbols-outlined">trending_up</span> [도입 기대효과]
+                    </h4>
+                    <p class="effects-text">막연하고 불안한 취업 준비 과정에서 전문 상담사의 밀착 지원을 통해 정서적 안정감과 명확한 방향성을 확보합니다.</p>
+                </div>
+
+                <div class="modal-section">
+                    <h4 class="modal-section-title">
+                        <span class="material-symbols-outlined">bar_chart_4_bars</span> [성장지표]
+                    </h4>
+                    <ul class="kpi-box">
+                        <li>
+                            <p><span>상담 건수</span> 200% 향상</p>
+                        </li>
+                        <li>
+                            <p><span>상담 만족도</span> 95% 달성</p>
+                        </li>
+                        <li>
+                            <p><span>진로 결정률</span> 40% 향상</p>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 1: 취업진단검사 -->
+    <div id="modal-02" class="service-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close-btn" onclick="closeModal('modal-02')">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+                <div class="modal-header-top">
+                    <div class="modal-icon">
+                        <span class="material-symbols-outlined">support_agent</span>
+                    </div>
+                    <div>
+                        <div>
+                            <span class="modal-tag">취업지원</span>
+                            <span class="modal-tag">역량강화</span>
                         </div>
                         <h2 class="modal-title">온라인 취업상담</h2>
                     </div>
@@ -371,7 +464,6 @@
             </div>
         </div>
     </div>
-
     
 
     <script>
@@ -380,7 +472,6 @@
             if (modal) {
                 modal.classList.add('active');
                 document.body.style.overflow = 'hidden';
-                lucide.createIcons();
             }
         }
 
@@ -399,9 +490,7 @@
             }
         });
 
-        document.addEventListener('DOMContentLoaded', () => {
-            lucide.createIcons();
-        });
+
     </script>
 </body>
 </html>

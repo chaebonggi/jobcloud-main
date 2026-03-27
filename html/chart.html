@@ -24,7 +24,7 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <div class="logo-img"><img src="./images/mentoring/logo.svg" alt="탄탄대로 로고"></div>
+                <div class="logo-img"><img src="./images/mentoring/mt_logo.svg" alt="탄탄대로 로고"></div>
                 <div class="logo-text">청년농 역량진단</div>
             </div>
         </div>
@@ -55,8 +55,11 @@
                             <div class="chart-list">
                                 <div class="ct-item">
                                     <h3>문항별 진단결과</h3>
-                                    <div class="ct-cont">                                
-                                        <div id="radarchart01"></div>
+                                    <div class="ct-cont">
+                                        <div class="radar-wrap">
+                                            <div id="radarchart01"></div>
+                                            <span class="total">80</span>
+                                        </div>
                                         <div class="custom-legend">
                                             <div class="legend-item">
                                                 <div class="legend-bar color-prep"></div>
@@ -156,7 +159,6 @@
                             color: "#ddd"
                         },
                         labels: {
-                            // HTML 템플릿 대신 순수 텍스트 사용 (오류 방지)
                             font: "500 13px 'Noto Sans KR'",
                             color: "#666"
                         }
