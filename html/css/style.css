@@ -1498,9 +1498,6 @@ ul, ol {
         width: 100%;
     }
     
-    .journey-item > div:first-child {
-        width: 50%;
-    }
 }
 
 .journey-dot {
